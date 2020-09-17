@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta name="description" content="Don&#39;t stop programming.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Benboby&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta property="og:site_name" content="Benboby&#39;s Blog">
+<meta property="og:description" content="Don&#39;t stop programming.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Benboby">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Benboby's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Benboby's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Benboby's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section">标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/Benboby" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%9F%A9%E9%98%B5%E4%B8%AD%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84%EF%BC%88%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.JPG">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%9F%A9%E9%98%B5%E4%B8%AD%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84%EF%BC%88%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：矩阵中最长递增路径（记忆化搜索）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-26 13:58:40 / 修改时间：14:04:50" itemprop="dateCreated datePublished" datetime="2020-07-26T13:58:40+08:00">2020-07-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%9F%A9%E9%98%B5%E4%B8%AD%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84%EF%BC%88%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%9F%A9%E9%98%B5%E4%B8%AD%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84%EF%BC%88%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>908</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定一个整数矩阵，找出最长递增路径的长度。</p>
+<p>对于每个单元格，你可以往上，下，左，右四个方向移动。 你不能在对角线方向上移动或移动到边界外（即不允许环绕）。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>记忆化搜索模板题。$dp[i][j]$记录之前已经计算得到的结果，之后直接读取即可。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution329</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">           [7,8,9]</span></span><br><span class="line"><span class="comment">           [9,7,6]</span></span><br><span class="line"><span class="comment">           [7,2,3]</span></span><br><span class="line"><span class="comment">           输出：6</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] dirs = &#123;&#123;-<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;, &#123;<span class="number">0</span>, <span class="number">1</span>&#125;&#125;;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> n, m;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span>[][] a, <span class="keyword">int</span>[][] dp, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(dp[x][y] != <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> dp[x][y];</span><br><span class="line">        dp[x][y] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span>[] dir : dirs) &#123;</span><br><span class="line">            <span class="keyword">int</span> fx = x + dir[<span class="number">0</span>], fy = y + dir[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(fx &gt;= <span class="number">0</span> &amp;&amp; fx &lt; n &amp;&amp; fy &gt;= <span class="number">0</span> &amp;&amp; fy &lt; m &amp;&amp; a[fx][fy] &gt; a[x][y])</span><br><span class="line">                dp[x][y] = Math.max(dp[x][y], dfs(a, dp, fx, fy) + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[x][y];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestIncreasingPath</span><span class="params">(<span class="keyword">int</span>[][] a)</span> </span>&#123;</span><br><span class="line">        n = a.length;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        m = a[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n][m];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">                res = Math.max(res, dfs(a, dp, i, j));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/Java-%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.JPG">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/23/Java-%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/" class="post-title-link" itemprop="url">Java 注解与反射</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-23 17:06:33" itemprop="dateCreated datePublished" datetime="2020-07-23T17:06:33+08:00">2020-07-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-22 23:38:24" itemprop="dateModified" datetime="2020-08-22T23:38:24+08:00">2020-08-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/23/Java-%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/23/Java-%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>15k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>14 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="注解-Annotation"><a href="#注解-Annotation" class="headerlink" title="注解 Annotation"></a>注解 Annotation</h2><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul>
+<li>对程序作出解释（类似于注释）</li>
+<li>可以被其他程序读取（如：编译器等）</li>
+</ul>
+<h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><ul>
+<li>注解以 “@注释名” 形式存在，如 “@Override”，有些可以添加一些参数值，如 “@SuppressWarnings(value=”unchecked”)”</li>
+<li>附加在package，class，method，field等上方，等于给他们添加额外辅助信息，我们可以通过反射机制编程实现对这些元数据的访问</li>
+</ul>
+<h3 id="内置注解"><a href="#内置注解" class="headerlink" title="内置注解"></a>内置注解</h3><ul>
+<li>@Override: 此注释只适用于修饰方法，表示一个方法声明打算重写超类中的另一个方法声明</li>
+<li>@SuppressWarnings: 用于抑制编译时的警告信息(Warning)，需要添加参数才能使用，如：(“all”),(“unchecked”),(value={“unchecked”,”deprecation”})等等</li>
+</ul>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><p>元注解作用就是负责注解其他注解，Java定义了4个标准的meta-annotation类型，他们被用来提供对其他annotation类型作说明</p>
+<ul>
+<li><strong>@Target</strong>: 用于描述注解的使用范围（被描述的注解可以用在什么地方）</li>
+<li><strong>@Retention</strong>: 表示需要在什么级别保存该注释信息，用于描述注解的生命周期(SOURCE &lt; CLASS &lt; RUNTIME)</li>
+<li>@Document: 说明该注解将被包含在javadoc中</li>
+<li>@Inherited: 说明子类可以<strong>继承</strong>父类中的该注解</li>
+</ul>
+<h3 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h3><p>使用@interface自定义注解时，自动继承java.lang.annotation.Annotation接口</p>
+<ul>
+<li>@interface用来声明一个注释，格式：@interface 注解名 { 定义内容 }</li>
+<li>其中的每一个方法实际上是声明了一个配置参数</li>
+<li>方法的名称就是参数的名称</li>
+<li>返回值类型就是参数的类型，返回值只能是基本类型(Class, String, enum)</li>
+<li>可以通过default来声明参数的默认值</li>
+<li>如果只有一个参数成员，一般参数名为value</li>
+<li>注解必须要有值，我们定义注解元素时，经常使用空字符串或者0来作为默认值(default)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 注解可以显示赋值，没有先后顺序之分，如果没有默认值，就必须给注解赋值</span></span><br><span class="line">    <span class="meta">@MyAnnotation</span>01(id = <span class="number">1</span>, age = <span class="number">18</span>, name = <span class="string">"Benboby"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 当注解只有一个参数时，默认定义为 value() , 则可以省略 "value = "</span></span><br><span class="line">    <span class="meta">@MyAnnotation</span>02(<span class="string">"Benboby"</span>) </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test02</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE, ElementType.METHOD&#125;) <span class="comment">// 作用域可以在类上或者方法上</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME) <span class="comment">// 在运行时有效</span></span><br><span class="line"><span class="meta">@interface</span> MyAnnotation01 &#123;</span><br><span class="line">    <span class="comment">// 注解的参数：参数类型 + 参数名() (+ 默认值);</span></span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">age</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">id</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    String[] schools() <span class="keyword">default</span> &#123;<span class="string">"本科"</span>,<span class="string">"带专"</span>&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE, ElementType.METHOD&#125;) <span class="comment">// 作用域可以在类上或者方法上</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME) <span class="comment">// 在运行时有效</span></span><br><span class="line"><span class="meta">@interface</span> MyAnnotation02 &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="反射（Java-Reflection）"><a href="#反射（Java-Reflection）" class="headerlink" title="反射（Java Reflection）"></a>反射（Java Reflection）</h2><h3 id="动态-VS-静态语言"><a href="#动态-VS-静态语言" class="headerlink" title="动态 VS 静态语言"></a>动态 VS 静态语言</h3><p>动态语言：运行时代码可以根据某些条件改变自身结构。如：C#, JavaScript, PHP, Python等。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// var 是万能类型</span></span><br><span class="line">    <span class="keyword">var</span> x = <span class="string">"var a=1; var b=2; alert(a+b)"</span>; <span class="comment">// 可以认为目前是字符串类型</span></span><br><span class="line">    <span class="built_in">eval</span>(x) <span class="comment">// 执行 x ，x 变为 a+b 的值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>静态语言：运行时结构不可改变的语言就是静态语言。如：Java, C, C++。</p>
+<ul>
+<li>Java不是动态语言，但Java有一定的动态性，我们可以利用反射机制获得类似动态语言的特性，使得Java在编程的时候变得更灵活。</li>
+</ul>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Reflection是Java被视为动态语言的关键，反射机制允许程序在执行期借助于Reflection API取得任何类的内部信息，并能直接操作任意对象的内部属性及方法。</p>
+<p>加载完类之后，在堆内存的方法区中就产生了一个Class类型的对象（一个类只有一个Class对象），这个对象就包含了完整的类的结构信息。我们可以通过这个对象看到类的结构，这个对象就像一面镜子，透过这个镜子看到类的结构，所以，我们形象的称之为：反射。</p>
+<p>正常方式： 引入需要的“包类”名称 -&gt; 通过new实例化 -&gt; 取得实例化对象<br>反射方式： 实例化对象 -&gt; getClass()方法 -&gt; 得到完整的“包类”名称</p>
+<p>优点：可以实现创建对象和编译，体现出很大的灵活性<br>缺点：对性能有影响。使用反射基本上是一种解释操作，我们可以告诉JVM，我们希望做什么并且它满足我们的要求。这类操作总是慢于直接执行相同的操作。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">        <span class="comment">// 通过反射获取对象类的Class对象</span></span><br><span class="line">        Class c1 = Class.forName(<span class="string">"pers.Shuke.reflection.User"</span>);</span><br><span class="line">        System.out.println(c1); <span class="comment">// 输出：class pers.Shuke.reflection.User</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h3><p>在Object类中定义了以下的方法，此方法将所有子类继承：<strong>public final Class getClass()</strong></p>
+<p>以上方法的返回值类型是一个Class类，此类是Java反射的源头，即：可以通过对象反射求出类名称。</p>
+<h3 id="获取Class类型的几种方式"><a href="#获取Class类型的几种方式" class="headerlink" title="获取Class类型的几种方式"></a>获取Class类型的几种方式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">        Person person = <span class="keyword">new</span> Student();</span><br><span class="line">        <span class="comment">// 方式1：通过对象获得</span></span><br><span class="line">        Class c1 = person.getClass();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 方式2：forname获得</span></span><br><span class="line">        Class c2 = Class.forName(<span class="string">"pers.Shuke.reflection.Student"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 方式3：通过类名.class获得</span></span><br><span class="line">        Class c3 = Student<span class="class">.<span class="keyword">class</span></span>;</span><br><span class="line">        System.out.println(c3);</span><br><span class="line">        <span class="comment">// c1 = c2 = c3 = "class pers.Shuke.reflection.Student"</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 方式4：基本内置类型的包装类都有一个Type属性</span></span><br><span class="line">        Class c4 = Integer.TYPE;   <span class="comment">// c4 = int</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 方式5：</span></span><br><span class="line">        Class c5 = c1.getSuperclass();  <span class="comment">// c5 = "class pers.Shuke.reflection.Person"</span></span><br><span class="line">        System.out.println(c5);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="所有类型的Class对象"><a href="#所有类型的Class对象" class="headerlink" title="所有类型的Class对象"></a>所有类型的Class对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test04</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Class c1 = Object<span class="class">.<span class="keyword">class</span></span>; <span class="comment">// 类 c1 = "class java.lang.Object"</span></span><br><span class="line">        Class c2 = Comparable<span class="class">.<span class="keyword">class</span></span>; <span class="comment">// 接口 c2 = "interface java.lang.Comparable"</span></span><br><span class="line">        Class c3 = String[]<span class="class">.<span class="keyword">class</span></span>; <span class="comment">// 一维数组 c3 = "class [Ljava.lang.String;"</span></span><br><span class="line">        Class c4 = <span class="keyword">int</span>[][]<span class="class">.<span class="keyword">class</span></span>; <span class="comment">// 二维数组 c4 = "class [[I"</span></span><br><span class="line">        Class c5 = Override<span class="class">.<span class="keyword">class</span></span>; <span class="comment">// 注解 c5 = "interface java.lang.Override"</span></span><br><span class="line">        Class c6 = ElementType<span class="class">.<span class="keyword">class</span></span>; <span class="comment">// 枚举 c6 = "class java.lang.annotation.ElementType"</span></span><br><span class="line">        Class c7 = Integer<span class="class">.<span class="keyword">class</span></span>; <span class="comment">// 基本数据类型 c7 = "class java.lang.Integer"</span></span><br><span class="line">        Class c8 = <span class="keyword">void</span><span class="class">.<span class="keyword">class</span></span>; <span class="comment">// void c8 = "void"</span></span><br><span class="line">        Class c9 = Class<span class="class">.<span class="keyword">class</span></span>; <span class="comment">// Class c9 = "class java.lang.Class"</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">        <span class="keyword">int</span>[] b = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</span><br><span class="line">        Class c10 = a.getClass();</span><br><span class="line">        Class c11 = b.getClass();</span><br><span class="line">        <span class="comment">// c10 = c11</span></span><br><span class="line">        <span class="comment">// 只有元素类型与维度一样，就是同一个Class</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Java内存分析"><a href="#Java内存分析" class="headerlink" title="Java内存分析"></a>Java内存分析</h3><h4 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h4><p>堆：存放new的对象和数组，可以被所有的线程共享，不会存放别的对象引用<br>栈：存放基本变量类型（包含具体数值），引用对象的变量（会存放这个引用在堆里面的具体地址）<br>方法区：可以被所有的线程共享，包含所有的class和static变量</p>
+<h4 id="类的加载过程"><a href="#类的加载过程" class="headerlink" title="类的加载过程"></a>类的加载过程</h4><p>当程序主动使用某个类时，如果该类还未被加载到内存中，则系统会通过以下三个步骤来对该类进行初始化。</p>
+<ol>
+<li>类的加载(Load)：将类的class文件读入内存，并为之创建一个java.lang.Class对象。此过程由类加载器完成。</li>
+<li>类的连接(Link)：将类的二进制数据合并到JRE中。</li>
+<li>类的初始化(Initialize)：JVM负责对类进行初始化。</li>
+</ol>
+<h4 id="类的初始化"><a href="#类的初始化" class="headerlink" title="类的初始化"></a>类的初始化</h4><ol>
+<li>类的主动引用（一定会发生类的初始化）</li>
+</ol>
+<ul>
+<li>当虚拟机启动，先初始化main方法所在的类</li>
+<li>new一个类的对象</li>
+<li>调用类的静态成员（除了final常量）和静态方法</li>
+<li>使用java.lang.reflect包的方法对类进行反射调用</li>
+<li>当初始化一个类，如果其父类没有被初始化，则会先初始化他的父类</li>
+</ul>
+<ol>
+<li>类的被动引用</li>
+</ol>
+<ul>
+<li>当访问一个静态域时，只有真正声明这个域的类才会被初始化。如：当通过子类引用父类的静态变量，不会导致子类初始化</li>
+<li>通过数组定义类引用，不会触发此类的初始化</li>
+<li>引用常量不会触发此类的初始化（常量在链接阶段就存入调用类的常量池中了）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 测试类什么时候会被初始化</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test08</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"main类被加载"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">        <span class="comment">// 主动调用</span></span><br><span class="line">        <span class="comment">//Son son = new Son();</span></span><br><span class="line">        <span class="comment">/* main类被加载</span></span><br><span class="line"><span class="comment">           父类被加载</span></span><br><span class="line"><span class="comment">           子类被加载</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 通过反射</span></span><br><span class="line">        <span class="comment">//Class.forName("pers.Shuke.Initialization.Son");</span></span><br><span class="line">        <span class="comment">/*  main类被加载</span></span><br><span class="line"><span class="comment">            父类被加载</span></span><br><span class="line"><span class="comment">            子类被加载</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 引用父类常量</span></span><br><span class="line">        <span class="comment">//System.out.println(Son.b);</span></span><br><span class="line">        <span class="comment">/*  main类被加载</span></span><br><span class="line"><span class="comment">            父类被加载</span></span><br><span class="line"><span class="comment">            2</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 引用自身常量</span></span><br><span class="line">        <span class="comment">//System.out.println(Son.m);</span></span><br><span class="line">        <span class="comment">/*  main类被加载</span></span><br><span class="line"><span class="comment">            父类被加载</span></span><br><span class="line"><span class="comment">            子类被加载</span></span><br><span class="line"><span class="comment">            100</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 定义数组</span></span><br><span class="line">        <span class="comment">//Son[] array = new Son[5];</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            main类被加载</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 引用final常量</span></span><br><span class="line">        <span class="comment">//System.out.println(Son.f);</span></span><br><span class="line">        <span class="comment">/*  main类被加载</span></span><br><span class="line"><span class="comment">            10</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"父类被加载"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"子类被加载"</span>);</span><br><span class="line">        m = <span class="number">300</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> m = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> f = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="类加载器的作用"><a href="#类加载器的作用" class="headerlink" title="类加载器的作用"></a>类加载器的作用</h4><p>类加载的作用：将class文件字节码内容加载到内存中，并将这些静态数据转化成方法区的运行时数据结构，然后在堆中生成一个代表这个类的Class对象，作为方法区中类数据的访问入口。</p>
+<p>类缓存：标准的JavaSE类加载器可以按要求查找类，但一旦某个类被加载到类加载器中，他将维持加载（缓存）一段时间。不过JVM垃圾回收机制可以回收这些Class对象。</p>
+<p>源程序(.java文件) -&gt; Java编译器 -&gt; 字节码(.class文件) -&gt; 类装载器 -&gt; 字节码校验器 -&gt; 解释器 -&gt; 操作系统平台</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test09</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">        <span class="comment">// 获取系统类加载器</span></span><br><span class="line">        ClassLoader classLoader = ClassLoader.getSystemClassLoader();</span><br><span class="line">        System.out.println(classLoader); <span class="comment">// 输出：jdk.internal.loader.ClassLoaders$AppClassLoader@3d4eac69</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取系统类父类的加载器 -&gt; 拓展类加载器</span></span><br><span class="line">        ClassLoader parent = classLoader.getParent();</span><br><span class="line">        System.out.println(parent); <span class="comment">// 输出：jdk.internal.loader.ClassLoaders$PlatformClassLoader@77459877</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取拓展类加载器的父类加载器 -&gt; 引导类加载器/根加载器（C/C++）</span></span><br><span class="line">        ClassLoader root = parent.getParent();</span><br><span class="line">        System.out.println(root); <span class="comment">// 输出：null （无法直接获取）</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 测试当前类是哪个加载器加载的</span></span><br><span class="line">        ClassLoader classLoader1 = Class.forName(<span class="string">"pers.Shuke.Initialization.Test09"</span>).getClassLoader();</span><br><span class="line">        System.out.println(classLoader1); <span class="comment">// 输出：jdk.internal.loader.ClassLoaders$AppClassLoader@3d4eac69</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 测试jdk内置的类是哪个加载器加载的</span></span><br><span class="line">        ClassLoader classLoader2 = Class.forName(<span class="string">"java.lang.Object"</span>).getClassLoader();</span><br><span class="line">        System.out.println(classLoader2); <span class="comment">// 输出：null</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如何获得系统类加载器可以加载的路径</span></span><br><span class="line">        System.out.println(System.getProperty(<span class="string">"java.class.path"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="获取类的运行时结构"><a href="#获取类的运行时结构" class="headerlink" title="获取类的运行时结构"></a>获取类的运行时结构</h3><p>通过反射获取类运行时的完整结构：</p>
+<ul>
+<li>实现的全部接口（Interface）</li>
+<li>所继承的父类（Superclass）</li>
+<li>全部的构造器（Constructor）</li>
+<li>全部的方法（Method）</li>
+<li>全部的Field</li>
+<li>注解</li>
+<li>…</li>
+</ul>
+<p>PS：public/private/protected区别（默认为friendly）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">作用域</th>
+<th style="text-align:center">当前类</th>
+<th style="text-align:center">同一public</th>
+<th style="text-align:center">子孙类</th>
+<th style="text-align:center">其他package</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">public</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">friendly</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">private</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test05</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchFieldException, NoSuchMethodException </span>&#123;</span><br><span class="line">        Class c1 = Class.forName(<span class="string">"pers.Shuke.reflection.User"</span>);</span><br><span class="line">        System.out.println(c1.getName()); <span class="comment">// 输出：pers.Shuke.reflection.User</span></span><br><span class="line">        System.out.println(c1.getSimpleName()); <span class="comment">// 输出：User</span></span><br><span class="line"></span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        c1 = user.getClass();</span><br><span class="line">        System.out.println(c1.getName()); <span class="comment">// 输出：pers.Shuke.reflection.User</span></span><br><span class="line">        System.out.println(c1.getSimpleName()); <span class="comment">// 输出：User</span></span><br><span class="line"></span><br><span class="line">        Field[] fields = c1.getFields(); <span class="comment">// 输出：null  解释：只能找到public属性</span></span><br><span class="line">        fields = c1.getDeclaredFields();</span><br><span class="line">        <span class="comment">/*  private java.lang.String pers.Shuke.reflection.User.name</span></span><br><span class="line"><span class="comment">            private int pers.Shuke.reflection.User.age</span></span><br><span class="line"><span class="comment">            private int pers.Shuke.reflection.User.id</span></span><br><span class="line"><span class="comment">            解释：可以找到全部属性</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">for</span>(Field field : fields) &#123;</span><br><span class="line">            System.out.println(field);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获得指定属性的值</span></span><br><span class="line">        <span class="comment">//Field name = c1.getField("name"); // 报错：只能获取public对象</span></span><br><span class="line">        Field name = c1.getDeclaredField(<span class="string">"name"</span>); <span class="comment">// 输出：private java.lang.String pers.Shuke.reflection.User.name</span></span><br><span class="line">        System.out.println(name);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取类的方法</span></span><br><span class="line">        Method[] methods = c1.getMethods(); <span class="comment">// 获取本类和父类所有public方法</span></span><br><span class="line">        methods = c1.getDeclaredMethods(); <span class="comment">// 获取本类所有方法</span></span><br><span class="line">        <span class="keyword">for</span>(Method method : methods) &#123;</span><br><span class="line">            System.out.println(method);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取类的指定方法(需要传参)</span></span><br><span class="line">        Method getname = c1.getMethod(<span class="string">"getName"</span>, <span class="keyword">null</span>);</span><br><span class="line">        Method setname = c1.getMethod(<span class="string">"setName"</span>, String<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        System.out.println(getname); <span class="comment">// 输出：public java.lang.String pers.Shuke.reflection.User.getName()</span></span><br><span class="line">        System.out.println(setname); <span class="comment">// 输出：public void pers.Shuke.reflection.User.setName(java.lang.String)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获得指定的构造器</span></span><br><span class="line">        Constructor[] constructors = c1.getConstructors(); <span class="comment">// 获取public构造器</span></span><br><span class="line">        constructors = c1.getDeclaredConstructors(); <span class="comment">// 获取指定构造器</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获得指定构造器</span></span><br><span class="line">        Constructor constructor = c1.getDeclaredConstructor(String<span class="class">.<span class="keyword">class</span>, <span class="title">int</span>.<span class="title">class</span>, <span class="title">int</span>.<span class="title">class</span>)</span>;</span><br><span class="line">        System.out.println(constructor); <span class="comment">// 输出：public pers.Shuke.reflection.User(java.lang.String,int,int)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="动态创建对象执行方法"><a href="#动态创建对象执行方法" class="headerlink" title="动态创建对象执行方法"></a>动态创建对象执行方法</h3><p>创建类的对象：<br>有无参构造器：调用Class对象的newInstance()方法</p>
+<ul>
+<li>类必须有一个无参数构造器</li>
+<li>类的构造器的访问权限要足够</li>
+</ul>
+<p>没有无参构造器：</p>
+<ol>
+<li>通过Class类的getDeclaredConstructor()取得本类的指定形参类型的构造器</li>
+<li>向构造器的形参中传递一个对象数组进去，里面包含了构造器中所需的哥哥参数</li>
+<li>通过Constructor</li>
+</ol>
+<p>调用指定的方法：<br>通过反射，调用类中的方法，通过Method完成。</p>
+<ol>
+<li>通过Class类的getMethod()方法取得一个Method对象，并设置此方法操作时所需要的参数类型。</li>
+<li>之后使用Object invoke()进行调用，并向方法中传递需要设置的obj对象的参数信息。</li>
+</ol>
+<p>setAccessible：</p>
+<ul>
+<li>Method，Field和Constructor对象都有setAccessible()方法</li>
+<li>作用为启动和禁用访问安全检查的开关</li>
+<li>参数值为true则指示反射的对象在使用时应该取消Java语言访问检测，这样可以提高反射的效率，使得原本无法访问的私有成员也可以访问</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test11</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException </span>&#123;</span><br><span class="line">        <span class="comment">// 获取class对象</span></span><br><span class="line">        Class c1 = Class.forName(<span class="string">"pers.Shuke.reflection.User"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 构造一个对象</span></span><br><span class="line">        User user = (User)c1.newInstance(); <span class="comment">// 本质上调用类的无参构造器</span></span><br><span class="line">        System.out.println(user); <span class="comment">// pers.Shuke.reflection.User@5b2133b1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 通过构造器创建对象</span></span><br><span class="line">        Constructor constructor = c1.getDeclaredConstructor(String<span class="class">.<span class="keyword">class</span>, <span class="title">int</span>.<span class="title">class</span>, <span class="title">int</span>.<span class="title">class</span>)</span>;</span><br><span class="line">        User user2 = (User)constructor.newInstance(<span class="string">"舒克"</span>, <span class="number">1</span>, <span class="number">10</span>);</span><br><span class="line">        System.out.println(user2); <span class="comment">// pers.Shuke.reflection.User@72ea2f77</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 通过反射调用普通方法</span></span><br><span class="line">        User user3 = (User)c1.newInstance();</span><br><span class="line">        <span class="comment">// 通过反射获取一个方法</span></span><br><span class="line">        Method setName = c1.getDeclaredMethod(<span class="string">"setName"</span>, String<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// invoke : 激活的意思</span></span><br><span class="line">        <span class="comment">// &#123;对象，方法的值&#125;</span></span><br><span class="line">        setName.invoke(user3, <span class="string">"舒克"</span>);</span><br><span class="line">        System.out.println(user3.getName()); <span class="comment">// 舒克</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 通过反射操作属性</span></span><br><span class="line">        User user4 = (User)c1.newInstance();</span><br><span class="line">        Field name = c1.getDeclaredField(<span class="string">"name"</span>);</span><br><span class="line"></span><br><span class="line">        name.setAccessible(<span class="keyword">false</span>); <span class="comment">// 关闭权限检测，否则无法直接修改private变量</span></span><br><span class="line">        name.set(user4, <span class="string">"舒克2"</span>);</span><br><span class="line">        System.out.println(user4.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="性能对比分析"><a href="#性能对比分析" class="headerlink" title="性能对比分析"></a>性能对比分析</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 分析性能问题</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test12</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 普通方式调用</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Test12_1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">long</span> startTime = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000000</span>; i++) &#123;</span><br><span class="line">            user.getName();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> endTime = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"普通方法执行10亿次："</span> + (endTime - startTime) + <span class="string">"ms"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 反射方式调用</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Test12_2</span><span class="params">()</span> <span class="keyword">throws</span> NoSuchMethodException, InvocationTargetException, IllegalAccessException </span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        Class c1 = user.getClass();</span><br><span class="line">        Method getName = c1.getDeclaredMethod(<span class="string">"getName"</span>, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">long</span> startTime = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000000</span>; i++) &#123;</span><br><span class="line">            getName.invoke(user, <span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> endTime = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"反射调用不关检测执行10亿次："</span> + (endTime - startTime) + <span class="string">"ms"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 反射反射调用（关闭检测）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Test12_3</span><span class="params">()</span> <span class="keyword">throws</span> NoSuchMethodException, InvocationTargetException, IllegalAccessException </span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        Class c1 = user.getClass();</span><br><span class="line">        Method getName = c1.getDeclaredMethod(<span class="string">"getName"</span>, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">        getName.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">long</span> startTime = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000000</span>; i++) &#123;</span><br><span class="line">            getName.invoke(user, <span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> endTime = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"反射调用不关检测执行10亿次："</span> + (endTime - startTime) + <span class="string">"ms"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> NoSuchMethodException, IllegalAccessException, InvocationTargetException </span>&#123;</span><br><span class="line">        Test12_1(); <span class="comment">// 6ms</span></span><br><span class="line">        Test12_2(); <span class="comment">// 2686ms</span></span><br><span class="line">        Test12_3(); <span class="comment">// 1065ms</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据结果可知：<strong>普通调用效率 &gt;&gt; 关闭检测反射调用效率 &gt; 不关闭检测反射调用效率</strong></p>
+<h3 id="获取泛型信息"><a href="#获取泛型信息" class="headerlink" title="获取泛型信息"></a>获取泛型信息</h3><p>Java采用泛型擦除机制来引入泛型，Java中的泛型仅仅是给编译器javac使用的，确保数据的安全性和免去强制类型转换问题，但是，一旦编译完成，所有和泛型相关的类型全部擦除</p>
+<p>为了通过反射操作这些类型，Java新增了ParameterizedType，GenericArrayType，TypeVariable和WildcardType这几种类型来代表不能被归一到Class类中的类型但是又和原始类型齐名的类型</p>
+<ul>
+<li>ParameterizedType: 表示一种参数化类型，比如Collection<String></String></li>
+<li>GenericArrayType: 表示一种元素类型是参数化类型或者类型变量的数组类型</li>
+<li>TypeVariable: 是各种类型变量的公共父接口</li>
+<li>WildcardType: 代表一种通配符类型表达式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过反射获取泛型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test13</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Test13_1</span><span class="params">(Map&lt;String, User&gt; map, List&lt;User&gt; list)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"test13_1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String, User&gt; <span class="title">Test13_2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"test13_2"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> NoSuchMethodException </span>&#123;</span><br><span class="line">        <span class="comment">// 获取方法</span></span><br><span class="line">        Method method = Test13.class.getMethod("Test13_1", Map.class, List.class);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取泛型参数类型</span></span><br><span class="line">        Type[] genericParameterTypes = method.getGenericParameterTypes();</span><br><span class="line">        <span class="keyword">for</span>(Type genericParameterType : genericParameterTypes) &#123;</span><br><span class="line">            System.out.println(<span class="string">"#"</span> + genericParameterType);</span><br><span class="line">            <span class="comment">/*  #java.util.Map&lt;java.lang.String, pers.Shuke.reflection.User&gt;</span></span><br><span class="line"><span class="comment">                ------------</span></span><br><span class="line"><span class="comment">                #java.util.List&lt;pers.Shuke.reflection.User&gt;</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="comment">// 是否属于参数化类型</span></span><br><span class="line">            <span class="keyword">if</span>(genericParameterType <span class="keyword">instanceof</span> ParameterizedType) &#123;</span><br><span class="line">                <span class="comment">// 强制转化，获得真实的参数类型</span></span><br><span class="line">                Type[] actualTypeArguments = ((ParameterizedType) genericParameterType).getActualTypeArguments();</span><br><span class="line">                <span class="keyword">for</span>(Type actualTypeArgument : actualTypeArguments) &#123;</span><br><span class="line">                    System.out.println(actualTypeArgument);</span><br><span class="line">                    <span class="comment">/*  class java.lang.String</span></span><br><span class="line"><span class="comment">                        class pers.Shuke.reflection.User</span></span><br><span class="line"><span class="comment">                        ------------</span></span><br><span class="line"><span class="comment">                        class pers.Shuke.reflection.User</span></span><br><span class="line"><span class="comment">                     */</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        method = Test13.class.getMethod("Test13_2", null);</span><br><span class="line">        <span class="comment">// 获取返回值类型</span></span><br><span class="line">        Type genericParameterType = method.getGenericReturnType();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 是否为泛型</span></span><br><span class="line">        <span class="keyword">if</span>(genericParameterType <span class="keyword">instanceof</span> ParameterizedType) &#123;</span><br><span class="line">            <span class="comment">// 强制转化为具体泛型</span></span><br><span class="line">            Type[] actualTypeArguments = ((ParameterizedType) genericParameterType).getActualTypeArguments();</span><br><span class="line">            <span class="keyword">for</span>(Type actualTypeArgument : actualTypeArguments) &#123;</span><br><span class="line">                System.out.println(actualTypeArgument);</span><br><span class="line">                <span class="comment">/*  class java.lang.String</span></span><br><span class="line"><span class="comment">                    class pers.Shuke.reflection.User</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="获取注解信息"><a href="#获取注解信息" class="headerlink" title="获取注解信息"></a>获取注解信息</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 反射操作注解</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test14</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchFieldException </span>&#123;</span><br><span class="line">        Class c1 = Class.forName(<span class="string">"pers.Shuke.reflection.People"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 通过反射获得注解</span></span><br><span class="line">        Annotation[] annotations = c1.getAnnotations();</span><br><span class="line">        <span class="keyword">for</span>(Annotation annotation : annotations) &#123;</span><br><span class="line">            System.out.println(annotation); <span class="comment">// @pers.Shuke.reflection.TableShuke("db_people")</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获得注解的value的值</span></span><br><span class="line">        TableShuke tableShuke = (TableShuke)c1.getAnnotation(TableShuke<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        String value = tableShuke.value();</span><br><span class="line">        System.out.println(value); <span class="comment">// db_people</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获得类的指定注解</span></span><br><span class="line">        Field field = c1.getDeclaredField(<span class="string">"name"</span>); <span class="comment">// 获得name属性的注解</span></span><br><span class="line">        FieldShuke annotation = field.getAnnotation(FieldShuke<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        System.out.println(annotation.columnName() + <span class="string">" "</span> + annotation.type() + <span class="string">" "</span> + annotation.length()); <span class="comment">// db_name varchar 8</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@TableShuke</span>(<span class="string">"db_people"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">    <span class="meta">@FieldShuke</span>(columnName = <span class="string">"db_name"</span>, type = <span class="string">"varchar"</span>, length = <span class="number">8</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@FieldShuke</span>(columnName = <span class="string">"db_age"</span>, type = <span class="string">"int"</span>, length = <span class="number">4</span>)</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="meta">@FieldShuke</span>(columnName = <span class="string">"db_id"</span>, type = <span class="string">"int"</span>, length = <span class="number">12</span>)</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">People</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">People</span><span class="params">(String name, <span class="keyword">int</span> age, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类名的注解</span></span><br><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@interface</span> TableShuke &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 属性的注解</span></span><br><span class="line"><span class="meta">@Target</span>(ElementType.FIELD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@interface</span> FieldShuke &#123;</span><br><span class="line">    <span class="function">String <span class="title">columnName</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">type</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">length</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%BA%A4%E9%94%99%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%88dp%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.JPG">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%BA%A4%E9%94%99%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%88dp%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：交错字符串（dp）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-18 10:42:14 / 修改时间：11:00:02" itemprop="dateCreated datePublished" datetime="2020-07-18T10:42:14+08:00">2020-07-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%BA%A4%E9%94%99%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%88dp%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%BA%A4%E9%94%99%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%88dp%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>755</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给你三个字符串 $s1, s2, s3$，问 $s3$ 能否由 $s1$ 和 $s2$ 交错组成。</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>显然，若 $|s1|+|s2|!=|s3|$ 则必不可能。然后考虑动态规划，$dp[i][j]$表示 $s1$ 前 $i$ 个字符和 $s2$ 前 $j$ 个字符能否交错组成 $s3$ 前 $i+j$ 个字符。$dp[i][j]$为真当且仅当：1. $dp[i-1][j]$为真且$s1[i-1]==s3[i+j-1]$ 或 2. $dp[i][j-1]$为真且$s2[j-1]==s3[i+j-1]$。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isInterleave</span><span class="params">(String s1, String s2, String s3)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l1 = s1.length();</span><br><span class="line">        <span class="keyword">int</span> l2 = s2.length();</span><br><span class="line">        <span class="keyword">int</span> l3 = s3.length();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(l1 + l2 != l3)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[l1 + <span class="number">1</span>][l2 + <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= l1; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= l2; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> p = i + j - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(i &gt; <span class="number">0</span>)</span><br><span class="line">                    dp[i][j] = dp[i][j] || dp[i - <span class="number">1</span>][j] &amp;&amp; s1.charAt(i - <span class="number">1</span>) == s3.charAt(p);</span><br><span class="line">                <span class="keyword">if</span>(j &gt; <span class="number">0</span>)</span><br><span class="line">                    dp[i][j] = dp[i][j] || dp[i][j - <span class="number">1</span>] &amp;&amp; s2.charAt(j - <span class="number">1</span>) == s3.charAt(p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[l1][l2];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%8C%E6%9E%84%E9%80%A0%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E5%92%8C%E9%80%BB%E8%BE%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.JPG">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/17/%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%8C%E6%9E%84%E9%80%A0%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E5%92%8C%E9%80%BB%E8%BE%91/" class="post-title-link" itemprop="url">静态代码块，构造代码块，构造函数及其执行顺序和逻辑</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-17 14:33:04" itemprop="dateCreated datePublished" datetime="2020-07-17T14:33:04+08:00">2020-07-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-22 23:39:56" itemprop="dateModified" datetime="2020-08-22T23:39:56+08:00">2020-08-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/17/%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%8C%E6%9E%84%E9%80%A0%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E5%92%8C%E9%80%BB%E8%BE%91/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/17/%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%8C%E6%9E%84%E9%80%A0%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E5%92%8C%E9%80%BB%E8%BE%91/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="静态代码块："><a href="#静态代码块：" class="headerlink" title="静态代码块："></a>静态代码块：</h2><ol>
+<li>随着类的加载而执行，只执行一次，并优先于主函数。具体说，静态代码块是由类调用的。类调用时，先执行静态代码块，然后才执行主函数的。</li>
+<li>静态代码块其实就是给类初始化的，而构造代码块是给对象初始化的。</li>
+<li>静态代码块中的变量是局部变量，与普通函数中的局部变量性质没有区别。</li>
+<li>一个类中可以有多个静态代码块（顺序由上至下）。</li>
+</ol>
+<h2 id="构造代码块"><a href="#构造代码块" class="headerlink" title="构造代码块"></a>构造代码块</h2><ol>
+<li>构造代码块的作用是给对象进行初始化。</li>
+<li>对象一建立就运行构造代码块了，而且优先于构造函数执行。这里要强调一下，有对象建立，才会运行构造代码块，类不能调用构造代码块的，而且构造代码块与构造函数的执行顺序是前者先于后者执行。</li>
+<li>构造代码块与构造函数的区别是：构造代码块是给所有对象进行统一初始化，而构造函数是给对应的对象初始化，因为构造函数是可以多个的，运行哪个构造函数就会建立什么样的对象，但无论建立哪个对象，都会先执行相同的构造代码块。也就是说，构造代码块中定义的是不同对象共性的初始化内容。</li>
+</ol>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><ol>
+<li>对象一建立，就会调用与之相应的构造函数，也就是说，不建立对象，构造函数是不会运行的。</li>
+<li>构造函数的作用是用于给对象进行初始化。</li>
+<li>一个对象建立，构造函数只运行一次，而一般方法可以被该对象调用多次。</li>
+</ol>
+<h2 id="Java类初始化顺序"><a href="#Java类初始化顺序" class="headerlink" title="Java类初始化顺序"></a>Java类初始化顺序</h2><ol>
+<li><p>单一类：静态变量，静态代码块 &gt; 变量，构造代码块 &gt; 构造函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test06</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String x = <span class="string">"静态变量"</span>;</span><br><span class="line">    <span class="keyword">public</span> String y = <span class="string">"变量"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test06</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"构造函数"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(x);</span><br><span class="line">        System.out.println(<span class="string">"静态代码块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(y);</span><br><span class="line">        System.out.println(<span class="string">"构造代码块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/* 输出：静态变量</span></span><br><span class="line"><span class="comment">                静态代码块</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        Test06 test06 = <span class="keyword">new</span> Test06();</span><br><span class="line">        <span class="comment">/* 输出：变量</span></span><br><span class="line"><span class="comment">                构造代码块</span></span><br><span class="line"><span class="comment">                构造函数</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继承情况：父类静态 &gt; 子类静态 &gt; 父类构造代码块 &gt; 父类构造函数 &gt; 子类构造代码块 &gt; 子类构造函数</p>
+</li>
+</ol>
+<p><strong>静态变量是属于类的，和继承无关！！！</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test06</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test06</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"父类构造函数"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"父类静态代码块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">"父类构造代码块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test06_1</span> <span class="keyword">extends</span> <span class="title">Test06</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test06_1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"子类构造函数"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"子类静态代码块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">"子类构造代码块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/* 输出：父类静态代码块</span></span><br><span class="line"><span class="comment">                子类静态代码块</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        Test06_1 test06_1 = <span class="keyword">new</span> Test06_1();</span><br><span class="line">        <span class="comment">/* 输出：父类构造代码块</span></span><br><span class="line"><span class="comment">                父类构造函数</span></span><br><span class="line"><span class="comment">                子类构造代码块</span></span><br><span class="line"><span class="comment">                子类构造函数</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        staticFunction();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 静态变量（有实例化的过程,这就是本题的重点）</span></span><br><span class="line">    <span class="keyword">static</span> StaticTest st = <span class="keyword">new</span> StaticTest();</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">//System.out.println(b); // 编译报错：因为b在构造代码块后边，此处不能引用。因此Java代码是从上到下的顺序</span></span><br><span class="line">        System.out.println(<span class="string">"1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">"2"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    StaticTest() &#123;</span><br><span class="line">        System.out.println(<span class="string">"3"</span>);</span><br><span class="line">        System.out.println(<span class="string">"a="</span> + a + <span class="string">",b="</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">staticFunction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"4"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这两个变量写在最后面</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">110</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> b = <span class="number">112</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 输出：2</span></span><br><span class="line"><span class="comment">        3</span></span><br><span class="line"><span class="comment">        a=110,b=0</span></span><br><span class="line"><span class="comment">        1</span></span><br><span class="line"><span class="comment">        4</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>先初始化静态变量，也就是执行new StaticTest()，先执行构造代码块，输出 2</li>
+<li>再执行构造函数，输出 3 和 a=110,b=0<ul>
+<li>在执行构造函数前，必须初始化实例属性，故 a = 110</li>
+<li>静态变量从上到下初始化，还没有轮到，因此 b = 0</li>
+</ul>
+</li>
+<li>执行静态代码块，输出 1</li>
+<li>最后进入main函数，执行静态方法staticFunction，输出 4</li>
+</ol>
+<p>可以发现：<strong>static变量并不一定在实例化变量前被初始化</strong>。</p>
+<h3 id="父类和子类有同名属性时"><a href="#父类和子类有同名属性时" class="headerlink" title="父类和子类有同名属性时"></a>父类和子类有同名属性时</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test07</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 使用多态</span></span><br><span class="line">        Parent chidParent = <span class="keyword">new</span> Child();</span><br><span class="line">        System.out.println(<span class="string">"Parent:"</span> + chidParent.getAge()); <span class="comment">//40</span></span><br><span class="line">        System.out.println(<span class="string">"Parent:"</span> + chidParent.age); <span class="comment">//18</span></span><br><span class="line">        System.out.println(<span class="string">"Parent:"</span> + chidParent.id); <span class="comment">//08</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 直接使用原本类型</span></span><br><span class="line">        Child child = <span class="keyword">new</span> Child();</span><br><span class="line">        System.out.println(<span class="string">"Child:"</span> + child.getAge()); <span class="comment">//40</span></span><br><span class="line">        System.out.println(<span class="string">"Child:"</span> + child.age); <span class="comment">//40</span></span><br><span class="line">        System.out.println(<span class="string">"Child:"</span> + child.id); <span class="comment">//8</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Integer age = <span class="number">40</span>;</span><br><span class="line">    <span class="keyword">public</span> Integer id = <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Integer age = <span class="number">18</span>;</span><br><span class="line">    <span class="keyword">public</span> String id = <span class="string">"08"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于输出 18 的解释（Java的继承机制）：</p>
+<ol>
+<li>属性属于实例自己的，所以Parent的age属性值是18</li>
+<li>属性不存在覆盖（即使同名），而方法是实实在在的覆盖（复写）</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/14/%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A12020%E7%AC%AC%E4%BA%8C%E5%9C%BA%E8%A1%A5%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.JPG">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/14/%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A12020%E7%AC%AC%E4%BA%8C%E5%9C%BA%E8%A1%A5%E9%A2%98/" class="post-title-link" itemprop="url">牛客多校2020第二场补题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-14 12:37:02" itemprop="dateCreated datePublished" datetime="2020-07-14T12:37:02+08:00">2020-07-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-18 14:18:39" itemprop="dateModified" datetime="2020-08-18T14:18:39+08:00">2020-08-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83/" itemprop="url" rel="index"><span itemprop="name">多校训练</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/14/%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A12020%E7%AC%AC%E4%BA%8C%E5%9C%BA%E8%A1%A5%E9%A2%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/14/%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A12020%E7%AC%AC%E4%BA%8C%E5%9C%BA%E8%A1%A5%E9%A2%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="F-Fake-Maxpooling"><a href="#F-Fake-Maxpooling" class="headerlink" title="F Fake Maxpooling"></a>F Fake Maxpooling</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>规定矩阵对应的值为其下标的 $lcm$ ，求所有 $k * k$ 子矩阵最大值之和。 $( n,m,k = 5000 )$</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>线性求 $lcm$ + 二维单调队列</p>
+<p>线性求 $lcm$ ：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!g[i][j]) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> h = <span class="number">1</span>; h * i &lt;= n &amp;&amp; h * j &lt;= m; h++) &#123;</span><br><span class="line">          g[h * i][h * j] = h;</span><br><span class="line">          a[h * i][h * j] = i * j * h;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>先对每一行进行单调队列（滑动窗口）维护出最大值矩阵 $g$ ，再对列进行单调队列维护矩阵 $g$ 的最大值即可。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5005</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, k, a[N][N], g[N][N];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> res;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;k);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!g[i][j]) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> h = <span class="number">1</span>; h * i &lt;= n &amp;&amp; h * j &lt;= m; h++) &#123;</span><br><span class="line">          g[h * i][h * j] = h;</span><br><span class="line">          a[h * i][h * j] = i * j * h;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">      <span class="keyword">while</span> (!q.empty() &amp;&amp; a[i][q.back()] &lt; a[i][j]) q.pop_back();</span><br><span class="line">      <span class="keyword">while</span> (!q.empty() &amp;&amp; j - q.front() &gt;= k) q.pop_front();</span><br><span class="line">      q.push_back(j);</span><br><span class="line">      <span class="keyword">if</span> (j &gt;= k) g[i][j] = a[i][q.front()];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = k; i &lt;= m; i++) &#123;</span><br><span class="line">    <span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">      <span class="keyword">while</span> (!q.empty() &amp;&amp; g[q.back()][i] &lt; g[j][i]) q.pop_back();</span><br><span class="line">      <span class="keyword">while</span> (!q.empty() &amp;&amp; j - q.front() &gt;= k) q.pop_front();</span><br><span class="line">      q.push_back(j);</span><br><span class="line">      <span class="keyword">if</span> (j &gt;= k) &#123;</span><br><span class="line">        a[j][i] = g[q.front()][i];</span><br><span class="line">        res += a[j][i];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, res);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C-Cover-the-Tree"><a href="#C-Cover-the-Tree" class="headerlink" title="C Cover the Tree"></a>C Cover the Tree</h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><p>给定无根树，用最少的链覆盖树的所有点。 $( n = 2e5 )$</p>
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p>思维 + dfs序</p>
+<p>首先不难想到所取的链两个端点都在叶子上才会是最优的，因此答案应为 $(叶子结点数 + 1)/2$ 。</p>
+<p>经过一番玄学证明，得到结论为按 dfs序 构造链会是最优的，任取非叶子结点为根，由 dfs序 得到叶子结点 $l<em>1, l_2 ….l_x$ ，然后将 $l_1$ 与 $l</em>{x/2+1}$ 构成链以此类推，若多出一个点，则与根结点连起来即可。</p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, u, v, root, de[N];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g[N], res;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (de[u] == <span class="number">1</span>) res.push_back(u);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span> v : g[u]) &#123;</span><br><span class="line">    <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">    dfs(v, u);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;u, &amp;v);</span><br><span class="line">    g[u].push_back(v);</span><br><span class="line">    g[v].push_back(u);</span><br><span class="line">    de[u]++;</span><br><span class="line">    de[v]++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (de[i] &gt; <span class="number">1</span>) root = i;</span><br><span class="line">  &#125;</span><br><span class="line">  dfs(root, <span class="number">-1</span>);</span><br><span class="line">  n = res.<span class="built_in">size</span>();</span><br><span class="line">  <span class="keyword">if</span> (n &amp; <span class="number">1</span>) res.push_back(root), n++;</span><br><span class="line">  n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, res[i], res[i + n]);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="B-Boundary"><a href="#B-Boundary" class="headerlink" title="B Boundary"></a>B Boundary</h2><h3 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h3><p>已知一个圆必过点 $(0,0)$ ，需要构造该圆使得尽可能多的给定点在该圆的边界上，问最多能有几个点。 $( n = 2000, |x,y| = 100000 )$</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><p>三个点可以确定一个圆，因此不妨枚举两个点，求出圆心，圆心重合次数最多的即为答案。</p>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2005</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, res;</span><br><span class="line"><span class="keyword">double</span> X, Y, R;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> &#123;</span></span><br><span class="line">  <span class="keyword">double</span> x, y;</span><br><span class="line">&#125; p[N];</span><br><span class="line"></span><br><span class="line"><span class="built_in">map</span>&lt;pair&lt;<span class="keyword">double</span>, <span class="keyword">double</span>&gt;, <span class="keyword">int</span>&gt; mp;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">solve</span><span class="params">(Point a, Point b, Point c)</span>  <span class="comment">//三点共圆圆心公式</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="number">2</span> * (a.y - c.y) * (a.x - b.x) - <span class="number">2</span> * (a.y - b.y) * (a.x - c.x) == <span class="number">0</span> &amp;&amp;</span><br><span class="line">      <span class="number">2</span> * (a.y - b.y) * (a.x - c.x) - <span class="number">2</span> * (a.y - c.y) * (a.x - b.x) == <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">  X = ((a.x * a.x - b.x * b.x + a.y * a.y - b.y * b.y) * (a.y - c.y) -</span><br><span class="line">       (a.x * a.x - c.x * c.x + a.y * a.y - c.y * c.y) * (a.y - b.y)) /</span><br><span class="line">      (<span class="number">2</span> * (a.y - c.y) * (a.x - b.x) - <span class="number">2</span> * (a.y - b.y) * (a.x - c.x));</span><br><span class="line">  Y = ((a.x * a.x - b.x * b.x + a.y * a.y - b.y * b.y) * (a.x - c.x) -</span><br><span class="line">       (a.x * a.x - c.x * c.x + a.y * a.y - c.y * c.y) * (a.x - b.x)) /</span><br><span class="line">      (<span class="number">2</span> * (a.y - b.y) * (a.x - c.x) - <span class="number">2</span> * (a.y - c.y) * (a.x - b.x));</span><br><span class="line">  R = <span class="built_in">sqrt</span>((X - a.x) * (X - a.x) + (Y - a.y) * (Y - a.y));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>, &amp;p[i].x, &amp;p[i].y);</span><br><span class="line">  Point o = &#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    mp.<span class="built_in">clear</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (solve(o, p[i], p[j])) &#123;</span><br><span class="line">        <span class="keyword">auto</span> now = make_pair(X, Y);</span><br><span class="line">        res = <span class="built_in">max</span>(res, ++mp[now]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ++res);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="J-Just-Shuffle"><a href="#J-Just-Shuffle" class="headerlink" title="J Just Shuffle"></a>J Just Shuffle</h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>一个排列经过质数次置换后得到排列 A ，求原排列。 ( n = 1e5 )</p>
+<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><p>直接拍个置换开根板子就过了。。。</p>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000010</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, i, j, k, o, x, l, d, a[N], g[N], nxt[N], t, q[N], b[N], ans[N];</span><br><span class="line"><span class="keyword">bool</span> v[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, k = m, t = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">2</span>; i * i &lt;= x; i++)</span><br><span class="line">    <span class="keyword">if</span> (x % i == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">while</span> (x % i == <span class="number">0</span>) x /= i, t *= i;</span><br><span class="line">      <span class="keyword">while</span> (k % i == <span class="number">0</span>) k /= i, t *= i;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">if</span> (x &gt; <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> (t *= x; k % x == <span class="number">0</span>; k /= x, t *= x)</span><br><span class="line">      ;</span><br><span class="line">  <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (!v[i]) &#123;</span><br><span class="line">      t = v[i] = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">for</span> (j = a[i]; j != i; j = a[j]) v[j] = <span class="number">1</span>, t++;</span><br><span class="line">      nxt[i] = g[t], g[t] = i;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (g[i]) &#123;</span><br><span class="line">      <span class="keyword">for</span> (t = <span class="number">0</span>, j = g[i]; j; j = nxt[j]) q[++t] = j;</span><br><span class="line">      d = __gcd(l = cal(i), m);</span><br><span class="line">      <span class="keyword">if</span> (t % d) <span class="keyword">return</span> <span class="built_in">puts</span>(<span class="string">"1"</span>), <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span> (x = <span class="number">1</span>; x &lt;= t; x += d) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; d; j++)</span><br><span class="line">          <span class="keyword">for</span> (k = <span class="number">0</span>, o = q[x + j]; k &lt; i; k++, o = a[o])</span><br><span class="line">            b[(j + <span class="number">1L</span>L * k * m) % l] = o;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; l; j++) ans[b[j]] = b[(j + <span class="number">1</span>) % l];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">printf</span>(<span class="string">"%d "</span>, ans[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/12/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%9C%B0%E4%B8%8B%E5%9F%8E%E6%B8%B8%E6%88%8F-%EF%BC%88dp%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.JPG">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/12/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%9C%B0%E4%B8%8B%E5%9F%8E%E6%B8%B8%E6%88%8F-%EF%BC%88dp%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：地下城游戏 （dp）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-12 10:07:19 / 修改时间：10:22:05" itemprop="dateCreated datePublished" datetime="2020-07-12T10:07:19+08:00">2020-07-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/12/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%9C%B0%E4%B8%8B%E5%9F%8E%E6%B8%B8%E6%88%8F-%EF%BC%88dp%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/12/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%9C%B0%E4%B8%8B%E5%9F%8E%E6%B8%B8%E6%88%8F-%EF%BC%88dp%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>638</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定权值矩阵，需要从左上角走到右下角，只能往右或往下走且权值会累加，问至少需要提前准备多少权值才能保证过程中不出现权值被耗尽的情况。</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>正着不太好写，可以尝试倒过来dp，$dp[i][j]$ 表示当前位置到终点至少需要准备多少权值，这样每个点要么从下边转移，要么从右边转移，选择最小的那个点转移即可，过程中需要保证权值至少为1，得到转移方程：$dp[i][j] = max(min(dp[i+1][j],dp[i][j+1])-mp[i][j],1)$。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calculateMinimumHP</span><span class="params">(<span class="keyword">int</span>[][] mp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = mp.length, m = mp[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>][m + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            Arrays.fill(dp[i], Integer.MAX_VALUE);</span><br><span class="line">        &#125;</span><br><span class="line">        dp[n][m - <span class="number">1</span>] = dp[n - <span class="number">1</span>][m] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = m - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">                dp[i][j] = Math.max(Math.min(dp[i + <span class="number">1</span>][j], dp[i][j + <span class="number">1</span>]) - mp[i][j], <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AContest-%EF%BC%88%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.JPG">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AContest-%EF%BC%88%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：Contest （树状数组）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-04 18:48:14 / 修改时间：19:57:37" itemprop="dateCreated datePublished" datetime="2020-06-04T18:48:14+08:00">2020-06-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AContest-%EF%BC%88%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AContest-%EF%BC%88%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p> $n$ 支队伍一共参加了三场比赛。<br>一支队伍 $x$ 认为自己比另一支队伍 $y$ 强当且仅当 $x$ 在至少一场比赛中比 $y$ 的排名高。<br>求有多少组 $(x,y)$，使得 $x$ 自己觉得比 $y$ 强，$y$ 自己也觉得比 $x$ 强，$(x, y)$, $(y, x)$算一组。</p>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>若 $x$ 和 $y$ 都互相认为更强，那么必定存在两场，一场 $x$ 强于 $y$，一场 $y$ 强于 $x$，那么就是对于任意两场求逆序数，最后的答案需要除以2，因为如果两队互认为更强，必定存在 $x$ 有两场更强，或者 $y$ 有两场更强，那么计算逆序数时就多计算了一次。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const ll N = <span class="number">2</span>e5 + <span class="number">5</span>;</span><br><span class="line">ll n, res, t[N];</span><br><span class="line"></span><br><span class="line">struct Node &#123;</span><br><span class="line">  ll a, b, c;</span><br><span class="line">&#125; <span class="string">q[N]</span>;</span><br><span class="line"></span><br><span class="line">bool cmpa(Node <span class="keyword">x</span>, Node <span class="keyword">y</span>) &#123; <span class="keyword">return</span> x.a &lt; y.a; &#125;</span><br><span class="line">bool cmpb(Node <span class="keyword">x</span>, Node <span class="keyword">y</span>) &#123; <span class="keyword">return</span> x.b &lt; y.b; &#125;</span><br><span class="line"></span><br><span class="line">void add(ll <span class="keyword">x</span>) &#123;</span><br><span class="line">  <span class="keyword">while</span> (<span class="keyword">x</span> &lt;= n) &#123;</span><br><span class="line">    t[<span class="keyword">x</span>]++;</span><br><span class="line">    <span class="keyword">x</span> += <span class="keyword">x</span> &amp; -<span class="keyword">x</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll query(ll <span class="keyword">x</span>) &#123;</span><br><span class="line">  ll sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="keyword">x</span>) &#123;</span><br><span class="line">    sum += t[<span class="keyword">x</span>];</span><br><span class="line">    <span class="keyword">x</span> -= <span class="keyword">x</span> &amp; -<span class="keyword">x</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main() &#123;</span><br><span class="line">  cin &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i++) cin &gt;&gt; <span class="string">q[i]</span>.a &gt;&gt; <span class="string">q[i]</span>.b &gt;&gt; <span class="string">q[i]</span>.c;</span><br><span class="line">  <span class="keyword">sort</span>(<span class="keyword">q</span> + <span class="number">1</span>, <span class="keyword">q</span> + n + <span class="number">1</span>, cmpa);</span><br><span class="line">  <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    add(<span class="string">q[i]</span>.b);</span><br><span class="line">    res += i - query(<span class="string">q[i]</span>.b);</span><br><span class="line">  &#125;</span><br><span class="line">  memset(t, <span class="number">0</span>, sizeof(t));</span><br><span class="line">  <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    add(<span class="string">q[i]</span>.c);</span><br><span class="line">    res += i - query(<span class="string">q[i]</span>.c);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">sort</span>(<span class="keyword">q</span> + <span class="number">1</span>, <span class="keyword">q</span> + n + <span class="number">1</span>, cmpb);</span><br><span class="line">  memset(t, <span class="number">0</span>, sizeof(t));</span><br><span class="line">  <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    add(<span class="string">q[i]</span>.c);</span><br><span class="line">    res += i - query(<span class="string">q[i]</span>.c);</span><br><span class="line">  &#125;</span><br><span class="line">  cout &lt;&lt; res / <span class="number">2</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AProtecting-the-Flower-%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.JPG">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AProtecting-the-Flower-%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：Protecting the Flower （贪心）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-29 17:34:57 / 修改时间：18:06:30" itemprop="dateCreated datePublished" datetime="2020-05-29T17:34:57+08:00">2020-05-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AProtecting-the-Flower-%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AProtecting-the-Flower-%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>680</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>一共有 $n$ 只牛在花坛旁边，第 $i$ 头牛每分钟破坏 $d_i$ 朵花，把第i头牛带回牛棚需要 $2 \times ti$ 这么多时间，每次只能带回一头牛，请问怎样能使得被破坏的花最少。</p>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>以小化大，先考虑两头牛，先领 $a$ ，损失为：$2\times{t_a}\times{d_b}$，先领 $b$，损失为 $2\times{t_b}\times{d_a}$，故得到排序条件 ${a_t \times {b_d} &lt; b_t \times {a_d}}$，最后模拟得出答案。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI pair<span class="meta-string">&lt;int, int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">ll n, sum, res;</span><br><span class="line">pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; p[<span class="number">200005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; p[i].x &gt;&gt; p[i].y;</span><br><span class="line">  sort(p + <span class="number">1</span>, p + n + <span class="number">1</span>, [](PI a, PI b) &#123; <span class="keyword">return</span> a.x * b.y &lt; b.x * a.y; &#125;);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    res += sum * p[i].y;</span><br><span class="line">    sum += p[i].x * <span class="number">2</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%B4%A7%E5%B8%81%E7%B3%BB%E7%BB%9F-%EF%BC%88%E8%83%8C%E5%8C%85dp%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.JPG">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%B4%A7%E5%B8%81%E7%B3%BB%E7%BB%9F-%EF%BC%88%E8%83%8C%E5%8C%85dp%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：货币系统 （背包dp）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-29 17:02:58 / 修改时间：17:22:14" itemprop="dateCreated datePublished" datetime="2020-05-29T17:02:58+08:00">2020-05-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%B4%A7%E5%B8%81%E7%B3%BB%E7%BB%9F-%EF%BC%88%E8%83%8C%E5%8C%85dp%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%B4%A7%E5%B8%81%E7%B3%BB%E7%BB%9F-%EF%BC%88%E8%83%8C%E5%8C%85dp%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>631</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>$n$ 种面额货币，数量无限，问最多保留几种，使得原来可以组成的仍然可以组成。（$t&lt;=20,n&lt;=100,a[i]&lt;=25000$）</p>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>由于大的只会被小的组成，所以先排序，对于存在性问题就显然是完全背包了，dp[i] 表示是否能表示出 $i$ 价值，得到状态转移方程：$dp[i]|=dp[i-a[i]]$，对于已经可以表示出来对 $a[i]$，已经可以由小的组成，因此不需要在枚举。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> t, n, res, a[<span class="number">105</span>], dp[<span class="number">300005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">  <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a + <span class="number">1</span>, a + n + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="number">0</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">    res = <span class="number">0</span>;</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!dp[a[i]]) &#123;</span><br><span class="line">        res++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = a[i]; j &lt;= a[n]; j++) dp[j] |= dp[j - a[i]];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%BB%BA%E7%AD%91%E6%8A%A2%E4%BF%AE-%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.JPG">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%BB%BA%E7%AD%91%E6%8A%A2%E4%BF%AE-%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：建筑抢修 （贪心）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-29 16:11:39 / 修改时间：16:33:49" itemprop="dateCreated datePublished" datetime="2020-05-29T16:11:39+08:00">2020-05-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%BB%BA%E7%AD%91%E6%8A%A2%E4%BF%AE-%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%BB%BA%E7%AD%91%E6%8A%A2%E4%BF%AE-%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>761</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>$n$ 栋建筑，第 $i$ 栋建筑需要 $s_i$ 时间修，截止到 $t_i$ 时间，问最多可以修多少建筑。</p>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>我们可以类比成写作业，先截止的我们会先做，这是大体的贪心策略。但他并不是最优的，因为可能那一科会花你非常多的时间，够你做更多的科目，得不偿失。因此我们用优先队列维护做过的作业中花费时间最大的那份，当目前要做的作业时间不够的时候，与这个最大值比较看是否花的时间更少，可行的话就把这个塞进去，那个丢出来，这样做了同样多的作业却花了更少的时间，同时维护答案。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n, sum, res;</span><br><span class="line">pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; p[N];</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; p[i].y &gt;&gt; p[i].x;</span><br><span class="line">  sort(p, p + n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (sum + p[i].y &lt;= p[i].x) &#123;</span><br><span class="line">      sum += p[i].y;</span><br><span class="line">      res++;</span><br><span class="line">      q.push(p[i].y);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (p[i].y &lt; q.top()) &#123;</span><br><span class="line">      sum -= q.top();</span><br><span class="line">      q.pop();</span><br><span class="line">      q.push(p[i].y);</span><br><span class="line">      sum += p[i].y;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Benboby"
+      src="/images/head.JPG">
+  <p class="site-author-name" itemprop="name">Benboby</p>
+  <div class="site-description" itemprop="description">Don't stop programming.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Benboby" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Benboby" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1981505441@qq.com" title="E-Mail → mailto:1981505441@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.google.com/" title="Google → https:&#x2F;&#x2F;www.google.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://benboby.github.io/" title="https:&#x2F;&#x2F;benboby.github.io&#x2F;" rel="noopener" target="_blank">本弱鸡的Github博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://kmlerc.coding-pages.com/" title="http:&#x2F;&#x2F;kmlerc.coding-pages.com&#x2F;" rel="noopener" target="_blank">本弱鸡的Coding博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://eaw3p1.coding-pages.com/" title="http:&#x2F;&#x2F;eaw3p1.coding-pages.com" rel="noopener" target="_blank">fightinggg大神</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://q1143316492.github.io/" title="https:&#x2F;&#x2F;q1143316492.github.io" rel="noopener" target="_blank">cwl大神</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sandychn.github.io/" title="https:&#x2F;&#x2F;sandychn.github.io" rel="noopener" target="_blank">sandy大神</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Benboby</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">148k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:14</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'd35QtHrvvrbKpmqKRhMSAQvL-gzGzoHsz',
+      appKey     : 'ojAzyhjiBf9x2qw26J7aHh94',
+      placeholder: "肉弹冲击！！！",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
