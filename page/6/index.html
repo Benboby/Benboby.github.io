@@ -190,6 +190,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%B4%A7%E5%B8%81%E7%B3%BB%E7%BB%9F-%EF%BC%88%E8%83%8C%E5%8C%85dp%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/qiuye.jpeg">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%B4%A7%E5%B8%81%E7%B3%BB%E7%BB%9F-%EF%BC%88%E8%83%8C%E5%8C%85dp%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：货币系统 （背包dp）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-29 17:02:58 / 修改时间：17:22:14" itemprop="dateCreated datePublished" datetime="2020-05-29T17:02:58+08:00">2020-05-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%B4%A7%E5%B8%81%E7%B3%BB%E7%BB%9F-%EF%BC%88%E8%83%8C%E5%8C%85dp%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%B4%A7%E5%B8%81%E7%B3%BB%E7%BB%9F-%EF%BC%88%E8%83%8C%E5%8C%85dp%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>631</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>$n$ 种面额货币，数量无限，问最多保留几种，使得原来可以组成的仍然可以组成。（$t&lt;=20,n&lt;=100,a[i]&lt;=25000$）</p>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>由于大的只会被小的组成，所以先排序，对于存在性问题就显然是完全背包了，dp[i] 表示是否能表示出 $i$ 价值，得到状态转移方程：$dp[i]|=dp[i-a[i]]$，对于已经可以表示出来对 $a[i]$，已经可以由小的组成，因此不需要在枚举。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> t, n, res, a[<span class="number">105</span>], dp[<span class="number">300005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">  <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a + <span class="number">1</span>, a + n + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="number">0</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">    res = <span class="number">0</span>;</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!dp[a[i]]) &#123;</span><br><span class="line">        res++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = a[i]; j &lt;= a[n]; j++) dp[j] |= dp[j - a[i]];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%BB%BA%E7%AD%91%E6%8A%A2%E4%BF%AE-%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1113,110 +1211,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/qiuye.jpeg">
-      <meta itemprop="name" content="Benboby">
-      <meta itemprop="description" content="Don't stop programming.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Benboby's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/12/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">C++面向对象：堆，栈与内存管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-12 17:51:02" itemprop="dateCreated datePublished" datetime="2020-05-12T17:51:02+08:00">2020-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-17 14:43:44" itemprop="dateModified" datetime="2020-07-17T14:43:44+08:00">2020-07-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-%E5%85%A5%E9%97%A8/" itemprop="url" rel="index"><span itemprop="name">C++入门</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/12/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/12/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>266</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>stack</strong>，由操作系统自动分配释放，是存在于某作用域的一块内存空间。例如当你调用函数，函数本身即会形成一个stack用来放置它所接收的参数，以及返回地址。函数本体中声明的任何变量，所使用的内存块都取自上述stack。</p>
-<p><strong>heap</strong>，是指由操作系统提供的一块 global 内存空间，程序可动态分配从中获得的若干区块，由开发人员分配和释放，若开发人员不释放，程序结束时由 OS 回收，分配方式类似于链表</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="built_in">Complex</span> <span class="built_in">c1</span>(<span class="number">1</span>,<span class="number">2</span>);         <span class="comment">// 栈中创建对象</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 堆中创建对象</span></span><br><span class="line">  <span class="built_in">Complex</span>* p = <span class="keyword">new</span> <span class="built_in">Complex</span>(<span class="number">3</span>);     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1287,7 +1281,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">85</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

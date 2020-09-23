@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-21T13:39:10.853Z</updated>
+  <updated>2020-09-23T10:53:38.894Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>应用软件开发：仓库管理系统ode_modules/</title>
+    <link href="http://yoursite.com/2020/09/23/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%EF%BC%9A%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://yoursite.com/2020/09/23/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%EF%BC%9A%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</id>
+    <published>2020-09-23T10:53:38.000Z</published>
+    <updated>2020-09-23T10:53:38.894Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>计算机网络知识点</title>
@@ -472,32 +485,6 @@
     
     
     <category term="并查集" scheme="http://yoursite.com/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题：数数组</title>
-    <link href="http://yoursite.com/2020/08/23/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%95%B0%E6%95%B0%E7%BB%84/"/>
-    <id>http://yoursite.com/2020/08/23/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%95%B0%E6%95%B0%E7%BB%84/</id>
-    <published>2020-08-23T06:27:45.000Z</published>
-    <updated>2020-08-23T06:37:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>构造一个长度为 $n$ 的序列，每个数字大小必须满足 $l &lt;= a[i] &lt;= r$，且和被 3 整除，问有多少种方法？</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>$dp[i][j]$ 表示长度为 $i$，余数为 $j$ 的构造数量。$a,b,c$ 表示区间内余数为 $0,1,2$ 的数的数量。</p><p>转移方程：</p><p>$dp[i][0] = a <em> dp[i - 1][0] + b </em> dp[i - 1][2] + c <em> dp[i - 1][1]$;<br>$dp[i][1] = (a </em> dp[i - 1][1] + b <em> dp[i - 1][0] + c </em> dp[i - 1][2]$;<br>$dp[i][2] = (a <em> dp[i - 1][2] + b </em> dp[i - 1][1] + c * dp[i - 1][0]$;</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">ll n, l, r, dp[<span class="number">200005</span>][<span class="number">3</span>], a, b, c;</span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; l &gt;&gt; r;</span><br><span class="line">  <span class="keyword">while</span> (l % <span class="number">3</span> != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">int</span> x = l % <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">1</span>)</span><br><span class="line">      b++;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (x == <span class="number">2</span>)</span><br><span class="line">      c++;</span><br><span class="line">    l++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (r % <span class="number">3</span> != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">int</span> x = r % <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">2</span>)</span><br><span class="line">      c++;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (x == <span class="number">1</span>)</span><br><span class="line">      b++;</span><br><span class="line">    r--;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">int</span> p = (r - l) / <span class="number">3</span>;</span><br><span class="line">  a += p;</span><br><span class="line">  b += p;</span><br><span class="line">  c += p;</span><br><span class="line">  a++;</span><br><span class="line">  dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    dp[i][<span class="number">0</span>] = (a * dp[i - <span class="number">1</span>][<span class="number">0</span>] + b * dp[i - <span class="number">1</span>][<span class="number">2</span>] + c * dp[i - <span class="number">1</span>][<span class="number">1</span>]) % mod;</span><br><span class="line">    dp[i][<span class="number">1</span>] = (a * dp[i - <span class="number">1</span>][<span class="number">1</span>] + b * dp[i - <span class="number">1</span>][<span class="number">0</span>] + c * dp[i - <span class="number">1</span>][<span class="number">2</span>]) % mod;</span><br><span class="line">    dp[i][<span class="number">2</span>] = (a * dp[i - <span class="number">1</span>][<span class="number">2</span>] + b * dp[i - <span class="number">1</span>][<span class="number">1</span>] + c * dp[i - <span class="number">1</span>][<span class="number">0</span>]) % mod;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; dp[n][<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;构造一个长度为 $n$ 的序列，每个数字大小必须满足 $l &amp;lt;= a[i] &amp;lt;= r$，且和被 3 整除，问有多少种方法？&lt;/p</summary>
-      
-    
-    
-    
-    <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-    <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-    <category term="计数dp" scheme="http://yoursite.com/tags/%E8%AE%A1%E6%95%B0dp/"/>
     
   </entry>
   
