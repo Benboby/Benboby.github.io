@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-25T14:20:56.352Z</updated>
+  <updated>2020-09-26T05:54:44.783Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一题：不相交线段的最小最大值</title>
+    <link href="http://yoursite.com/2020/09/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%BA%BF%E6%AE%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E6%9C%80%E5%A4%A7%E5%80%BC/"/>
+    <id>http://yoursite.com/2020/09/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%BA%BF%E6%AE%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E6%9C%80%E5%A4%A7%E5%80%BC/</id>
+    <published>2020-09-26T05:51:09.000Z</published>
+    <updated>2020-09-26T05:54:44.783Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>在一维数轴上给出 $m$ 个线段，每个线段都都有 $l,r,w$ 三个数据代表这个线段的左右端点和这个区间权值。 从中取出若干个不相交的线段(区间端点可以共用)，在覆盖满 $[1,n]$ 的情况下，取出的线段中 $权重的最大值]$ 最小能为多少？</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>$dp[i]$ 代表覆盖满 $[1,i]$ 最大权值最小为多少，然后按左端点从小到大枚举线段，就有 $dp[ri]=min(dp[ri],max(dp[li],wi))$。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> l, r;</span><br><span class="line">  ll w;</span><br><span class="line">&#125; q[<span class="number">200005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Node x, Node y)</span> </span>&#123; <span class="keyword">return</span> x.l &lt; y.l; &#125;</span><br><span class="line"></span><br><span class="line">ll dp[<span class="number">100005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n, m;</span><br><span class="line">  <span class="keyword">while</span> (~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m)) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) <span class="built_in">scanf</span>(<span class="string">"%d%d%lld"</span>, &amp;q[i].l, &amp;q[i].r, &amp;q[i].w);</span><br><span class="line">    sort(q + <span class="number">1</span>, q + m + <span class="number">1</span>, cmp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) dp[i] = <span class="number">1e18</span>;</span><br><span class="line">    dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">      dp[q[i].r] = <span class="built_in">min</span>(dp[q[i].r], <span class="built_in">max</span>(dp[q[i].l], q[i].w));</span><br><span class="line">    <span class="keyword">if</span> (dp[n] == <span class="number">1e18</span>)</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">"invalid data"</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, dp[n]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;在一维数轴上给出 $m$ 个线段，每个线段都都有 $l,r,w$ 三个数据代表这个线段的左右端点和这个区间权值。 从中取出若干个不相交的线段</summary>
+      
+    
+    
+    
+    <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+    <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title>每日一题：连通两组点的最小成本</title>
@@ -460,31 +484,6 @@
     
     
     <category term="图论" scheme="http://yoursite.com/tags/%E5%9B%BE%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode1563：石子游戏V</title>
-    <link href="http://yoursite.com/2020/08/25/LeetCode1563%EF%BC%9A%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8FV/"/>
-    <id>http://yoursite.com/2020/08/25/LeetCode1563%EF%BC%9A%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8FV/</id>
-    <published>2020-08-25T03:26:41.000Z</published>
-    <updated>2020-09-01T03:24:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>几块石子 排成一行 ，每块石子都有一个关联值，关联值为整数，由数组 stoneValue 给出。</p><p>游戏中的每一轮：Alice 会将这行石子分成两个 非空行（即，左侧行和右侧行）；Bob 负责计算每一行的值，即此行中所有石子的值的总和。Bob 会丢弃值最大的行，Alice 的得分为剩下那行的值（每轮累加）。如果两行的值相等，Bob 让 Alice 决定丢弃哪一行。下一轮从剩下的那一行开始。</p><p>只 <strong>剩下一块石子</strong> 时，游戏结束。Alice 的分数最初为 <strong>0</strong> 。</p><p>返回 Alice 能够获得的最大分数 。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>$dp[l][r]$ 表示区间 $[l,r]$ Alice能得到的最大值，然后区间dp。</p><p>若$sum[l…mid] == sum[mid+1…r]$ ，则 $dp[l][r] = max(dp[l][r], dp[l][mid] + dp[mid + 1][r] + sum[l…mid])$。</p><p>若$sum[l…mid] != sum[mid+1…r]$ :</p><ul><li>$sum[l…mid] &gt; sum[mid + 1][r]$ ，则 $dp[l][r] = max(dp[l][r], dp[mid + 1][r] + sum[mid+1…r])$。</li><li>$sum[l…mid] &lt; sum[mid + 1][r]$ ，则 $dp[l][r] = max(dp[l][r], dp[l][mid] + sum[l…mid])$。</li></ul><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">stoneGameV</span><span class="params">(<span class="keyword">int</span>[] stoneValue)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = stoneValue.length;</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</span><br><span class="line">        <span class="keyword">int</span>[] sum = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        sum[<span class="number">0</span>] = stoneValue[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            sum[i] = sum[i - <span class="number">1</span>] + stoneValue[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> len = <span class="number">2</span>; len &lt;= n; len++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">0</span>; l + len - <span class="number">1</span> &lt; n; l++) &#123;</span><br><span class="line">                <span class="keyword">int</span> r = l + len - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> mid = l; mid &lt; r; mid++) &#123;</span><br><span class="line">                    <span class="keyword">int</span> fl = sum[mid] - (l &gt; <span class="number">0</span> ? sum[l - <span class="number">1</span>] : <span class="number">0</span>);</span><br><span class="line">                    <span class="keyword">int</span> fr = sum[r] - sum[mid];</span><br><span class="line">                    <span class="keyword">if</span> (fl == fr) &#123;</span><br><span class="line">                        dp[l][r] = Math.max(dp[l][r], Math.max(dp[l][mid], dp[mid + <span class="number">1</span>][r]) + fl);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (fl &gt; fr) &#123;</span><br><span class="line">                            dp[l][r] = Math.max(dp[l][r], dp[mid + <span class="number">1</span>][r] + fr);</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            dp[l][r] = Math.max(dp[l][r], dp[l][mid] + fl);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][n - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;几块石子 排成一行 ，每块石子都有一个关联值，关联值为整数，由数组 stoneValue 给出。&lt;/p&gt;
-&lt;p&gt;游戏中的每一轮：Alice </summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
-    
-    
-    <category term="区间dp" scheme="http://yoursite.com/tags/%E5%8C%BA%E9%97%B4dp/"/>
     
   </entry>
   

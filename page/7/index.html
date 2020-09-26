@@ -190,6 +190,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AMoovie-Mooving-%EF%BC%88%E7%8A%B6%E5%8E%8Bdp%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/qiuye.jpeg">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AMoovie-Mooving-%EF%BC%88%E7%8A%B6%E5%8E%8Bdp%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：Moovie Mooving （状压dp）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-15 13:11:48" itemprop="dateCreated datePublished" datetime="2020-05-15T13:11:48+08:00">2020-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-20 21:04:25" itemprop="dateModified" datetime="2020-05-20T21:04:25+08:00">2020-05-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AMoovie-Mooving-%EF%BC%88%E7%8A%B6%E5%8E%8Bdp%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AMoovie-Mooving-%EF%BC%88%E7%8A%B6%E5%8E%8Bdp%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>有 N 部电影，每部电影有不同的放映时常，和若干个放映起始时间。<br>Bessie 可以在一部电影播放过程中的任何时间进入或退出放映厅。每部电影她最多看1次且她不能在看一部电影的过程中，换到另一个正在播放相同电影的放映厅。</p>
+<p>Bessie 能不能从0到L分钟连续不断地观看电影？如果能，计算她最少看几部电影。</p>
+<p>$(1 \leq L \leq 100,000,000，1\leq N\leq 201≤L≤100,000,000，1≤N≤20)$</p>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>$n$ 只有20考虑状压dp，$dp[i]$ 表示完成 $i$ 集合需要的最长时间，假设 $i$ 集合最后看的一部电影为 $j$，那么 $dp[i]$ 由 dp[i ^ (2^j)] 转移过来，并二分选取小于转移前集合的电影 $j$ 的最晚放映时间来更新 $p[i]$，同时维护 $dp[i] &gt;=l $ 的最小集合为答案。时间复杂度 $O(2^n*log(1000))$</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">22</span>;</span><br><span class="line"><span class="keyword">int</span> n, l, t[N], dp[<span class="number">1</span> &lt;&lt; N];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; l;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> c, x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t[i] &gt;&gt; c;</span><br><span class="line">    <span class="keyword">while</span> (c--) &#123;</span><br><span class="line">      <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">      g[i].push_back(x);</span><br><span class="line">    &#125;</span><br><span class="line">    g[i].push_back(l);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">int</span> res = n + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; (<span class="number">1</span> &lt;&lt; n); i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> ((i &gt;&gt; j) &amp; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> now = i ^ (<span class="number">1</span> &lt;&lt; j);</span><br><span class="line">        <span class="keyword">int</span> pos =</span><br><span class="line">            upper_bound(g[j].<span class="built_in">begin</span>(), g[j].<span class="built_in">end</span>(), dp[now]) - g[j].<span class="built_in">begin</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (pos &gt;= <span class="number">0</span> &amp;&amp; g[j][pos] + t[j] &gt; dp[now])</span><br><span class="line">          dp[i] = <span class="built_in">max</span>(dp[i], g[j][pos] + t[j]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (dp[i] &gt;= l) res = <span class="built_in">min</span>(res, __builtin_popcount(i));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (res == n + <span class="number">1</span>)</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"-1"</span>);</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/13/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%BF%87%E6%B2%B3-%E7%A6%BB%E6%95%A3%E5%8C%96-dp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1157,111 +1263,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92%EF%BC%88%E7%8A%B6%E5%8E%8Bdp%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/qiuye.jpeg">
-      <meta itemprop="name" content="Benboby">
-      <meta itemprop="description" content="Don't stop programming.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Benboby's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92%EF%BC%88%E7%8A%B6%E5%8E%8Bdp%EF%BC%89/" class="post-title-link" itemprop="url">课程安排（状压dp）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-01 14:39:35" itemprop="dateCreated datePublished" datetime="2020-05-01T14:39:35+08:00">2020-05-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-25 22:31:48" itemprop="dateModified" datetime="2020-07-25T22:31:48+08:00">2020-07-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92%EF%BC%88%E7%8A%B6%E5%8E%8Bdp%EF%BC%89/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92%EF%BC%88%E7%8A%B6%E5%8E%8Bdp%EF%BC%89/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>题意：让你安排课程，保证每学期的课不能冲突，问最少需要几个学期。</p>
-<p>solution：</p>
-<p>因为 n 只有15，可以考虑状压dp。用二进制每位的1/0表示当前是否学习该课程，可以得到 n 个二进制位，那么所有的可能性有 1&lt;&lt;n 种，预处理 g[s] 表示 s 所代表课程的是否可以在一个学期内学完（对于当前要学的所有课程的学时进行标记，若有重复标记则不可能在一学期学完），f[s] 维护学完当前课程所花费的最少学期，枚举子集进行转移。<br>答案的状态应该是所有课全部修完，即 $f[(1&lt;&lt;n)-1]$。时间复杂度 $O(2^n <em> m </em> n)$。</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1</span> &lt;&lt; <span class="number">15</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, sum, f[N], g[N], b[<span class="number">20</span>], a[<span class="number">20</span>][<span class="number">105</span>], vis[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt;&gt; i &amp; <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= b[i]; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[a[i][j]]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        vis[a[i][j]] = <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; b[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= b[i]; j++) <span class="built_in">cin</span> &gt;&gt; a[i][j];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">memset</span>(f, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(f));    <span class="comment">// 因为要维护最小值，因此初值赋为最大值</span></span><br><span class="line">  f[<span class="number">0</span>] = <span class="number">0</span>;                  <span class="comment">//  学完 0 门课需要 0 个学期</span></span><br><span class="line">  sum = (<span class="number">1</span> &lt;&lt; n) - <span class="number">1</span>;        <span class="comment">//  每门课代表一个二进制位，枚举所有可能共有 1&lt;&lt;n 种</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> s = <span class="number">0</span>; s &lt;= sum; ++s) &#123;       </span><br><span class="line">    g[s] = check(s);         <span class="comment">// 验证 s 是否能在一个学期内学完</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> t = s; t; t = (t - <span class="number">1</span>) &amp; s)         <span class="comment">// 从之前的状态（子集）进行转移</span></span><br><span class="line">      <span class="keyword">if</span> (g[t]) f[s] = <span class="built_in">min</span>(f[s], f[s ^ t] + <span class="number">1</span>);      <span class="comment">// 可以在一个学期学完，则维护最小值</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; f[sum] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1332,7 +1333,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1416,7 +1417,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">152k</span>
+    <span title="站点总字数">153k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
