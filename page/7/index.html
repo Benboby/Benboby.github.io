@@ -190,6 +190,109 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%82%A8%E7%89%A9%E7%82%B9%E7%9A%84%E8%B7%9D%E7%A6%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/qiuye.jpeg">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%82%A8%E7%89%A9%E7%82%B9%E7%9A%84%E8%B7%9D%E7%A6%BB/" class="post-title-link" itemprop="url">每日一题：储物点的距离</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-15 18:39:27 / 修改时间：19:28:46" itemprop="dateCreated datePublished" datetime="2020-05-15T18:39:27+08:00">2020-05-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%82%A8%E7%89%A9%E7%82%B9%E7%9A%84%E8%B7%9D%E7%A6%BB/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%82%A8%E7%89%A9%E7%82%B9%E7%9A%84%E8%B7%9D%E7%A6%BB/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定 $i$ 和 $i+1$两点的距离和 $i$ 点的货物数量，$m$ 次询问将 $[l,r]$ 所有物品搬到 $x$ 点的总费用（区间内每个物品各自离 $x$ 点距离和）。（$n,m &lt;= 200000 , 0 &lt;= ai,bi &lt;= 2000000000$）</p>
+<h3 id="soltuion"><a href="#soltuion" class="headerlink" title="soltuion"></a>soltuion</h3><p>前缀和维护：$sum1$ 表示每个储物点离原点0的距离，$sum2$ 表示前 $i$ 个储物点共有多少货物，$sum3$ 表示前 $i$ 个储物点的所有物品到原点0的和。</p>
+<ul>
+<li>$x&lt;=l$，即 $[l,r]$ 所有物品到原点的距离 - 到 $x$ 点的距离。</li>
+<li>$x&gt;=r$，即 $[l,r]$ 所有物品从 $x$ 点到原点的距离 - 从原位置到原点的距离。</li>
+<li>处于中间的情况，就是拆解成 $[l,x],[x+1,r]$ 两种情况，然后分别带入上面情况即可。</li>
+</ul>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight gml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const ll <span class="keyword">mod</span> = <span class="number">1000000007</span>;</span><br><span class="line">const int N = <span class="number">2e5</span> + <span class="number">5</span>;</span><br><span class="line">int n, m, l, r;</span><br><span class="line">ll <span class="symbol">x</span>, res, sum1[N], sum2[N], sum3[N];</span><br><span class="line">int main() &#123;</span><br><span class="line">  cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">  <span class="keyword">for</span> (int i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    cin &gt;&gt; <span class="symbol">x</span>;</span><br><span class="line">    sum1[i] = (sum1[i - <span class="number">1</span>] + <span class="symbol">x</span>) % <span class="keyword">mod</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (int i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    cin &gt;&gt; <span class="symbol">x</span>;</span><br><span class="line">    sum2[i] = (sum2[i - <span class="number">1</span>] + <span class="symbol">x</span>) % <span class="keyword">mod</span>;</span><br><span class="line">    sum3[i] = (sum3[i - <span class="number">1</span>] + sum1[i] * <span class="symbol">x</span>) % <span class="keyword">mod</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (m--) &#123;</span><br><span class="line">    cin &gt;&gt; <span class="symbol">x</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">    <span class="keyword">if</span> (<span class="symbol">x</span> &lt;= l)</span><br><span class="line">      res = ((sum3[r] - sum3[l - <span class="number">1</span>] + <span class="keyword">mod</span>) % <span class="keyword">mod</span> -</span><br><span class="line">             (sum2[r] - sum2[l - <span class="number">1</span>] + <span class="keyword">mod</span>) % <span class="keyword">mod</span> * sum1[<span class="symbol">x</span>] % <span class="keyword">mod</span> + <span class="keyword">mod</span>) %</span><br><span class="line">            <span class="keyword">mod</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="symbol">x</span> &gt;= r)</span><br><span class="line">      res = ((sum1[<span class="symbol">x</span>] * ((sum2[r] - sum2[l - <span class="number">1</span>] + <span class="keyword">mod</span>) % <span class="keyword">mod</span>)) % <span class="keyword">mod</span> - sum3[r] +</span><br><span class="line">             sum3[l - <span class="number">1</span>] + <span class="keyword">mod</span>) %</span><br><span class="line">            <span class="keyword">mod</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      res = (((sum3[r] - sum3[<span class="symbol">x</span>] + <span class="keyword">mod</span>) % <span class="keyword">mod</span> -</span><br><span class="line">              (sum2[r] - sum2[<span class="symbol">x</span>] + <span class="keyword">mod</span>) % <span class="keyword">mod</span> * sum1[<span class="symbol">x</span>] + <span class="keyword">mod</span>) %</span><br><span class="line">                 <span class="keyword">mod</span> +</span><br><span class="line">             ((sum1[<span class="symbol">x</span>] * ((sum2[<span class="symbol">x</span>] - sum2[l - <span class="number">1</span>] + <span class="keyword">mod</span>) % <span class="keyword">mod</span>)) % <span class="keyword">mod</span> -</span><br><span class="line">              sum3[<span class="symbol">x</span>] + sum3[l - <span class="number">1</span>] + <span class="keyword">mod</span>) %</span><br><span class="line">                 <span class="keyword">mod</span>) %</span><br><span class="line">            <span class="keyword">mod</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; (res + <span class="keyword">mod</span>) % <span class="keyword">mod</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AMoovie-Mooving-%EF%BC%88%E7%8A%B6%E5%8E%8Bdp%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -406,7 +509,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/qiuye.jpeg">
@@ -420,7 +523,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/12/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">C++面向对象：堆，栈与内存管理</a>
+            <a href="/2020/05/12/%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">堆，栈与内存管理</a>
         </h2>
 
         <div class="post-meta">
@@ -437,7 +540,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-29 13:16:48" itemprop="dateModified" datetime="2020-09-29T13:16:48+08:00">2020-09-29</time>
+                <time title="修改时间：2020-09-30 14:12:37" itemprop="dateModified" datetime="2020-09-30T14:12:37+08:00">2020-09-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -445,7 +548,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-%E5%85%A5%E9%97%A8/" itemprop="url" rel="index"><span itemprop="name">C++入门</span></a>
+                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
                 </span>
             </span>
 
@@ -458,8 +561,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/12/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/12/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/12/%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/12/%E5%A0%86%EF%BC%8C%E6%A0%88%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -613,7 +716,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%EF%BC%8C%E6%8B%B7%E8%B4%9D%E5%A4%8D%E5%88%B6%EF%BC%8C%E6%9E%90%E6%9E%84/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%EF%BC%8C%E6%8B%B7%E8%B4%9D%E5%A4%8D%E5%88%B6%EF%BC%8C%E6%9E%90%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/qiuye.jpeg">
@@ -627,7 +730,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/11/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%EF%BC%8C%E6%8B%B7%E8%B4%9D%E5%A4%8D%E5%88%B6%EF%BC%8C%E6%9E%90%E6%9E%84/" class="post-title-link" itemprop="url">C++面向对象：拷贝构造，拷贝复制，析构</a>
+            <a href="/2020/05/11/%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%EF%BC%8C%E6%8B%B7%E8%B4%9D%E5%A4%8D%E5%88%B6%EF%BC%8C%E6%9E%90%E6%9E%84/" class="post-title-link" itemprop="url">拷贝构造，拷贝复制，析构</a>
         </h2>
 
         <div class="post-meta">
@@ -644,7 +747,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-17 14:44:08" itemprop="dateModified" datetime="2020-07-17T14:44:08+08:00">2020-07-17</time>
+                <time title="修改时间：2020-09-30 14:08:03" itemprop="dateModified" datetime="2020-09-30T14:08:03+08:00">2020-09-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -652,7 +755,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-%E5%85%A5%E9%97%A8/" itemprop="url" rel="index"><span itemprop="name">C++入门</span></a>
+                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
                 </span>
             </span>
 
@@ -665,8 +768,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/11/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%EF%BC%8C%E6%8B%B7%E8%B4%9D%E5%A4%8D%E5%88%B6%EF%BC%8C%E6%9E%90%E6%9E%84/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/11/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%EF%BC%8C%E6%8B%B7%E8%B4%9D%E5%A4%8D%E5%88%B6%EF%BC%8C%E6%9E%90%E6%9E%84/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/11/%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%EF%BC%8C%E6%8B%B7%E8%B4%9D%E5%A4%8D%E5%88%B6%EF%BC%8C%E6%9E%90%E6%9E%84/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/11/%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%EF%BC%8C%E6%8B%B7%E8%B4%9D%E5%A4%8D%E5%88%B6%EF%BC%8C%E6%9E%90%E6%9E%84/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1155,119 +1258,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2%EF%BC%88DP%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/qiuye.jpeg">
-      <meta itemprop="name" content="Benboby">
-      <meta itemprop="description" content="Don't stop programming.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Benboby's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2%EF%BC%88DP%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：合并回文子串（区间DP）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-02 11:23:36 / 修改时间：11:59:34" itemprop="dateCreated datePublished" datetime="2020-05-02T11:23:36+08:00">2020-05-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2%EF%BC%88DP%EF%BC%89/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2%EF%BC%88DP%EF%BC%89/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定两个字符串，各取出一个子串接在一起，求最长回文子串的长度。</p>
-<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>先考虑普通的求最长回文子串的dp做法:</p>
-<p>$dp[i][j] = 0/1 $ 表示子串 $i~j$ 是否为回文串。</p>
-<p>那么，容易得到：$dp[i][j] = (dp[i+1][j-1]$ &amp;&amp; $s[i]==s[j])$。</p>
-<p>由于 $i$ 是由 $i+1$ 转移过来的，所以我们需要倒着遍历：</p>
-<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (int <span class="built_in">i</span> = s.<span class="built_in">size</span>() - <span class="number">1</span>; <span class="built_in">i</span> &gt;= <span class="number">0</span>; <span class="built_in">i</span>--)</span><br><span class="line">  <span class="keyword">for</span> (int <span class="built_in">j</span> = <span class="built_in">i</span>; <span class="built_in">j</span> &lt; s.<span class="built_in">size</span>(); <span class="built_in">j</span>++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (s[<span class="built_in">i</span>] == s[<span class="built_in">j</span>] &amp;&amp; (<span class="built_in">j</span> - <span class="built_in">i</span> &lt; <span class="number">2</span> || dp[<span class="built_in">i</span> + <span class="number">1</span>][<span class="built_in">j</span> - <span class="number">1</span>])) &#123;</span><br><span class="line">      dp[<span class="built_in">i</span>][<span class="built_in">j</span>] = <span class="built_in">true</span>;</span><br><span class="line">      res = <span class="built_in">max</span>(res, <span class="built_in">j</span> - <span class="built_in">i</span> + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>那么这题其实可以类比：</p>
-<p>$dp[i][j][k][l]$ 表示a串第i个字符到第j个字符和b串第k个字符到第l个字符是否组成回文串：</p>
-<p>往 $a[i+1]$ 到 $a[j−1]$ 和 $b[k]$ 到 $b[l]$ 构成的串的两端加上 $a[i]$ 和 $a[j]$ 两个字符：</p>
-<p>$dp[i][j][k][l] = dp[i+1][j-1][k][l] and (a[i]==a[j])$</p>
-<p>往 $a[i+1]$ 到 $a[j]$ 和 $b[k]$ 到 $b[l-1]$ 构成的串的两端加上 $a[i]$ 和 $b[l]$ 两个字符：</p>
-<p>$dp[i][j][k][l] = dp[i+1][j][k][l-1] and (a[i]==b[l])$</p>
-<p>往 $a[i]$ 到 $a[j-1]$ 和 $b[k+1]$ 到 $b[l]$ 构成的串的两端加上 $b[k]$ 和 $a[j]$ 两个字符：</p>
-<p>$dp[i][j][k][l] = dp[i][j-1][k+1][l] and (b[k]==a[j])$</p>
-<p>往 $a[i]$ 到 $a[j]$ 和 $b[k+1]$ 到 $b[l-1]$ 构成的串的两端加上 $b[k]$ 和 $b[l]$ 两个字符：</p>
-<p>$dp[i][j][k][l] = dp[i][j][k+1][l-1] and (b[k]==b[l])$</p>
-<p><strong>实际上就是取法由原来的一种变为了四种，注意若组成的字符串长度小于2时需要直接赋值为1</strong></p>
-<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int <span class="symbol">N</span> = <span class="number">105</span>;</span><br><span class="line">char a[<span class="symbol">N</span>], b[<span class="symbol">N</span>];</span><br><span class="line">bool f[<span class="symbol">N</span>][<span class="symbol">N</span>][<span class="symbol">N</span>][<span class="symbol">N</span>];</span><br><span class="line">int t, n, m;</span><br><span class="line">int main() &#123;</span><br><span class="line">  scanf(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">  while (t--) &#123;</span><br><span class="line">    int res = <span class="number">0</span>;</span><br><span class="line">    scanf(<span class="string">"%s"</span>, a + <span class="number">1</span>);</span><br><span class="line">    scanf(<span class="string">"%s"</span>, b + <span class="number">1</span>);</span><br><span class="line">    n = strlen(a + <span class="number">1</span>);</span><br><span class="line">    m = strlen(b + <span class="number">1</span>);</span><br><span class="line">    for (int len1 = <span class="number">0</span>; len1 &lt;= n; len1++)    //枚举a串的长度</span><br><span class="line">      for (int len2 = <span class="number">0</span>; len2 &lt;= m; len2++)  //枚举b串的长度</span><br><span class="line">        for (int i = <span class="number">1</span>; i + len1 - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">          for (int k = <span class="number">1</span>; k + len2 - <span class="number">1</span> &lt;= m; k++) &#123;</span><br><span class="line">            int j = i + len1 - <span class="number">1</span>,</span><br><span class="line">                l = k + len2 - <span class="number">1</span>;  //根据左端点和长度计算右端点</span><br><span class="line">            if (len1 + len2 &lt;= <span class="number">1</span>)</span><br><span class="line">              f[i][j][k][l] = <span class="number">1</span>;</span><br><span class="line">            else &#123;</span><br><span class="line">              f[i][j][k][l] = <span class="number">0</span>;</span><br><span class="line">              if (len1 &gt; <span class="number">1</span>)</span><br><span class="line">                f[i][j][k][l] |= (f[i + <span class="number">1</span>][j - <span class="number">1</span>][k][l] &amp;&amp; (a[i] == a[j]));</span><br><span class="line">              if (len1 &amp;&amp; len2)</span><br><span class="line">                f[i][j][k][l] |= (f[i + <span class="number">1</span>][j][k][l - <span class="number">1</span>] &amp;&amp; (a[i] == b[l]));</span><br><span class="line">              if (len1 &amp;&amp; len2)</span><br><span class="line">                f[i][j][k][l] |= (f[i][j - <span class="number">1</span>][k + <span class="number">1</span>][l] &amp;&amp; (a[j] == b[k]));</span><br><span class="line">              if (len2 &gt; <span class="number">1</span>)</span><br><span class="line">                f[i][j][k][l] |= (f[i][j][k + <span class="number">1</span>][l - <span class="number">1</span>] &amp;&amp; (b[k] == b[l]));</span><br><span class="line">            &#125;</span><br><span class="line">            if (f[i][j][k][l]) res = max(res, len1 + len2);</span><br><span class="line">          &#125;</span><br><span class="line">    printf(<span class="string">"%d\n"</span>, res);</span><br><span class="line">  &#125;</span><br><span class="line">  return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1338,20 +1328,20 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">88</span>
+          <span class="site-state-item-count">89</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">34</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
