@@ -190,6 +190,110 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9ATwo-Graphs%EF%BC%88%E6%9A%B4%E5%8A%9B%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/qiuye.jpeg">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9ATwo-Graphs%EF%BC%88%E6%9A%B4%E5%8A%9B%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：Two Graphs（暴力）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-05 14:07:55" itemprop="dateCreated datePublished" datetime="2020-05-05T14:07:55+08:00">2020-05-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 17:53:23" itemprop="dateModified" datetime="2020-07-14T17:53:23+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9ATwo-Graphs%EF%BC%88%E6%9A%B4%E5%8A%9B%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9ATwo-Graphs%EF%BC%88%E6%9A%B4%E5%8A%9B%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给一个小图和一个大图，问大图有多少个子图形状和小图一样。</p>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>最多只有8个点，因为每个点标号可能不一样，因此可以全排列枚举所有点的位置，然后判断小图有的边大图是否也有（因为原来边的属性还在），并通过hash进行去重。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, m1, m2, res, pre[<span class="number">10</span>], mp1[<span class="number">10</span>][<span class="number">10</span>], mp2[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>, <span class="keyword">int</span>&gt; p;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (~<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m1, &amp;m2)) &#123;</span><br><span class="line">    <span class="built_in">memset</span>(mp1, <span class="number">0</span>, <span class="keyword">sizeof</span>(mp1));</span><br><span class="line">    <span class="built_in">memset</span>(mp2, <span class="number">0</span>, <span class="keyword">sizeof</span>(mp2));</span><br><span class="line">    p.<span class="built_in">clear</span>();</span><br><span class="line">    res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m1; i++) &#123;</span><br><span class="line">      <span class="keyword">int</span> x, y;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">      mp1[x][y] = mp1[y][x] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m2; i++) &#123;</span><br><span class="line">      <span class="keyword">int</span> x, y;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">      mp2[x][y] = mp2[y][x] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) pre[i] = i;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">      <span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">long</span> <span class="keyword">long</span> now = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n &amp;&amp; flag; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n &amp;&amp; flag; j++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (mp1[i][j] == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!mp2[pre[i]][pre[j]]) flag = <span class="number">0</span>;</span><br><span class="line">            now |= <span class="number">1L</span>L &lt;&lt; (mp2[pre[i]][pre[j]]);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (flag &amp;&amp; p[now] == <span class="number">0</span>) &#123;</span><br><span class="line">        res++;</span><br><span class="line">        p[now] = <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">while</span> (next_permutation(pre + <span class="number">1</span>, pre + n + <span class="number">1</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, res);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/03/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9ADifferent-Integers%EF%BC%88%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84-%E8%8E%AB%E9%98%9F%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1120,108 +1224,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%BE%8E%E5%91%B3%E8%8F%9C%E8%82%B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/qiuye.jpeg">
-      <meta itemprop="name" content="Benboby">
-      <meta itemprop="description" content="Don't stop programming.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Benboby's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%BE%8E%E5%91%B3%E8%8F%9C%E8%82%B4/" class="post-title-link" itemprop="url">每日一题：美味菜肴</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-04-27 15:40:27 / 修改时间：16:25:41" itemprop="dateCreated datePublished" datetime="2020-04-27T15:40:27+08:00">2020-04-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/04/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%BE%8E%E5%91%B3%E8%8F%9C%E8%82%B4/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%BE%8E%E5%91%B3%E8%8F%9C%E8%82%B4/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>$n$ 件食材（每种食材的数量可以视为无限），小明连续工作 $T$ 时间。每道菜肴的制作需要特定的一种食材以及一段时间，但是食材一旦放久就不新鲜了，菜的美味值会降低。第 $i$ 道菜肴有三个属性 $ai$，$bi$，$ci$，$ai$ 是该菜肴的美味值，$bi$ 是该菜肴所选食材不新鲜的速率，如果在第t时刻完成第i道菜则美味值为：$ai-t*bi$，完成这道菜需要 $ci$ 的时间。求在这 $T$ 时间内能做出菜肴使得总美味值的最大值。</p>
-<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>首先需要贪心确定顺序，考虑只有两道菜，可以得到：$a_i−b_i∗c_i+(a_j−b_j∗(c_i+c_j))&gt;=a_j−b_j∗c_j+(a_i−b_i∗(c_i+c_j))$，化简后得到：$b_i∗c_i&gt;=b_j∗c_i$。排序后背包即可（需要降维）。</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const ll INF = <span class="number">0x3ffffffffffff</span>;</span><br><span class="line">const <span class="keyword">int</span> N = <span class="number">2</span>e5 + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">struct Node &#123;</span><br><span class="line">  ll a, b, c;</span><br><span class="line">&#125; <span class="string">q[N]</span>;</span><br><span class="line"></span><br><span class="line">ll res = -INF, <span class="keyword">s</span>[N], dp[N];</span><br><span class="line"></span><br><span class="line">bool cmp(Node <span class="keyword">x</span>, Node <span class="keyword">y</span>) &#123; <span class="keyword">return</span> x.c * <span class="keyword">s</span>[y.a] &lt; y.c * <span class="keyword">s</span>[x.a]; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main() &#123;</span><br><span class="line">  <span class="keyword">int</span> n, <span class="keyword">m</span>, t;</span><br><span class="line">  cin &gt;&gt; n &gt;&gt; <span class="keyword">m</span> &gt;&gt; t;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cin &gt;&gt; <span class="keyword">s</span>[i];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="keyword">m</span>; i++) cin &gt;&gt; <span class="string">q[i]</span>.a &gt;&gt; <span class="string">q[i]</span>.b &gt;&gt; <span class="string">q[i]</span>.c;</span><br><span class="line">  <span class="keyword">sort</span>(<span class="keyword">q</span> + <span class="number">1</span>, <span class="keyword">q</span> + <span class="keyword">m</span> + <span class="number">1</span>, cmp);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; i++) dp[i] = -INF;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="keyword">m</span>; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = t; j &gt;= <span class="string">q[i]</span>.c; j--)</span><br><span class="line">      dp[j] = max(dp[j], dp[j - <span class="string">q[i]</span>.c] + <span class="string">q[i]</span>.b - j * <span class="keyword">s</span>[<span class="string">q[i]</span>.a]);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; i++) res = max(res, dp[i]);</span><br><span class="line">  cout &lt;&lt; res &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1288,7 +1294,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-count">91</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1372,7 +1378,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">158k</span>
+    <span title="站点总字数">159k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

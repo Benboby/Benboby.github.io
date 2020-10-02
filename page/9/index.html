@@ -190,6 +190,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%BE%8E%E5%91%B3%E8%8F%9C%E8%82%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/qiuye.jpeg">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%BE%8E%E5%91%B3%E8%8F%9C%E8%82%B4/" class="post-title-link" itemprop="url">每日一题：美味菜肴</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-27 15:40:27 / 修改时间：16:25:41" itemprop="dateCreated datePublished" datetime="2020-04-27T15:40:27+08:00">2020-04-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/04/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%BE%8E%E5%91%B3%E8%8F%9C%E8%82%B4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%BE%8E%E5%91%B3%E8%8F%9C%E8%82%B4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>$n$ 件食材（每种食材的数量可以视为无限），小明连续工作 $T$ 时间。每道菜肴的制作需要特定的一种食材以及一段时间，但是食材一旦放久就不新鲜了，菜的美味值会降低。第 $i$ 道菜肴有三个属性 $ai$，$bi$，$ci$，$ai$ 是该菜肴的美味值，$bi$ 是该菜肴所选食材不新鲜的速率，如果在第t时刻完成第i道菜则美味值为：$ai-t*bi$，完成这道菜需要 $ci$ 的时间。求在这 $T$ 时间内能做出菜肴使得总美味值的最大值。</p>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>首先需要贪心确定顺序，考虑只有两道菜，可以得到：$a_i−b_i∗c_i+(a_j−b_j∗(c_i+c_j))&gt;=a_j−b_j∗c_j+(a_i−b_i∗(c_i+c_j))$，化简后得到：$b_i∗c_i&gt;=b_j∗c_i$。排序后背包即可（需要降维）。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const ll INF = <span class="number">0x3ffffffffffff</span>;</span><br><span class="line">const <span class="keyword">int</span> N = <span class="number">2</span>e5 + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">struct Node &#123;</span><br><span class="line">  ll a, b, c;</span><br><span class="line">&#125; <span class="string">q[N]</span>;</span><br><span class="line"></span><br><span class="line">ll res = -INF, <span class="keyword">s</span>[N], dp[N];</span><br><span class="line"></span><br><span class="line">bool cmp(Node <span class="keyword">x</span>, Node <span class="keyword">y</span>) &#123; <span class="keyword">return</span> x.c * <span class="keyword">s</span>[y.a] &lt; y.c * <span class="keyword">s</span>[x.a]; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main() &#123;</span><br><span class="line">  <span class="keyword">int</span> n, <span class="keyword">m</span>, t;</span><br><span class="line">  cin &gt;&gt; n &gt;&gt; <span class="keyword">m</span> &gt;&gt; t;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cin &gt;&gt; <span class="keyword">s</span>[i];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="keyword">m</span>; i++) cin &gt;&gt; <span class="string">q[i]</span>.a &gt;&gt; <span class="string">q[i]</span>.b &gt;&gt; <span class="string">q[i]</span>.c;</span><br><span class="line">  <span class="keyword">sort</span>(<span class="keyword">q</span> + <span class="number">1</span>, <span class="keyword">q</span> + <span class="keyword">m</span> + <span class="number">1</span>, cmp);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; i++) dp[i] = -INF;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="keyword">m</span>; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = t; j &gt;= <span class="string">q[i]</span>.c; j--)</span><br><span class="line">      dp[j] = max(dp[j], dp[j - <span class="string">q[i]</span>.c] + <span class="string">q[i]</span>.b - j * <span class="keyword">s</span>[<span class="string">q[i]</span>.a]);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; i++) res = max(res, dp[i]);</span><br><span class="line">  cout &lt;&lt; res &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AGame-Strategy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1151,136 +1249,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AAccumulation-Degree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/qiuye.jpeg">
-      <meta itemprop="name" content="Benboby">
-      <meta itemprop="description" content="Don't stop programming.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Benboby's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AAccumulation-Degree/" class="post-title-link" itemprop="url">每日一题：Accumulation Degree</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-18 10:14:14" itemprop="dateCreated datePublished" datetime="2020-04-18T10:14:14+08:00">2020-04-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-20 11:44:55" itemprop="dateModified" datetime="2020-04-20T11:44:55+08:00">2020-04-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/04/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AAccumulation-Degree/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AAccumulation-Degree/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一棵n个节点的树，边权值视作流量，找到一个源点使得从该点出发到所有叶子节点流量和最大。</p>
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>我们先考虑这样一道题：指定一点使得到树上其他点的深度之和最小。</p>
-<h4 id="这显然是树的重心的性质：树中所有点到某个点的距离和中，到重心的距离和是最小的，如果有两个重心，他们的距离和一样。"><a href="#这显然是树的重心的性质：树中所有点到某个点的距离和中，到重心的距离和是最小的，如果有两个重心，他们的距离和一样。" class="headerlink" title="这显然是树的重心的性质：树中所有点到某个点的距离和中，到重心的距离和是最小的，如果有两个重心，他们的距离和一样。"></a>这显然是树的重心的性质：树中所有点到某个点的距离和中，到重心的距离和是最小的，如果有两个重心，他们的距离和一样。</h4><p>我们先假设这棵树的根为1，进行一次dfs，可以求出每个点的深度 $dep[i]$ 和子树大小 $size[i]$ ，设某点作为根深度之和为 $f$( i )，显然：$f(1)$ = $\sum_{i=1}^{n}{dep[i]}$。</p>
-<p>当根从 $u$ 转移到子节点 $v$ 时，以 $v$ 为根的子树内所有节点 $dep$ 都减1，其余节点加1。从而得到状态转移方程：$f[v] = f[u] - size[v] + (n - size[v]) = f[u] + n - 2 * size[v]$，答案取最小值即可，时间复杂度 $O (n)$ 。</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e6</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, res, idx, h[N], dep[N], <span class="built_in">size</span>[N];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> f[N];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> to, next;</span><br><span class="line">&#125; E[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123; E[idx].to = b, E[idx].next = h[a], h[a] = idx++; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">size</span>[u] = <span class="number">1</span>;</span><br><span class="line">  dep[u] = dep[fa] + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = h[u]; ~i; i = E[i].next) &#123;</span><br><span class="line">    <span class="keyword">int</span> v = E[i].to;</span><br><span class="line">    <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">    dfs1(v, u);</span><br><span class="line">    <span class="built_in">size</span>[u] += <span class="built_in">size</span>[v];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = h[u]; ~i; i = E[i].next) &#123;</span><br><span class="line">    <span class="keyword">int</span> v = E[i].to;</span><br><span class="line">    <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">    f[v] = f[u] + n - <span class="number">2L</span>L * <span class="built_in">size</span>[v];</span><br><span class="line">    dfs2(v, u);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="keyword">sizeof</span>(h));</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">    add(x, y);</span><br><span class="line">    add(y, x);</span><br><span class="line">  &#125;</span><br><span class="line">  dep[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">  dfs1(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) f[<span class="number">1</span>] += dep[i];</span><br><span class="line">  dfs2(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">  <span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0x3ffffffffffff</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (sum &gt; f[i]) &#123;</span><br><span class="line">      sum = f[i];</span><br><span class="line">      res = i;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; sum &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在我们回过头来看这道题，可以发现思路都大同小异，只是转移方程发生了变化。</p>
-<p>定义 $flow[i]表示以 i 为根的子树中流量的最大值$，那么，当节点从 $u$ 转移到 $v$ 时，我们可以得到：</p>
-<ol>
-<li>当 $v$ 为叶子结点，则 $flow[u] += flow[v]$ ；</li>
-<li>当 $u$ 为非叶子结点，则 $flow[u] = min(flow[v], fl(u, v))$  $(fl(u, v) 即u, v两点间的流量限制)$ 。</li>
-</ol>
-<p>这样，根为1时的 $flow[1]$ 就求出来了。</p>
-<p>接下来考虑根节点的转移：从以 $u$ 为根节点转移为以 $v$ 为根节点，对于根节点 $v$ 而言，唯一会产生影响的就是 $v$ 流向 $u$ 的路径，也就是对于换根后所有用到这条边的路径，都要加上这条流量的限制，则状态转移方程为：</p>
-<ol>
-<li>当 $u$ 为叶子节点时，$f[v] += fl(u, v)$ ;</li>
-<li>当 $v$ 为非叶子结点时，$f[v] += min(fl(u, v), flow[u] - min(flow[v], fl(u, v)))$ 。</li>
-</ol>
-<p>进行两次dfs即可，时间复杂度 $O(n)$。</p>
-<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, n, res, idx, h[N], d[N], f[N];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> to, w, next;</span><br><span class="line">&#125; E[N &lt;&lt; <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">  E[idx].to = b, E[idx].w = c, E[idx].next = h[a], h[a] = idx++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = h[u]; ~i; i = E[i].next) &#123;</span><br><span class="line">    <span class="keyword">int</span> v = E[i].to, w = E[i].w;</span><br><span class="line">    <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">    dfs1(v, u);</span><br><span class="line">    <span class="keyword">if</span> (d[v] == <span class="number">1</span>)</span><br><span class="line">      f[u] += w;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      f[u] += <span class="built_in">min</span>(f[v], w);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = h[u]; ~i; i = E[i].next) &#123;</span><br><span class="line">    <span class="keyword">int</span> v = E[i].to, w = E[i].w;</span><br><span class="line">    <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">    <span class="keyword">if</span> (d[u] == <span class="number">1</span>)</span><br><span class="line">      f[v] += w;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      f[v] += <span class="built_in">min</span>(w, f[u] - <span class="built_in">min</span>(f[v], w));</span><br><span class="line">    dfs2(v, u);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">  <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">    idx = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="keyword">sizeof</span>(h));</span><br><span class="line">    <span class="built_in">memset</span>(d, <span class="number">0</span>, <span class="keyword">sizeof</span>(d));</span><br><span class="line">    <span class="built_in">memset</span>(f, <span class="number">0</span>, <span class="keyword">sizeof</span>(f));</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">      <span class="keyword">int</span> x, y, z;</span><br><span class="line">      <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; z;</span><br><span class="line">      add(x, y, z);</span><br><span class="line">      add(y, x, z);</span><br><span class="line">      d[x]++;</span><br><span class="line">      d[y]++;</span><br><span class="line">    &#125;</span><br><span class="line">    dfs1(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    dfs2(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) res = <span class="built_in">max</span>(res, f[i]);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于换根dp，一般有两个步骤：</p>
-<ol>
-<li>默认1为根进行dfs预处理；</li>
-<li>从1开始，进行根的转移，计算贡献变化。</li>
-</ol>
-<p>对于dp而言，状态转移方程是最重要的，需要多思考，多刷题，才能累积经验，掌握要点。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1347,7 +1319,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-count">91</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1431,7 +1403,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">158k</span>
+    <span title="站点总字数">159k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
