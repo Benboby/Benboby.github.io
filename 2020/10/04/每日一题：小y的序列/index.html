@@ -22,17 +22,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="Don&#39;t stop programming.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Benboby&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83/index.html">
+  <meta name="description" content="题目最少修改几个数，使得数列满足 $a[i + 1] - a[i] &#x3D; i$。$(n \in [1, 1e5], a[i] \in [-1e9, 1e9])$ Solution先构造一个长度为 $n$ 满足题意的初始数列，然后将所给的数减去对应的初始构造的数，差值出现的次数最多的就是最长的满足题意的序列，要修改的就是剩余的那些数。 Code123456789101112131415#include">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一题：小y的序列">
+<meta property="og:url" content="http://yoursite.com/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%B0%8Fy%E7%9A%84%E5%BA%8F%E5%88%97/index.html">
 <meta property="og:site_name" content="Benboby&#39;s Blog">
-<meta property="og:description" content="Don&#39;t stop programming.">
+<meta property="og:description" content="题目最少修改几个数，使得数列满足 $a[i + 1] - a[i] &#x3D; i$。$(n \in [1, 1e5], a[i] \in [-1e9, 1e9])$ Solution先构造一个长度为 $n$ 满足题意的初始数列，然后将所给的数减去对应的初始构造的数，差值出现的次数最多的就是最长的满足题意的序列，要修改的就是剩余的那些数。 Code123456789101112131415#include">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-04T14:22:19.000Z">
+<meta property="article:modified_time" content="2020-10-04T14:31:11.946Z">
 <meta property="article:author" content="Benboby">
+<meta property="article:tag" content="思维">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/categories/%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83/">
+<link rel="canonical" href="http://yoursite.com/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%B0%8Fy%E7%9A%84%E5%BA%8F%E5%88%97/">
 
 
 <script id="page-configurations">
@@ -40,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: 多校训练 | Benboby's Blog</title>
+  <title>每日一题：小y的序列 | Benboby's Blog</title>
   
 
 
@@ -184,97 +187,126 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%B0%8Fy%E7%9A%84%E5%BA%8F%E5%88%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/qiuye.jpeg">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          每日一题：小y的序列
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-04 22:22:19 / 修改时间：22:31:11" itemprop="dateCreated datePublished" datetime="2020-10-04T22:22:19+08:00">2020-10-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">多校训练
-          <small>分类</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%B0%8Fy%E7%9A%84%E5%BA%8F%E5%88%97/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%B0%8Fy%E7%9A%84%E5%BA%8F%E5%88%97/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>435</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-01T14:01:12+08:00"
-              content="2020-10-01">
-          10-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/01/%E7%89%9B%E5%AE%A2%E5%9B%BD%E5%BA%86%E9%9B%86%E8%AE%ADday1/" itemprop="url">
-            <span itemprop="name">牛客国庆集训day1</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-18T13:18:57+08:00"
-              content="2020-08-18">
-          08-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/18/%E6%9D%AD%E7%94%B5%E5%A4%9A%E6%A0%A1%EF%BC%9ATree/" itemprop="url">
-            <span itemprop="name">杭电多校：Tree</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-14T12:37:02+08:00"
-              content="2020-07-14">
-          07-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/07/14/%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A12020%E7%AC%AC%E4%BA%8C%E5%9C%BA%E8%A1%A5%E9%A2%98/" itemprop="url">
-            <span itemprop="name">牛客多校2020第二场补题</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>最少修改几个数，使得数列满足 $a[i + 1] - a[i] = i$。$(n \in [1, 1e5], a[i] \in [-1e9, 1e9])$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先构造一个长度为 $n$ 满足题意的初始数列，然后将所给的数减去对应的初始构造的数，差值出现的次数最多的就是最长的满足题意的序列，要修改的就是剩余的那些数。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n, x, p = <span class="number">0</span>, res;</span><br><span class="line">  <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mp;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; x;</span><br><span class="line">  res = mp[x] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    p += i;</span><br><span class="line">    res = <span class="built_in">max</span>(res, ++mp[x - p]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; n - res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%80%9D%E7%BB%B4/" rel="tag"># 思维</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AArithmetic-Progressions/" rel="prev" title="每日一题：Arithmetic Progressions">
+      <i class="fa fa-chevron-left"></i> 每日一题：Arithmetic Progressions
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -321,6 +353,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -484,6 +517,61 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

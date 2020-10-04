@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-04T14:13:11.205Z</updated>
+  <updated>2020-10-04T14:31:11.946Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一题：小y的序列</title>
+    <link href="http://yoursite.com/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%B0%8Fy%E7%9A%84%E5%BA%8F%E5%88%97/"/>
+    <id>http://yoursite.com/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%B0%8Fy%E7%9A%84%E5%BA%8F%E5%88%97/</id>
+    <published>2020-10-04T14:22:19.000Z</published>
+    <updated>2020-10-04T14:31:11.946Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>最少修改几个数，使得数列满足 $a[i + 1] - a[i] = i$。$(n \in [1, 1e5], a[i] \in [-1e9, 1e9])$</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先构造一个长度为 $n$ 满足题意的初始数列，然后将所给的数减去对应的初始构造的数，差值出现的次数最多的就是最长的满足题意的序列，要修改的就是剩余的那些数。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n, x, p = <span class="number">0</span>, res;</span><br><span class="line">  <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mp;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; x;</span><br><span class="line">  res = mp[x] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    p += i;</span><br><span class="line">    res = <span class="built_in">max</span>(res, ++mp[x - p]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; n - res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;最少修改几个数，使得数列满足 $a[i + 1] - a[i] = i$。$(n \in [1, 1e5], a[i] \in [-1e9,</summary>
+      
+    
+    
+    
+    <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+    <category term="思维" scheme="http://yoursite.com/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>每日一题：Arithmetic Progressions</title>
@@ -459,30 +483,6 @@
     <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
     <category term="记忆化搜索" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题：牛牛构造等差数列</title>
-    <link href="http://yoursite.com/2020/08/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%89%9B%E7%89%9B%E6%9E%84%E9%80%A0%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/"/>
-    <id>http://yoursite.com/2020/08/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%89%9B%E7%89%9B%E6%9E%84%E9%80%A0%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/</id>
-    <published>2020-08-31T05:15:45.000Z</published>
-    <updated>2020-08-31T05:21:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>有 $n$ 个数，他们对每个数可以进行 $+1$ 或 $-1$ 操作，但对于每一个数，该操作最多只能执行一次。使用最少的操作次数，将这几个数构造成一个等差数列。如果完全不能构造成功，就输出 $-1$。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>每个数最多只能修改一次，因此我们只要枚举前两个数的修改状态就能确定首项和公差，只有 $9$ 种可能，然后逐一判断取最小值即可。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = -<span class="number">1</span>; i &lt;= <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = -<span class="number">1</span>; j &lt;= <span class="number">1</span>; j++) &#123;</span><br><span class="line">                b[<span class="number">0</span>] += i;</span><br><span class="line">                b[<span class="number">1</span>] += j;</span><br><span class="line">                <span class="keyword">int</span> d = b[<span class="number">1</span>] - b[<span class="number">0</span>];</span><br><span class="line">                <span class="keyword">int</span> pre = b[<span class="number">1</span>], now, cnt = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">                <span class="keyword">if</span> (i != <span class="number">0</span>)</span><br><span class="line">                    cnt++;</span><br><span class="line">                <span class="keyword">if</span> (j != <span class="number">0</span>)</span><br><span class="line">                    cnt++;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">2</span>; k &lt; n; k++) &#123;</span><br><span class="line">                    now = pre + d;</span><br><span class="line">                    <span class="keyword">if</span> (Math.abs(now - b[k]) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                        flag = <span class="keyword">true</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (Math.abs(now - b[k]) == <span class="number">1</span>) &#123;</span><br><span class="line">                        cnt++;</span><br><span class="line">                    &#125;</span><br><span class="line">                    pre = now;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (flag == <span class="keyword">false</span>) &#123;</span><br><span class="line">                    res = Math.min(res, cnt);</span><br><span class="line">                &#125;</span><br><span class="line">                b[<span class="number">0</span>] -= i;</span><br><span class="line">                b[<span class="number">1</span>] -= j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res == Integer.MAX_VALUE ? -<span class="number">1</span> : res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;有 $n$ 个数，他们对每个数可以进行 $+1$ 或 $-1$ 操作，但对于每一个数，该操作最多只能执行一次。使用最少的操作次数，将这几个数</summary>
-      
-    
-    
-    
-    <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-    <category term="思维" scheme="http://yoursite.com/tags/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
