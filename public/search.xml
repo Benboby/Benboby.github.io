@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>每日一题：Arithmetic Progressions</title>
+      <link href="2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AArithmetic-Progressions/"/>
+      <url>2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AArithmetic-Progressions/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>从给定数列中能选出组成的最长等差数列长度为多少？$(n \in [1, 5000], a[i] \in [1, 1e9])$</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>$dp[i][j]$ 表示 $a[i]$ 为等差数列最后一个数，$a[j]$ 为倒数第二个数。</p><p>排序后二维枚举 $i$ 和 $j$，二分找到对应的下标 $k$ 使得 $a[k]+a[i]=2*a[j]$ ，直接转移 $dp[i][j] = max(dp[i][j], dp[j][k] + 1)$。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, res, a[<span class="number">5005</span>], dp[<span class="number">5005</span>][<span class="number">5005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">  sort(a, a + n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">      <span class="keyword">int</span> k = lower_bound(a, a + n, a[j] * <span class="number">2</span> - a[i]) - a;</span><br><span class="line">      <span class="keyword">if</span> (a[k] == a[j] * <span class="number">2</span> - a[i]) dp[i][j] = <span class="built_in">max</span>(dp[i][j], dp[j][k] + <span class="number">1</span>);</span><br><span class="line">      res = <span class="built_in">max</span>(res, dp[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; res + <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态规划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Effective C++条款总结</title>
+      <link href="2020/10/03/Effective-C-%E6%9D%A1%E6%AC%BE%E6%80%BB%E7%BB%93/"/>
+      <url>2020/10/03/Effective-C-%E6%9D%A1%E6%AC%BE%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h2 id="从-C-转向-C"><a href="#从-C-转向-C" class="headerlink" title="从 C 转向 C++"></a>从 C 转向 C++</h2><h3 id="条款1-尽量用-const-和-inline-而不用-define"><a href="#条款1-尽量用-const-和-inline-而不用-define" class="headerlink" title="条款1. 尽量用 const 和 inline 而不用 #define"></a>条款1. 尽量用 const 和 inline 而不用 #define</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++面向对象 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每日一题：Medians and Partition</title>
       <link href="2020/10/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AMedians-and-Partition/"/>
       <url>2020/10/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AMedians-and-Partition/</url>

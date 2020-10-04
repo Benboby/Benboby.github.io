@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-02T12:15:02.501Z</updated>
+  <updated>2020-10-04T14:13:11.205Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一题：Arithmetic Progressions</title>
+    <link href="http://yoursite.com/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AArithmetic-Progressions/"/>
+    <id>http://yoursite.com/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AArithmetic-Progressions/</id>
+    <published>2020-10-04T13:45:03.000Z</published>
+    <updated>2020-10-04T14:13:11.205Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>从给定数列中能选出组成的最长等差数列长度为多少？$(n \in [1, 5000], a[i] \in [1, 1e9])$</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>$dp[i][j]$ 表示 $a[i]$ 为等差数列最后一个数，$a[j]$ 为倒数第二个数。</p><p>排序后二维枚举 $i$ 和 $j$，二分找到对应的下标 $k$ 使得 $a[k]+a[i]=2*a[j]$ ，直接转移 $dp[i][j] = max(dp[i][j], dp[j][k] + 1)$。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, res, a[<span class="number">5005</span>], dp[<span class="number">5005</span>][<span class="number">5005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">  sort(a, a + n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">      <span class="keyword">int</span> k = lower_bound(a, a + n, a[j] * <span class="number">2</span> - a[i]) - a;</span><br><span class="line">      <span class="keyword">if</span> (a[k] == a[j] * <span class="number">2</span> - a[i]) dp[i][j] = <span class="built_in">max</span>(dp[i][j], dp[j][k] + <span class="number">1</span>);</span><br><span class="line">      res = <span class="built_in">max</span>(res, dp[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; res + <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;从给定数列中能选出组成的最长等差数列长度为多少？$(n \in [1, 5000], a[i] \in [1, 1e9])$&lt;/p&gt;
+&lt;h2</summary>
+      
+    
+    
+    
+    <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+    <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Effective C++条款总结</title>
+    <link href="http://yoursite.com/2020/10/03/Effective-C-%E6%9D%A1%E6%AC%BE%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2020/10/03/Effective-C-%E6%9D%A1%E6%AC%BE%E6%80%BB%E7%BB%93/</id>
+    <published>2020-10-03T13:21:02.000Z</published>
+    <updated>2020-10-03T13:34:22.377Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="从-C-转向-C"><a href="#从-C-转向-C" class="headerlink" title="从 C 转向 C++"></a>从 C 转向 C++</h2><h3 id="条款1-尽量用-const-和-inline-而不用-define"><a href="#条款1-尽量用-const-和-inline-而不用-define" class="headerlink" title="条款1. 尽量用 const 和 inline 而不用 #define"></a>条款1. 尽量用 const 和 inline 而不用 #define</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;从-C-转向-C&quot;&gt;&lt;a href=&quot;#从-C-转向-C&quot; class=&quot;headerlink&quot; title=&quot;从 C 转向 C++&quot;&gt;&lt;/a&gt;从 C 转向 C++&lt;/h2&gt;&lt;h3 id=&quot;条款1-尽量用-const-和-inline-而不用-define&quot;&gt;&lt;a</summary>
+      
+    
+    
+    
+    <category term="C++" scheme="http://yoursite.com/categories/C/"/>
+    
+    
+    <category term="C++面向对象" scheme="http://yoursite.com/tags/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>每日一题：Medians and Partition</title>
@@ -431,56 +480,6 @@
     
     
     <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-    <category term="思维" scheme="http://yoursite.com/tags/%E6%80%9D%E7%BB%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题：Playing Tag on Tree</title>
-    <link href="http://yoursite.com/2020/08/30/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9APlaying-Tag-on-Tree/"/>
-    <id>http://yoursite.com/2020/08/30/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9APlaying-Tag-on-Tree/</id>
-    <published>2020-08-30T11:17:19.000Z</published>
-    <updated>2020-08-31T05:22:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一棵树，A 在 $x$ 点，B 在 $y$ 点，B 追 A，两人每次可以往相邻点移动，A 先跑，问 A 最晚什么时候被追上。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>结论：找到一个点，满足 $dis_B &gt; dis_A$ 且 $dis_B$ 最大，即为最终落脚点。</p><p>因为直观上来说，明显最后的点离 B 越远越好，但这个点可能离 A 更远，因此需要满足 $dis_B &gt; dis_A$。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> dis[<span class="number">2</span>][N];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> be, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">  q.push(be);</span><br><span class="line">  dis[id][be] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">    <span class="keyword">int</span> u = q.front();</span><br><span class="line">    q.pop();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> v : g[u]) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!dis[id][v]) &#123;</span><br><span class="line">        dis[id][v] = dis[id][u] + <span class="number">1</span>;</span><br><span class="line">        q.push(v);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n, x, y, u, v, res = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; x &gt;&gt; y;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v;</span><br><span class="line">    g[u].push_back(v);</span><br><span class="line">    g[v].push_back(u);</span><br><span class="line">  &#125;</span><br><span class="line">  bfs(x, <span class="number">0</span>);</span><br><span class="line">  bfs(y, <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (dis[<span class="number">0</span>][i] &lt; dis[<span class="number">1</span>][i]) res = max(res, dis[<span class="number">1</span>][i] - <span class="number">2</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给定一棵树，A 在 $x$ 点，B 在 $y$ 点，B 追 A，两人每次可以往相邻点移动，A 先跑，问 A 最晚什么时候被追上。&lt;/p&gt;
-&lt;</summary>
-      
-    
-    
-    
-    <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-    <category term="思维" scheme="http://yoursite.com/tags/%E6%80%9D%E7%BB%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode：最短回文串</title>
-    <link href="http://yoursite.com/2020/08/29/LeetCode214%EF%BC%9A%E6%9C%80%E7%9F%AD%E5%9B%9E%E6%96%87%E4%B8%B2/"/>
-    <id>http://yoursite.com/2020/08/29/LeetCode214%EF%BC%9A%E6%9C%80%E7%9F%AD%E5%9B%9E%E6%96%87%E4%B8%B2/</id>
-    <published>2020-08-29T11:18:12.000Z</published>
-    <updated>2020-08-31T05:23:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一个字符串 $s$，你可以通过在字符串前面添加字符将其转换为回文串。找到并返回可以用这种方式转换的最短回文串。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>等价于求字符串 $s$ 以 $s_0$ 开头的最长回文串，然后多出来的后缀翻转后就是需要补足的最小长度，判断回文可以采用哈希。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">shortestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">long</span> left = <span class="number">0</span>, right = <span class="number">0</span>, base = <span class="number">13331</span>, mod = <span class="number">1000000007</span>, pre = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> pos = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            left = (left * base + s.charAt(i)) % mod;</span><br><span class="line">            right = (right + pre * s.charAt(i)) % mod;</span><br><span class="line">            <span class="keyword">if</span> (left == right) &#123;</span><br><span class="line">                pos = i;</span><br><span class="line">            &#125;</span><br><span class="line">            pre = pre * base % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        String add = (pos == n-<span class="number">1</span> ? <span class="string">""</span> : s.substring(pos+<span class="number">1</span>,n));</span><br><span class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder(add).reverse();</span><br><span class="line">        res.append(s);</span><br><span class="line">        <span class="keyword">return</span> res.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给定一个字符串 $s$，你可以通过在字符串前面添加字符将其转换为回文串。找到并返回可以用这种方式转换的最短回文串。&lt;/p&gt;
-&lt;h2 id=&quot;</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
     
     
     <category term="思维" scheme="http://yoursite.com/tags/%E6%80%9D%E7%BB%B4/"/>
