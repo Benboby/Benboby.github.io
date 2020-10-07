@@ -718,7 +718,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Java%E5%8F%8D%E5%B0%84/</loc>
+    <loc>http://yoursite.com/tags/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Makefile/</loc>
     <lastmod>2020-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -732,7 +739,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E5%8C%BA%E9%97%B4dp/</loc>
+    <loc>http://yoursite.com/tags/Java%E5%8F%8D%E5%B0%84/</loc>
     <lastmod>2020-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -740,6 +747,13 @@
   
   <url>
     <loc>http://yoursite.com/tags/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E5%8C%BA%E9%97%B4dp/</loc>
     <lastmod>2020-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -781,14 +795,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E5%9B%9E%E6%96%87/</loc>
+    <loc>http://yoursite.com/tags/Vim/</loc>
     <lastmod>2020-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Vim/</loc>
+    <loc>http://yoursite.com/tags/%E5%9B%9E%E6%96%87/</loc>
     <lastmod>2020-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -802,21 +816,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/tags/%E6%A0%91/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2020-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -831,6 +838,13 @@
   
   <url>
     <loc>http://yoursite.com/tags/%E4%BA%8C%E5%88%86/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2020-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -921,6 +935,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2020-10-07</lastmod>
     <changefreq>daily</changefreq>
@@ -934,94 +955,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>http://yoursite.com/tags/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/Makefile/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
     <loc>http://yoursite.com/categories/Java%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/LeetCode/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/MySQL/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/Vim/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/ACM%E6%A8%A1%E6%9D%BF/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2020-10-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2020-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1049,7 +986,70 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/categories/LeetCode/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/MySQL/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/Vim/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/ACM%E6%A8%A1%E6%9D%BF/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2020-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
