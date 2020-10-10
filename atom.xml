@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-06T06:48:33.548Z</updated>
+  <updated>2020-10-10T10:24:47.825Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RMQ算法原理及实现</title>
+    <link href="http://yoursite.com/2020/10/10/RMQ%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://yoursite.com/2020/10/10/RMQ%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/</id>
+    <published>2020-10-10T10:15:34.000Z</published>
+    <updated>2020-10-10T10:24:47.825Z</updated>
+    
+    <content type="html"><![CDATA[<p>RMQ（Range Minimum/Maximum Query），区间最值查询问题，是指：对于长度为 $n$ 的数列A，回答若干次询问 $RMQ(i,j)$，返回数列A中下标在区间 $[i,j]$ 中的最小/大值。</p><p>这里介绍Tarjan的Sparse-Table算法，预处理时间为 $O(nlogn)$，但查询只需要 $O(1)$，并且常数很小，算法也很容易写出。</p><p>1）预处理：</p><p>　设 $A[i]$ 是要求区间最值的数列，$d[i, j]$ 表示从第i个数起连续 $2^j$ 个数中的最小值。(DP的状态)</p><p>　显然 $d[i][0]$ 的值就是 $A[i]$ (DP初值)，我们把 $d[i，j]$ 平均分成两段(因为 $d[i，j]$ 一定是偶数个数字)，从 $i$ 到 $i + 2 ^ (j - 1) - 1$ 为一段，$i + 2 ^ (j - 1)$ 到 $i + 2 ^ j - 1$ 为一段(长度都为 $2 ^ (j - 1)$)。于是我们得到了状态转移方程 $d[i, j] = min(d[i，j-1], d[i + 2^(j-1)，j-1])$</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">RMQ</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) d[i][<span class="number">0</span>] = a[i];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; (<span class="number">1</span> &lt;&lt; j) &lt;= n; ++j)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt; n; ++i)</span><br><span class="line">      d[i][j] = <span class="built_in">min</span>(d[i][j - <span class="number">1</span>], d[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2）查询：</p><p>　假如我们需要查询的区间为 $(i,j)$ ，那么我们需要找到覆盖这个闭区间(左边界取 $i$，右边界取 $j$)的最小幂（可以重复，比如查询1，2，3，4，5，5不是2的任意次方，但我们可以查询1234和2345）。</p><p>　这个查询长度我们取范围小于等于区间长度的最大 $(2^k)$，这样我们查询 $i$ 到 $i + (2^k)$ 与 $j - (2^k) + 1$ 到 $j$ 的值，取二者最小值即可，代码实现如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> ((<span class="number">1</span> &lt;&lt; (k + <span class="number">1</span>)) &lt;= R - L + <span class="number">1</span>) ++k;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">min</span>(d[L][k], d[R - (<span class="number">1</span> &lt;&lt; k) + <span class="number">1</span>][k]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;RMQ（Range Minimum/Maximum Query），区间最值查询问题，是指：对于长度为 $n$ 的数列A，回答若干次询问 $RMQ(i,j)$，返回数列A中下标在区间 $[i,j]$ 中的最小/大值。&lt;/p&gt;
+&lt;p&gt;这里介绍Tarjan的Sparse-Tabl</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>每日一题：树中距离之和</title>
@@ -450,31 +471,6 @@
     
     
     <category term="数学" scheme="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>存在负数的背包问题</title>
-    <link href="http://yoursite.com/2020/09/02/%E5%AD%98%E5%9C%A8%E8%B4%9F%E6%95%B0%E7%9A%84%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2020/09/02/%E5%AD%98%E5%9C%A8%E8%B4%9F%E6%95%B0%E7%9A%84%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</id>
-    <published>2020-09-02T05:23:38.000Z</published>
-    <updated>2020-10-05T14:38:43.877Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目1"><a href="#题目1" class="headerlink" title="题目1"></a>题目1</h2><p>体积和价值可能为负数的01背包。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>逆向思维，对于体积为负的物品，我们可以一开始就装进去，背包对应的进行扩容，物品的体积和价值也对应取反。这样在进行背包dp 的时候就代表移除这个物品，答案取最大值即可。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">410</span>;</span><br><span class="line"><span class="keyword">int</span> c[N], v[N], ans;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">40010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> N, M;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;N, &amp;M);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;c[i], &amp;v[i]);</span><br><span class="line">    <span class="keyword">if</span> (c[i] &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">      ans += v[i];</span><br><span class="line">      M -= c[i];</span><br><span class="line">      c[i] = -c[i];</span><br><span class="line">      v[i] = -v[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++)  </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = M; j &gt;= c[i]; j--) dp[j] = max(dp[j], dp[j - c[i]] + v[i]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= M; i++) &#123;</span><br><span class="line">    dp[M] = max(dp[M], dp[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans + dp[M]);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目2"><a href="#题目2" class="headerlink" title="题目2"></a>题目2</h2><p>体积和价值可能为负数且要求所取的物品体积之和和价值之和都大于0的条件下，两者总和最大的01背包。$(n = 100, -1000&lt;=v,w&lt;=1000)$</p><h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h2><p>由于体积可能为负，因此需要负数转化为正数，以 $100000$ 为分界线划分为左边代表正数，右边代表负数做背包dp即可，当体积为负时，转移是由大的容量转移过来，需要从小到大遍历。最后取分界线右侧且dp值大于 0 的体积加价值最大值即可。</p><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> m = <span class="number">2e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n, x, y, res, dp[m];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) dp[i] = -m;</span><br><span class="line">  dp[<span class="number">100000</span>] = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">    <span class="keyword">if</span> (x &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = m - <span class="number">1</span>; j &gt;= x; j--) &#123;</span><br><span class="line">        <span class="keyword">if</span> (dp[j - x] != -m) dp[j] = max(dp[j], dp[j - x] + y);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m + x; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (dp[j - x] != -m) dp[j] = max(dp[j], dp[j - x] + y);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100000</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (dp[i] &gt; <span class="number">0</span>) res = max(res, dp[i] + i - <span class="number">100000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;题目1&quot;&gt;&lt;a href=&quot;#题目1&quot; class=&quot;headerlink&quot; title=&quot;题目1&quot;&gt;&lt;/a&gt;题目1&lt;/h2&gt;&lt;p&gt;体积和价值可能为负数的01背包。&lt;/p&gt;
-&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;</summary>
-      
-    
-    
-    
-    <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
