@@ -955,6 +955,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://yoursite.com/tags/RMQ/</loc>
+    <lastmod>2020-10-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
