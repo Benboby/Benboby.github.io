@@ -190,6 +190,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/qiuye.jpeg">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/" class="post-title-link" itemprop="url">每日一题：最小区间</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-01 18:41:27 / 修改时间：18:57:28" itemprop="dateCreated datePublished" datetime="2020-08-01T18:41:27+08:00">2020-08-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>你有 k 个升序排列的整数数组。找到一个最小区间，使得 k 个列表中的每个列表至少有一个数包含在其中。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>直接对所有的数排序，然后优先队列维护一个k个数组都有值存在且对当前来说长度最小的滑动窗口，同时维护答案即可。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> val, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">            <span class="keyword">this</span>.id = id;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> val, id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] smallestRange(List&lt;List&lt;Integer&gt;&gt; nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        PriorityQueue&lt;Node&gt; q = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="keyword">new</span> Comparator&lt;Node&gt;()&#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Node a, Node b)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> a.val - b.val;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        PriorityQueue&lt;Node&gt; q1 = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="keyword">new</span> Comparator&lt;Node&gt;()&#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Node a, Node b)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> a.val - b.val;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            List&lt;Integer&gt; num = nums.get(i);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; num.size(); j++) &#123;</span><br><span class="line">                Node node = <span class="keyword">new</span> Node(num.get(j), i);</span><br><span class="line">                q.add(node);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>, dis = <span class="number">1000000000</span>;</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">while</span> (q.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            Node now = q.poll();</span><br><span class="line">            q1.add(now);</span><br><span class="line">            <span class="keyword">if</span>(map.get(now.id) == <span class="keyword">null</span>) &#123;</span><br><span class="line">                cnt++;</span><br><span class="line">                map.put(now.id, <span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">int</span> x = map.get(now.id);</span><br><span class="line">                map.remove(now.id);</span><br><span class="line">                map.put(now.id, x + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(q1.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                Node x = q1.peek();</span><br><span class="line">                <span class="keyword">if</span>(map.get(x.id) == <span class="number">1</span>)</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    q1.poll();</span><br><span class="line">                    <span class="keyword">int</span> y = map.get(x.id);</span><br><span class="line">                    map.remove(x.id);</span><br><span class="line">                    map.put(x.id, y - <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(q1.size() &gt; <span class="number">0</span> &amp;&amp; cnt == n &amp;&amp; dis &gt; now.val - q1.peek().val) &#123;</span><br><span class="line">                dis = now.val - q1.peek().val;</span><br><span class="line">                res[<span class="number">0</span>] = q1.peek().val;</span><br><span class="line">                res[<span class="number">1</span>] = now.val;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%A4%9A%E7%9A%84%E4%B8%8D%E9%87%8D%E5%8F%A0%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1661,104 +1759,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AContest-%EF%BC%88%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/qiuye.jpeg">
-      <meta itemprop="name" content="Benboby">
-      <meta itemprop="description" content="Don't stop programming.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Benboby's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AContest-%EF%BC%88%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%EF%BC%89/" class="post-title-link" itemprop="url">每日一题：Contest （树状数组）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-04 18:48:14 / 修改时间：19:57:37" itemprop="dateCreated datePublished" datetime="2020-06-04T18:48:14+08:00">2020-06-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AContest-%EF%BC%88%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%EF%BC%89/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9AContest-%EF%BC%88%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%EF%BC%89/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p> $n$ 支队伍一共参加了三场比赛。<br>一支队伍 $x$ 认为自己比另一支队伍 $y$ 强当且仅当 $x$ 在至少一场比赛中比 $y$ 的排名高。<br>求有多少组 $(x,y)$，使得 $x$ 自己觉得比 $y$ 强，$y$ 自己也觉得比 $x$ 强，$(x, y)$, $(y, x)$算一组。</p>
-<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>若 $x$ 和 $y$ 都互相认为更强，那么必定存在两场，一场 $x$ 强于 $y$，一场 $y$ 强于 $x$，那么就是对于任意两场求逆序数，最后的答案需要除以2，因为如果两队互认为更强，必定存在 $x$ 有两场更强，或者 $y$ 有两场更强，那么计算逆序数时就多计算了一次。</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const ll N = <span class="number">2</span>e5 + <span class="number">5</span>;</span><br><span class="line">ll n, res, t[N];</span><br><span class="line"></span><br><span class="line">struct Node &#123;</span><br><span class="line">  ll a, b, c;</span><br><span class="line">&#125; <span class="string">q[N]</span>;</span><br><span class="line"></span><br><span class="line">bool cmpa(Node <span class="keyword">x</span>, Node <span class="keyword">y</span>) &#123; <span class="keyword">return</span> x.a &lt; y.a; &#125;</span><br><span class="line">bool cmpb(Node <span class="keyword">x</span>, Node <span class="keyword">y</span>) &#123; <span class="keyword">return</span> x.b &lt; y.b; &#125;</span><br><span class="line"></span><br><span class="line">void add(ll <span class="keyword">x</span>) &#123;</span><br><span class="line">  <span class="keyword">while</span> (<span class="keyword">x</span> &lt;= n) &#123;</span><br><span class="line">    t[<span class="keyword">x</span>]++;</span><br><span class="line">    <span class="keyword">x</span> += <span class="keyword">x</span> &amp; -<span class="keyword">x</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll query(ll <span class="keyword">x</span>) &#123;</span><br><span class="line">  ll sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="keyword">x</span>) &#123;</span><br><span class="line">    sum += t[<span class="keyword">x</span>];</span><br><span class="line">    <span class="keyword">x</span> -= <span class="keyword">x</span> &amp; -<span class="keyword">x</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main() &#123;</span><br><span class="line">  cin &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i++) cin &gt;&gt; <span class="string">q[i]</span>.a &gt;&gt; <span class="string">q[i]</span>.b &gt;&gt; <span class="string">q[i]</span>.c;</span><br><span class="line">  <span class="keyword">sort</span>(<span class="keyword">q</span> + <span class="number">1</span>, <span class="keyword">q</span> + n + <span class="number">1</span>, cmpa);</span><br><span class="line">  <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    add(<span class="string">q[i]</span>.b);</span><br><span class="line">    res += i - query(<span class="string">q[i]</span>.b);</span><br><span class="line">  &#125;</span><br><span class="line">  memset(t, <span class="number">0</span>, sizeof(t));</span><br><span class="line">  <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    add(<span class="string">q[i]</span>.c);</span><br><span class="line">    res += i - query(<span class="string">q[i]</span>.c);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">sort</span>(<span class="keyword">q</span> + <span class="number">1</span>, <span class="keyword">q</span> + n + <span class="number">1</span>, cmpb);</span><br><span class="line">  memset(t, <span class="number">0</span>, sizeof(t));</span><br><span class="line">  <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    add(<span class="string">q[i]</span>.c);</span><br><span class="line">    res += i - query(<span class="string">q[i]</span>.c);</span><br><span class="line">  &#125;</span><br><span class="line">  cout &lt;&lt; res / <span class="number">2</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1829,7 +1829,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-count">98</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1913,13 +1913,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">162k</span>
+    <span title="站点总字数">163k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:27</span>
+    <span title="站点阅读时长">2:28</span>
 </div>
 
         
