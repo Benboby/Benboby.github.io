@@ -1,4 +1,4 @@
-### [Welcome to My Blog](https://benboby.github.io/)
+### [Welcome to My Blog](https://benboby.top/)
 
 #### 这里是小黄的blog，用于记录日常的学习和刷题
 
