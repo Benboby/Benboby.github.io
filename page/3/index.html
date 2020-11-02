@@ -190,6 +190,162 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/04/Java%E5%B8%B8%E9%87%8F%E6%B1%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/qiuye.jpeg">
+      <meta itemprop="name" content="Benboby">
+      <meta itemprop="description" content="Don't stop programming.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benboby's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/04/Java%E5%B8%B8%E9%87%8F%E6%B1%A0/" class="post-title-link" itemprop="url">Java常量池</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-04 13:14:36" itemprop="dateCreated datePublished" datetime="2020-09-04T13:14:36+08:00">2020-09-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-30 14:11:41" itemprop="dateModified" datetime="2020-09-30T14:11:41+08:00">2020-09-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/04/Java%E5%B8%B8%E9%87%8F%E6%B1%A0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/04/Java%E5%B8%B8%E9%87%8F%E6%B1%A0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="什么是常量"><a href="#什么是常量" class="headerlink" title="什么是常量"></a>什么是常量</h3><p>用final修饰的成员变量表示常量，值一旦给定就无法改变！</p>
+<p>final修饰的变量有三种：<strong>静态变量</strong>、<strong>实例变量</strong>和<strong>局部变量</strong>，分别表示三种类型的常量。</p>
+<h3 id="Class文件中的常量池"><a href="#Class文件中的常量池" class="headerlink" title="Class文件中的常量池"></a>Class文件中的常量池</h3><p>在Class文件结构中，最头的4个字节用于存储魔数Magic Number，用于确定一个文件是否能被JVM接受，再接着4个字节用于存储版本号，前2个字节存储次版本号，后2个存储主版本号，再接着是用于存放常量的常量池，由于常量的数量是不固定的，所以常量池的入口放置一个U2类型的数据(constant_pool_count)存储常量池容量计数值。</p>
+<p>常量池主要用于存放两大类常量：字面量(Literal)和符号引用量(Symbolic References)，字面量相当于Java语言层面常量的概念，如文本字符串，声明为final的常量值等，符号引用则属于编译原理方面的概念，包括了如下三种类型的常量：<strong>类和接口的全限定名</strong>，<strong>字段名称和描述符</strong>，<strong>方法名称和描述符</strong>。</p>
+<h3 id="方法区中的运行时常量池"><a href="#方法区中的运行时常量池" class="headerlink" title="方法区中的运行时常量池"></a>方法区中的运行时常量池</h3><p>运行时常量池是方法区的一部分。</p>
+<p>CLass文件中除了有类的版本、字段、方法、接口等描述信息外，还有一项信息是常量池，用于存放编译期生成的各种字面量和符号引用，这部分内容将在类加载后进入方法区的运行时常量池中存放。</p>
+<p>运行时常量池相对于CLass文件常量池的另外一个重要特征是具备动态性，Java语言并不要求常量一定只有编译期才能产生，也就是并非预置入CLass文件中常量池的内容才能进入方法区运行时常量池，运行期间也可能将新的常量放入池中，这种特性被开发人员利用比较多的就是String类的intern()方法。</p>
+<h3 id="常量池的好处"><a href="#常量池的好处" class="headerlink" title="常量池的好处"></a>常量池的好处</h3><p>常量池是为了避免频繁的创建和销毁对象而影响系统性能，其实现了对象的共享。</p>
+<p>例如字符串常量池，在编译阶段就把所有的字符串文字放到一个常量池中。<br>（1）节省内存空间：常量池中所有相同的字符串常量被合并，只占用一个空间。<br>（2）节省运行时间：比较字符串时，== 比 equals()快。对于两个引用变量，只用 == 判断引用是否相等，也就可以判断实际值是否相等。</p>
+<h3 id="双等号-的含义"><a href="#双等号-的含义" class="headerlink" title="双等号==的含义"></a>双等号==的含义</h3><p><strong>基本数据类型</strong>之间应用双等号，比较的是他们的<strong>数值</strong>。</p>
+<p><strong>复合数据类型(类)</strong>之间应用双等号，比较的是他们在<strong>内存中的存放地址</strong>。</p>
+<h2 id="8种基本类型的包装类和常量池"><a href="#8种基本类型的包装类和常量池" class="headerlink" title="8种基本类型的包装类和常量池"></a>8种基本类型的包装类和常量池</h2><p>java中基本类型的包装类的大部分都实现了常量池技术，即Byte,Short,Integer,Long,Character,Boolean；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer i1 = <span class="number">40</span>;</span><br><span class="line">Integer i2 = <span class="number">40</span>;</span><br><span class="line">System.out.println(i1==i2);<span class="comment">//输出TRUE</span></span><br></pre></td></tr></table></figure>
+<p>这5种包装类默认创建了数值[-128，127]的相应类型的缓存数据，但是超出此范围仍然会去创建新的对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Integer 缓存代码 ：</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">assert</span> IntegerCache.high &gt;= <span class="number">127</span>;</span><br><span class="line">     <span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)</span><br><span class="line">         <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer i1 = <span class="number">400</span>;</span><br><span class="line">Integer i2 = <span class="number">400</span>;</span><br><span class="line">System.out.println(i1==i2);<span class="comment">//输出false</span></span><br></pre></td></tr></table></figure>
+<p>两种浮点数类型的包装类Float,Double并没有实现常量池技术。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Double i1=<span class="number">1.2</span>;</span><br><span class="line">Double i2=<span class="number">1.2</span>;</span><br><span class="line">System.out.println(i1==i2);<span class="comment">//输出false</span></span><br></pre></td></tr></table></figure>
+<h3 id="应用常量池的场景"><a href="#应用常量池的场景" class="headerlink" title="应用常量池的场景"></a>应用常量池的场景</h3><ol>
+<li><p>Integer i1=40; Java在编译的时候会直接将代码封装成 Integer i1=Integer.valueOf(40);，从而使用常量池中的对象。</p>
+</li>
+<li><p>Integer i1 = new Integer(40); 这种情况下会创建新的对象。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Integer i1 = <span class="number">40</span>;</span><br><span class="line">Integer i2 = <span class="number">40</span>;</span><br><span class="line">Integer i3 = <span class="number">0</span>;</span><br><span class="line">Integer i4 = <span class="keyword">new</span> Integer(<span class="number">40</span>);</span><br><span class="line">Integer i5 = <span class="keyword">new</span> Integer(<span class="number">40</span>);</span><br><span class="line">Integer i6 = <span class="keyword">new</span> Integer(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"i1=i2   "</span> + (i1 == i2));</span><br><span class="line">System.out.println(<span class="string">"i1=i2+i3   "</span> + (i1 == i2 + i3));</span><br><span class="line">System.out.println(<span class="string">"i1=i4   "</span> + (i1 == i4));</span><br><span class="line">System.out.println(<span class="string">"i4=i5   "</span> + (i4 == i5));</span><br><span class="line">System.out.println(<span class="string">"i4=i5+i6   "</span> + (i4 == i5 + i6));</span><br><span class="line">System.out.println(<span class="string">"40=i5+i6   "</span> + (<span class="number">40</span> == i5 + i6));</span><br><span class="line"></span><br><span class="line">i1=i2   <span class="keyword">true</span></span><br><span class="line">i1=i2+i3   <span class="keyword">true</span></span><br><span class="line">i1=i4   <span class="keyword">false</span></span><br><span class="line">i4=i5   <span class="keyword">false</span></span><br><span class="line">i4=i5+i6   <span class="keyword">true</span></span><br><span class="line"><span class="number">40</span>=i5+i6   <span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+<p> 解释：语句i4 == i5 + i6，因为 + 这个操作符不适用于Integer对象，首先 i5 和 i6 进行自动拆箱操作，进行数值相加，即i4 == 40。然后Integer对象无法与数值进行直接比较，所以i4自动拆箱转为int值40，最终这条语句转为40 == 40进行数值比较。</p>
+</li>
+</ol>
+<h2 id="String类和常量池"><a href="#String类和常量池" class="headerlink" title="String类和常量池"></a>String类和常量池</h2><h3 id="String对象创建方式"><a href="#String对象创建方式" class="headerlink" title="String对象创建方式"></a>String对象创建方式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"abcd"</span>;</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">"abcd"</span>);</span><br><span class="line">System.out.println(str1==str2);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>这两种不同的创建方法是有差别的，第一种方式是在常量池中拿对象，第二种方式是直接在堆内存空间创建一个新的对象。<br>只要使用new方法，便需要创建新的对象。</p>
+<h3 id="连接表达式"><a href="#连接表达式" class="headerlink" title="连接表达式 +"></a>连接表达式 +</h3><ol>
+<li>只有使用引号包含文本的方式创建的String对象之间使用“+”连接产生的新对象才会被加入字符串池中。</li>
+<li>对于所有包含new方式新建对象（包括null）的“+”连接表达式，它所产生的新对象都不会被加入字符串池中。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"str"</span>;</span><br><span class="line">String str2 = <span class="string">"ing"</span>;</span><br><span class="line"></span><br><span class="line">String str3 = <span class="string">"str"</span> + <span class="string">"ing"</span>;</span><br><span class="line">String str4 = str1 + str2;</span><br><span class="line">System.out.println(str3 == str4);<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">String str5 = <span class="string">"string"</span>;</span><br><span class="line">System.out.println(str3 == str5);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>特例1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String A = <span class="string">"ab"</span>; <span class="comment">// 常量A</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String B = <span class="string">"cd"</span>; <span class="comment">// 常量B</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">String s = A + B;  <span class="comment">// 将两个常量用+连接对s进行初始化</span></span><br><span class="line">String t = <span class="string">"abcd"</span>;</span><br><span class="line"><span class="keyword">if</span> (s == t) &#123;</span><br><span class="line">    System.out.println(<span class="string">"s等于t，它们是同一个对象"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">"s不等于t，它们不是同一个对象"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// s等于t，它们是同一个对象</span></span><br></pre></td></tr></table></figure>
+<p>A和B都是常量，值是固定的，因此s的值也是固定的，它在类被编译时就已经确定了。也就是说：String s = A + B; 等同于：String s = ”ab” + ”cd”;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String A; <span class="comment">// 常量A</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String B; <span class="comment">// 常量B</span></span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">    A = <span class="string">"ab"</span>;</span><br><span class="line">    B = <span class="string">"cd"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 将两个常量用+连接对s进行初始化</span></span><br><span class="line">    String s = A + B;</span><br><span class="line">    String t = <span class="string">"abcd"</span>;</span><br><span class="line">    <span class="keyword">if</span> (s == t) &#123;</span><br><span class="line">        System.out.println(<span class="string">"s等于t，它们是同一个对象"</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"s不等于t，它们不是同一个对象"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// s不等于t，它们不是同一个对象</span></span><br></pre></td></tr></table></figure>
+<p>A和B虽然被定义为常量，但是它们都没有马上被赋值。在运算出s的值之前，他们何时被赋值，以及被赋予什么样的值，都是个变数。因此A和B在被赋值之前，性质类似于一个变量。那么s就不能在编译期被确定，而只能在运行时被创建了。</p>
+<h3 id="String-s1-new-String-“xyz”-创建了几个对象？"><a href="#String-s1-new-String-“xyz”-创建了几个对象？" class="headerlink" title="String s1 = new String(“xyz”); 创建了几个对象？"></a>String s1 = new String(“xyz”); 创建了几个对象？</h3><p>考虑类加载阶段和实际执行时。</p>
+<ol>
+<li><p>类加载对一个类只会进行一次。”xyz”在类加载时就已经创建并驻留了（如果该类被加载之前已经有”xyz”字符串被驻留过则不需要重复创建用于驻留的”xyz”实例）。驻留的字符串是放在全局共享的字符串常量池中的。</p>
+</li>
+<li><p>在这段代码后续被运行的时候，”xyz”字面量对应的String实例已经固定了，不会再被重复创建。所以这段代码将常量池中的对象复制一份放到heap中，并且把heap中的这个对象的引用交给 s1 持有。</p>
+</li>
+</ol>
+<p>这条语句创建了2个对象。</p>
+<h3 id="java-lang-String-intern"><a href="#java-lang-String-intern" class="headerlink" title="java.lang.String.intern()"></a>java.lang.String.intern()</h3><p>运行时常量池相对于CLass文件常量池的另外一个重要特征是具备动态性，Java语言并不要求常量一定只有编译期才能产生，也就是并非预置入CLass文件中常量池的内容才能进入方法区运行时常量池，运行期间也可能将新的常量放入池中，这种特性被开发人员利用比较多的就是String类的intern()方法。</p>
+<p>String的intern()方法会查找在常量池中是否存在一份equal相等的字符串,如果有则返回该字符串的引用,如果没有则添加自己的字符串进入常量池。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   String s1 = <span class="keyword">new</span> String(<span class="string">"计算机"</span>);</span><br><span class="line">   String s2 = s1.intern();</span><br><span class="line">   String s3 = <span class="string">"计算机"</span>;</span><br><span class="line">   System.out.println(<span class="string">"s1 == s2? "</span> + (s1 == s2));</span><br><span class="line">   System.out.println(<span class="string">"s3 == s2? "</span> + (s3 == s2));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// s1 == s2? false</span></span><br><span class="line"><span class="comment">// s3 == s2? true</span></span><br></pre></td></tr></table></figure>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   String hello = <span class="string">"Hello"</span>, lo = <span class="string">"lo"</span>;</span><br><span class="line">   System.out.println((hello == <span class="string">"Hello"</span>) + <span class="string">" "</span>);</span><br><span class="line">   System.out.println((Other.hello == hello) + <span class="string">" "</span>);</span><br><span class="line">   System.out.println((other.Other.hello == hello) + <span class="string">" "</span>);</span><br><span class="line">   System.out.println((hello == (<span class="string">"Hel"</span>+<span class="string">"lo"</span>)) + <span class="string">" "</span>);</span><br><span class="line">   System.out.println((hello == (<span class="string">"Hel"</span>+lo)) + <span class="string">" "</span>);</span><br><span class="line">   System.out.println(hello == (<span class="string">"Hel"</span>+lo).intern());</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Other</span> </span>&#123; <span class="keyword">static</span> String hello = <span class="string">"Hello"</span>; &#125;</span><br><span class="line"><span class="keyword">package</span> other;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Other</span> </span>&#123; <span class="keyword">public</span> <span class="keyword">static</span> String hello = <span class="string">"Hello"</span>; &#125;</span><br><span class="line"><span class="comment">// true true true true false true</span></span><br></pre></td></tr></table></figure>
+<p>在同包同类下，引用自同一String对象。</p>
+<p>在同包不同类下，引用自同一String对象。</p>
+<p>在不同包不同类下，依然引用自同一String对象。</p>
+<p>在编译成.class时能够识别为同一字符串的，自动优化成常量，引用自同一String对象。</p>
+<p>在运行时创建的字符串具有独立的内存地址，所以不引用自同一String对象。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/03/CMakeLists%E7%9A%84%E7%BC%96%E5%86%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1251,110 +1407,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/LeetCode214%EF%BC%9A%E6%9C%80%E7%9F%AD%E5%9B%9E%E6%96%87%E4%B8%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/qiuye.jpeg">
-      <meta itemprop="name" content="Benboby">
-      <meta itemprop="description" content="Don't stop programming.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Benboby's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/29/LeetCode214%EF%BC%9A%E6%9C%80%E7%9F%AD%E5%9B%9E%E6%96%87%E4%B8%B2/" class="post-title-link" itemprop="url">LeetCode：最短回文串</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-29 19:18:12" itemprop="dateCreated datePublished" datetime="2020-08-29T19:18:12+08:00">2020-08-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 13:23:40" itemprop="dateModified" datetime="2020-08-31T13:23:40+08:00">2020-08-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/08/29/LeetCode214%EF%BC%9A%E6%9C%80%E7%9F%AD%E5%9B%9E%E6%96%87%E4%B8%B2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/29/LeetCode214%EF%BC%9A%E6%9C%80%E7%9F%AD%E5%9B%9E%E6%96%87%E4%B8%B2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>591</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一个字符串 $s$，你可以通过在字符串前面添加字符将其转换为回文串。找到并返回可以用这种方式转换的最短回文串。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>等价于求字符串 $s$ 以 $s_0$ 开头的最长回文串，然后多出来的后缀翻转后就是需要补足的最小长度，判断回文可以采用哈希。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">shortestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">long</span> left = <span class="number">0</span>, right = <span class="number">0</span>, base = <span class="number">13331</span>, mod = <span class="number">1000000007</span>, pre = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> pos = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            left = (left * base + s.charAt(i)) % mod;</span><br><span class="line">            right = (right + pre * s.charAt(i)) % mod;</span><br><span class="line">            <span class="keyword">if</span> (left == right) &#123;</span><br><span class="line">                pos = i;</span><br><span class="line">            &#125;</span><br><span class="line">            pre = pre * base % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        String add = (pos == n-<span class="number">1</span> ? <span class="string">""</span> : s.substring(pos+<span class="number">1</span>,n));</span><br><span class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder(add).reverse();</span><br><span class="line">        res.append(s);</span><br><span class="line">        <span class="keyword">return</span> res.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1425,7 +1477,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">102</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1438,7 +1490,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1509,13 +1561,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">173k</span>
+    <span title="站点总字数">176k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:37</span>
+    <span title="站点阅读时长">2:40</span>
 </div>
 
 
