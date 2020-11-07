@@ -22,20 +22,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="内存管理内存管理详解内存分配方式在C++中，内存分为5个区：  栈：执行函数时，函数内部局部变量存储单元在栈上创建，结束时自动释放。效率很高，但存储容量有限。 堆：由new分配的内存块，编译起器不会自动释放，需要delete进行释放。如果没有释放，则程序运行结束后会由操作系统自动回收。 自由存储区：由malloc等分配的内存块，类似堆，由free结束自己的生命。 全局&#x2F;静态存储区：存储全局变量和静">
+  <meta name="description" content="constexpr关键字constexpr关键字是C++11新增的关键字，其语义是“常量表达式”，也就是在编译期可求值的表达式。 对于constexpr修饰的函数：  函数体一般只包含一个return语句； 函数体可以包含其他语句，但是不能是运行期语句，只能是编译期语句；  1234567constexpr int Inc(int i) &amp;#123;    return i + 1;&amp;#125;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++内存管理">
-<meta property="og:url" content="http://yoursite.com/2020/11/02/C-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:title" content="C++11中的constexpr">
+<meta property="og:url" content="http://yoursite.com/2020/11/07/C-11%EF%BC%9Aconstexpr/index.html">
 <meta property="og:site_name" content="Benboby&#39;s Blog">
-<meta property="og:description" content="内存管理内存管理详解内存分配方式在C++中，内存分为5个区：  栈：执行函数时，函数内部局部变量存储单元在栈上创建，结束时自动释放。效率很高，但存储容量有限。 堆：由new分配的内存块，编译起器不会自动释放，需要delete进行释放。如果没有释放，则程序运行结束后会由操作系统自动回收。 自由存储区：由malloc等分配的内存块，类似堆，由free结束自己的生命。 全局&#x2F;静态存储区：存储全局变量和静">
+<meta property="og:description" content="constexpr关键字constexpr关键字是C++11新增的关键字，其语义是“常量表达式”，也就是在编译期可求值的表达式。 对于constexpr修饰的函数：  函数体一般只包含一个return语句； 函数体可以包含其他语句，但是不能是运行期语句，只能是编译期语句；  1234567constexpr int Inc(int i) &amp;#123;    return i + 1;&amp;#125;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-02T03:12:51.000Z">
-<meta property="article:modified_time" content="2020-11-02T14:03:28.154Z">
+<meta property="article:published_time" content="2020-11-07T04:29:59.000Z">
+<meta property="article:modified_time" content="2020-11-07T11:57:57.889Z">
 <meta property="article:author" content="Benboby">
-<meta property="article:tag" content="C++内存管理">
+<meta property="article:tag" content="C++面向对象">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/11/02/C-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
+<link rel="canonical" href="http://yoursite.com/2020/11/07/C-11%EF%BC%9Aconstexpr/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>C++内存管理 | Benboby's Blog</title>
+  <title>C++11中的constexpr | Benboby's Blog</title>
   
 
 
@@ -194,7 +194,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/02/C-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/07/C-11%EF%BC%9Aconstexpr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/qiuye.jpeg">
@@ -207,7 +207,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C++内存管理
+          C++11中的constexpr
         </h1>
 
         <div class="post-meta">
@@ -218,7 +218,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-02 11:12:51 / 修改时间：22:03:28" itemprop="dateCreated datePublished" datetime="2020-11-02T11:12:51+08:00">2020-11-02</time>
+              <time title="创建时间：2020-11-07 12:29:59 / 修改时间：19:57:57" itemprop="dateCreated datePublished" datetime="2020-11-07T12:29:59+08:00">2020-11-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,8 +246,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/11/02/C-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/02/C-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/11/07/C-11%EF%BC%9Aconstexpr/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/07/C-11%EF%BC%9Aconstexpr/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -257,14 +257,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
+              <span>3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -276,37 +276,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><h3 id="内存管理详解"><a href="#内存管理详解" class="headerlink" title="内存管理详解"></a>内存管理详解</h3><h4 id="内存分配方式"><a href="#内存分配方式" class="headerlink" title="内存分配方式"></a>内存分配方式</h4><p>在C++中，内存分为5个区：</p>
+        <h2 id="constexpr关键字"><a href="#constexpr关键字" class="headerlink" title="constexpr关键字"></a>constexpr关键字</h2><p>constexpr关键字是C++11新增的关键字，其语义是“常量表达式”，也就是在编译期可求值的表达式。</p>
+<p>对于constexpr修饰的函数：</p>
 <ol>
-<li>栈：执行函数时，函数内部局部变量存储单元在栈上创建，结束时自动释放。效率很高，但存储容量有限。</li>
-<li>堆：由new分配的内存块，编译起器不会自动释放，需要delete进行释放。如果没有释放，则程序运行结束后会由操作系统自动回收。</li>
-<li>自由存储区：由malloc等分配的内存块，类似堆，由free结束自己的生命。</li>
-<li>全局/静态存储区：存储全局变量和静态变量。</li>
-<li>常量存储区：存放常量，不允许修改。</li>
+<li>函数体一般只包含一个return语句；</li>
+<li>函数体可以包含其他语句，但是不能是运行期语句，只能是编译期语句；</li>
 </ol>
-<h4 id="明确区分堆和栈"><a href="#明确区分堆和栈" class="headerlink" title="明确区分堆和栈"></a>明确区分堆和栈</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>* p = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在栈内存中存放了一个指向一块堆内存的指针p。程序会先确定在堆中分配内存的大小，然后调用 operator new 分配内存，然后返回这块内存的首地址，放入栈中。</p>
-<p>汇编代码如下：<br><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">00401028 </span>push <span class="number">14</span>h </span><br><span class="line"><span class="number">0040102</span>A <span class="keyword">call</span> operator <span class="keyword">new</span> (<span class="number">00401060</span>) </span><br><span class="line"><span class="number">0040102</span>F add esp,<span class="number">4</span> </span><br><span class="line"><span class="symbol">00401032 </span>mov dword ptr [ebp-<span class="number">8</span>],eax </span><br><span class="line"><span class="symbol">00401035 </span>mov eax,dword ptr [ebp-<span class="number">8</span>] </span><br><span class="line"><span class="symbol">00401038 </span>mov dword ptr [ebp-<span class="number">4</span>],eax</span><br></pre></td></tr></table></figure></p>
-<p>这里并没有释放内存，因此需要 <strong>delete[] p</strong>，告诉编译器删除的是数组，然后编译器根据Cookie信息去释放内存。</p>
-<h4 id="堆和栈的区别"><a href="#堆和栈的区别" class="headerlink" title="堆和栈的区别"></a>堆和栈的区别</h4><ol>
-<li>管理方式：栈由编译器自动管理，无需手动控制；堆释放工作由程序员控制，容易产生内存泄露。</li>
-<li>空间大小：堆内存一般不超过系统内存都是可以申请的，栈内存默认为8M（个人测试）。</li>
-<li>碎片问题：对于堆而言，频繁的new/delete势必会造成内存空间的不连续，造成大量的碎片，使程序的效率降低；对于栈而言，则不会发生这样的情况，先进后出，以至于永远不可能有一个内存块从非栈顶位置弹出。</li>
-<li>生长方向：对于堆而言，生长方向向上，向着内存地址增加的方向增长；对于栈而言，生长方向向下，向着内存地址减小的方向增长。</li>
-<li>分配方式：堆都是动态分配的，没有静态分配的堆。栈有动态分配和静态分配两种，静态分配由编译器完成，比如局部变量的分配；动态分配由alloc函数进行分配，都由编译器进行释放。</li>
-<li>分配效率：栈是机器系统提供的数据结构，计算机会在底层对栈提供支持：分配专门的寄存器存放栈的地址，压栈出栈都有专门的指令执行，这就决定了栈的效率比较高。堆则是 C/C++ 函数库提供的，它的机制是很复杂的，例如为了分配一块内存，库函数会按照一定的算法在堆内存中搜索可用的足够大小的空间，如果没有足够大小的空间（可能是由于内存碎片太多），就有可能调用系统功能去增加程序数据段的内存空间，这样就有机会分到足够大小的内存，然后进行返回。显然，堆的效率比栈要低得多。</li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">constexpr</span> <span class="keyword">int</span> <span class="title">Inc</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> a = Inc(<span class="number">1</span>); <span class="comment">// ok</span></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> b = Inc(<span class="built_in">cin</span>.<span class="built_in">get</span>()); <span class="comment">// !error</span></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> c = a * <span class="number">2</span> + <span class="number">1</span>; <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
+<p>constexpr还能用于修饰类的构造函数，即保证如果提供给该构造函数的参数都是constexpr，那么产生的对象中的所有成员都会是constexpr，该对象也就是constexpr对象了，可用于各种只能使用constexpr的场合。注意，constexpr构造函数必须有一个空的函数体，即所有成员变量的初始化都放到初始化列表中。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span> &#123;</span></span><br><span class="line">    constexpr A(int xx, int yy): x(xx), y(yy) &#123;&#125;</span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> A <span class="title">a</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>)</span></span>;</span><br><span class="line"><span class="keyword">enum</span> &#123;SIZE_X = a.x, SIZE_Y = a.y&#125;;</span><br></pre></td></tr></table></figure>
+<p>好处：</p>
+<ol>
+<li>是一种很强的约束，更好地保证程序的正确语义不被破坏。</li>
+<li>编译器可以在编译期对constexpr的代码进行非常大的优化，比如将用到的constexpr表达式都直接替换成最终结果等。</li>
+<li>相比宏来说，没有额外的开销，但更安全可靠。</li>
 </ol>
-<p>从这里我们可以看到，堆和栈相比，由于大量 new/delete 的使用，容易造成大量的内存碎片；由于没有专门的系统支持，效率很低；由于可能引发用户态和核心态的切换，内存的申请，代价变得更加昂贵。所以栈在程序中是应用最广泛的，就算是函数的调用也利用栈去完成，函数调用过程中的参数，返回地址，EBP 和局部变量都采用栈的方式存放。所以，尽量使用栈，而不是用堆。</p>
-<p>虽然栈有如此多的好处，但和堆相比并不灵活。如果需要分配大量内存空间，还是堆好一些。</p>
-<h3 id="重载全局的new和delete操作"><a href="#重载全局的new和delete操作" class="headerlink" title="重载全局的new和delete操作"></a>重载全局的new和delete操作</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> * <span class="keyword">operator</span> <span class="title">new</span><span class="params">(<span class="keyword">size_t</span> <span class="built_in">size</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">void</span> *p = <span class="built_in">malloc</span>(<span class="built_in">size</span>); </span><br><span class="line">    <span class="keyword">return</span> (p); </span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="keyword">operator</span> <span class="title">delete</span><span class="params">(<span class="keyword">void</span> *p)</span></span>; </span><br><span class="line">&#123; </span><br><span class="line">    <span class="built_in">free</span>(p); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>也可以对单个类的 new 和 delete 操作符重载。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestClass</span> &#123;</span> </span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">    <span class="function"><span class="keyword">void</span> * <span class="keyword">operator</span> <span class="title">new</span><span class="params">(<span class="keyword">size_t</span> <span class="built_in">size</span>)</span></span>; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="keyword">operator</span> <span class="title">delete</span><span class="params">(<span class="keyword">void</span> *p)</span></span>; </span><br><span class="line">    <span class="comment">// .. other members here ... </span></span><br><span class="line">&#125;; </span><br><span class="line"><span class="function"><span class="keyword">void</span> *TestClass::<span class="keyword">operator</span> <span class="title">new</span><span class="params">(<span class="keyword">size_t</span> <span class="built_in">size</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">void</span> *p = <span class="built_in">malloc</span>(<span class="built_in">size</span>); <span class="comment">// Replace this with alternative allocator </span></span><br><span class="line">    <span class="keyword">return</span> (p); </span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">void</span> TestClass::<span class="keyword">operator</span> <span class="title">delete</span><span class="params">(<span class="keyword">void</span> *p)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">// Replace this with alternative de-allocator</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>C++将对象数组的内存分配作为一个单独的操作，而不同于单个对象的内存分配。为了改变这种方式，你同样需要重载 new[] 和 delete[]操作符。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestClass</span> &#123;</span> </span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">    <span class="keyword">void</span> * <span class="keyword">operator</span> <span class="keyword">new</span>[ ](<span class="keyword">size_t</span> <span class="built_in">size</span>); </span><br><span class="line">    <span class="keyword">void</span> <span class="keyword">operator</span> <span class="keyword">delete</span>[ ](<span class="keyword">void</span> *p); </span><br><span class="line">    <span class="comment">// .. other members here .. </span></span><br><span class="line">&#125;; </span><br><span class="line"><span class="keyword">void</span> *TestClass::<span class="keyword">operator</span> <span class="keyword">new</span>[ ](<span class="keyword">size_t</span> <span class="built_in">size</span>) </span><br><span class="line">&#123; </span><br><span class="line">    <span class="keyword">void</span> *p = <span class="built_in">malloc</span>(<span class="built_in">size</span>); </span><br><span class="line">    <span class="keyword">return</span> (p); </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">void</span> TestClass::<span class="keyword">operator</span> <span class="keyword">delete</span>[ ](<span class="keyword">void</span> *p) </span><br><span class="line">&#123; </span><br><span class="line">    <span class="built_in">free</span>(p); </span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    TestClass *p = <span class="keyword">new</span> TestClass[<span class="number">10</span>]; </span><br><span class="line">    <span class="comment">// ... etc ... </span></span><br><span class="line">    <span class="keyword">delete</span>[ ] p; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>PS：对于多数 C++ 的实现，new[]操作符中的个数参数是数组的大小加上额外的存储对象数目的一些字节。因此应该尽量避免分配对象数组，使内存分配策略简单。</p>
-<h3 id="常见的内存错误及其对策"><a href="#常见的内存错误及其对策" class="headerlink" title="常见的内存错误及其对策"></a>常见的内存错误及其对策</h3><ol>
-<li>内存分配未成功，却使用了它。如果是用 malloc 或 new 来申请内存，应该用 if(p==NULL) 或 if(p!=NULL)进行防错处理。如果指针 p 是函数的参数，那么在函数的入口处用 assert(p!=NULL) 进行。</li>
-</ol>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>const 和 constexpr 变量之间的主要区别在于：const 变量的初始化可以延迟到运行时，而 constexpr 变量必须在编译时进行初始化。所有 constexpr 变量均为常量，因此必须使用常量表达式初始化。</p>
+<h3 id="修饰指针"><a href="#修饰指针" class="headerlink" title="修饰指针"></a>修饰指针</h3><p>在使用const时，如果关键字const出现在星号左边，表示被指物是常量；如果出现在星号右边，表示指针本身是常量；如果出现在星号两边，表示被指物和指针两者都是常量。</p>
+<p>与const不同，在constexpr声明中如果定义了一个指针，限定符constexpr仅对指针有效，与指针所指对象无关。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> g_tempA = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> g_conTempA = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> g_conexprTempA = <span class="number">4</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> tempA = <span class="number">4</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> conTempA = <span class="number">4</span>;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> conexprTempA = <span class="number">4</span>;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">/*1.正常运行,编译通过*/</span></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> *conptrA = &amp;tempA;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> *conptrB = &amp;conTempA;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> *conptrC = &amp;conexprTempA;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">/*2.局部变量的地址要运行时才能确认，故不能在编译期决定，编译不过*/</span></span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> *conexprPtrA = &amp;tempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> *conexprPtrB = &amp;conTempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> *conexprPtrC = &amp;conexprTempA;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">/*3.第一个通过，后面两个不过,因为constexpr int *所限定的是指针是常量，故不能将常量的地址赋给顶层const*/</span></span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> *conexprPtrD = &amp;g_tempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> *conexprPtrE = &amp;g_conTempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> *conexprPtrF = &amp;g_conexprTempA;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">/*4.局部变量的地址要运行时才能确认，故不能在编译期决定，编译不过*/</span></span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> *conexprConPtrA = &amp;tempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> *conexprConPtrB = &amp;conTempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> *conexprConPtrC = &amp;conexprTempA;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*5.正常运行，编译通过*/</span></span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> *conexprConPtrD = &amp;g_tempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> *conexprConPtrE = &amp;g_conTempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> *conexprConPtrF = &amp;g_conexprTempA;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="修饰引用"><a href="#修饰引用" class="headerlink" title="修饰引用"></a>修饰引用</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> g_tempA = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> g_conTempA = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> g_conexprTempA = <span class="number">4</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> tempA = <span class="number">4</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> conTempA = <span class="number">4</span>;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> conexprTempA = <span class="number">4</span>;</span><br><span class="line">	<span class="comment">/*1.正常运行，编译通过*/</span></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> &amp;conptrA = tempA;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> &amp;conptrB = conTempA;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> &amp;conptrC = conexprTempA;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">/*2.有两个问题：一是引用到局部变量，不能在编译器确定；二是conexprPtrB和conexprPtrC应该为constexpr const类型，编译不过*/</span></span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> &amp;conexprPtrA = tempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> &amp;conexprPtrB = conTempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> &amp;conexprPtrC = conexprTempA;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">/*3.第一个编译通过，后两个不通过，原因是因为conexprPtrE和conexprPtrF应该为constexpr const类型*/</span></span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> &amp;conexprPtrD = g_tempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> &amp;conexprPtrE = g_conTempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">int</span> &amp;conexprPtrF = g_conexprTempA;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">/*4.正常运行，编译通过*/</span></span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> &amp;conexprConPtrD = g_tempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> &amp;conexprConPtrE = g_conTempA;</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> &amp;conexprConPtrF = g_conexprTempA;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简单的说constexpr所引用的对象必须在编译期就决定地址。可以通过上例conexprPtrD来修改g_tempA的值，也就是说constexpr修饰的引用不是常量，如果要确保常量引用需要constexpr const来修饰。</p>
 
     </div>
 
@@ -316,7 +306,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/C-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" rel="tag"># C++内存管理</a>
+              <a href="/tags/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag"># C++面向对象</a>
           </div>
 
         
@@ -325,13 +315,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/30/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E7%BB%8F%E5%85%B8%E9%A2%98/" rel="prev" title="树状数组经典题">
-      <i class="fa fa-chevron-left"></i> 树状数组经典题
+    <a href="/2020/11/05/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84%EF%BC%8C%E4%B8%AD%E5%BF%83%EF%BC%8C%E9%87%8D%E5%BF%83/" rel="prev" title="树的直径，中心，重心">
+      <i class="fa fa-chevron-left"></i> 树的直径，中心，重心
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/11/05/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84%EF%BC%8C%E4%B8%AD%E5%BF%83%EF%BC%8C%E9%87%8D%E5%BF%83/" rel="next" title="树的直径，中心，重心">
-      树的直径，中心，重心 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -391,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存管理"><span class="nav-number">1.</span> <span class="nav-text">内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存管理详解"><span class="nav-number">1.1.</span> <span class="nav-text">内存管理详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内存分配方式"><span class="nav-number">1.1.1.</span> <span class="nav-text">内存分配方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#明确区分堆和栈"><span class="nav-number">1.1.2.</span> <span class="nav-text">明确区分堆和栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆和栈的区别"><span class="nav-number">1.1.3.</span> <span class="nav-text">堆和栈的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重载全局的new和delete操作"><span class="nav-number">1.2.</span> <span class="nav-text">重载全局的new和delete操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的内存错误及其对策"><span class="nav-number">1.3.</span> <span class="nav-text">常见的内存错误及其对策</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#constexpr关键字"><span class="nav-number">1.</span> <span class="nav-text">constexpr关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">2.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰指针"><span class="nav-number">2.1.</span> <span class="nav-text">修饰指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰引用"><span class="nav-number">2.2.</span> <span class="nav-text">修饰引用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
