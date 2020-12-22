@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-20T06:09:48.917Z</updated>
+  <updated>2020-12-22T14:38:23.913Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一题：大逃离</title>
+    <link href="http://yoursite.com/2020/12/22/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%A4%A7%E9%80%83%E7%A6%BB/"/>
+    <id>http://yoursite.com/2020/12/22/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%A4%A7%E9%80%83%E7%A6%BB/</id>
+    <published>2020-12-22T14:28:30.000Z</published>
+    <updated>2020-12-22T14:38:23.913Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>从 $n$ 个数中任选 $k$ 个数，取得这 $k$ 个数中最大的一个数，求每个数被取得的概率。$(n, k \in [1, 2e5])$</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>将数组排序后，枚举每个数被作为最大值的可能性，当第 $i$ 个数作为最大值时，其它 $k - 1$ 个一定从前 $i - 1$ 个里面选，即方案数为 $C(i - 1, k - 1)$，将其除以总方案数 $C(n, k)$ 即为被取得概率。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * @param n int整型 </span></span><br><span class="line"><span class="comment">     * @param k int整型 </span></span><br><span class="line"><span class="comment">     * @param Point int整型vector </span></span><br><span class="line"><span class="comment">     * @return int整型vector</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> f[<span class="number">200005</span>];</span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">qp</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (b) &#123;</span><br><span class="line">            <span class="keyword">if</span> (b &amp; <span class="number">1</span>) sum = sum * a % mod;</span><br><span class="line">            a = a * a % mod;</span><br><span class="line">            b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)sum;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">C</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == m || m == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> f[n] * qp(f[m], mod - <span class="number">2</span>) % mod * qp(f[n - m], mod - <span class="number">2</span>) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">city</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        <span class="keyword">auto</span> b = a;</span><br><span class="line">        sort(a.begin(), a.end());</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">long</span> <span class="keyword">long</span>&gt; mp;</span><br><span class="line">        f[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= <span class="number">200000</span>; ++i) &#123;</span><br><span class="line">            f[i] = f[i - <span class="number">1</span>] * i % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i + <span class="number">1</span> &gt;= k) </span><br><span class="line">                mp[a[i]] = C(i, k - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> sum = C(n, k);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            g.push_back(mp[b[i]] * qp(sum, mod - <span class="number">2</span>) % mod);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> g;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;从 $n$ 个数中任选 $k$ 个数，取得这 $k$ 个数中最大的一个数，求每个数被取得的概率。$(n, k \in [1, 2e5])$&lt;</summary>
+      
+    
+    
+    
+    <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+    <category term="数学" scheme="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>GCC编译器</title>
@@ -455,30 +479,6 @@
     
     
     <category term="状压dp" scheme="http://yoursite.com/tags/%E7%8A%B6%E5%8E%8Bdp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络知识点</title>
-    <link href="http://yoursite.com/2020/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    <id>http://yoursite.com/2020/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9/</id>
-    <published>2020-09-20T10:00:53.000Z</published>
-    <updated>2020-09-21T13:39:10.853Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="OSI模型"><a href="#OSI模型" class="headerlink" title="OSI模型"></a>OSI模型</h2><p>OSI七层模型是一种框架性的设计方法，建立七层模型的主要目的是为<strong>解决异种网络互连时所遇到的兼容性问题</strong>，其最主要的功能就是<strong>帮助不同类型的主机实现数据传输</strong>。它的<strong>最大优点是将服务、接口和协议这三个概念明确地区分开来</strong>，通过七个层次化的结构模型使不同的系统不同的网络之间实现可靠的通讯。</p><p>OSI七层参考模型的各个层次的划分遵循下列原则： </p><ol><li>同一层中的各网络节点都有相同的层次结构，具有同样的功能。 </li><li>同一节点内相邻层之间通过接口（可以是逻辑接口）进行通信。 </li><li>七层结构中的每一层使用下一层提供的服务，并且向其上层提供服务。 </li><li>不同节点的同等层按照协议实现对等层之间的通信。</li></ol><h3 id="各层简介"><a href="#各层简介" class="headerlink" title="各层简介"></a>各层简介</h3><h4 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h4><p>主要任务是在<strong>物理媒体</strong>上实现比特流的<strong>透明传输</strong>。传输单位是比特。</p><p><strong>透明传输：不管所传数据是什么样的比特组合，都应当能够在链路上传送。</strong></p><p>主要<strong>定义物理设备标准</strong>，如网线的接口类型、光纤的接口类型、各种传输介质的传输速率等。它的主要作用是传输比特流（就是由1、0转化为电流强弱来进行传输，到达目的地后在转化为1、0，也就是我们常说的数模转换与模数转换），这一层的数据叫做比特。</p><ul><li>定义接口特性</li><li>定义传输模式：单工，半双工，双工</li><li>定义传输速率</li><li>比特同步</li><li>比特编码</li></ul><h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>主要任务是把网络层传下来的数据报<strong>组装成帧</strong>。传输单位是<strong>帧</strong>。</p><p><strong>负责物理传输的准备</strong>。在物理层提供比特流服务的基础上，建立相邻结点之间的数据链路，通过差错控制提供数据帧（Frame）在信道上无差错的传输，并进行各电路上的动作系列。数据链路层在不可靠的物理介质上提供可靠的传输。该层的作用包括：<strong>物理地址寻址、数据的成帧、流量控制、数据的检错、重发</strong>等。在这一层，数据的单位称为帧（frame）。数据链路层协议的代表包括：SDLC、HDLC、PPP、STP、帧中继等。<strong>MAC地址和交换机在这一层</strong>。</p><ul><li>成帧：定义帧的开始和结束</li><li>差错控制：帧错+位错</li><li>流量控制</li><li>访问（接入）控制：控制对信道的访问</li></ul><h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>主要任务是把<strong>分组</strong>从源端传到目的端，为分组交换网上的不同主机提供通信服务。网络层的传输单位是<strong>数据报</strong>。</p><p>在计算机网络中进行通信的两个计算机之间可能会经过很多个数据链路，也可能还要经过很多通信子网。网络层的任务就是选择合适的网间路由和交换结点，确保数据及时传送。网络层将数据链路层提供的帧组成数据包，包中封装有网络层包头，其中含有逻辑地址信息- -源站点和目的站点地址的网络地址。如果你在谈论一个IP地址，那么你是在处理第3层的问题，这是“数据包”问题，而不是第2层的“帧”。IP是第3层问题的一部分，此外还有一些路由协议和地 址解析协议（ARP）。有关路由的一切事情都在这第3层处理。地址解析和路由是3层的重要目的。网络层还可以实现拥塞控制、网际互连等功能。在这一层，数据的单位称为<strong>数据包</strong>（packet）。网络层协议的代表包括：IP、IPX、RIP、OSPF等。<strong>负责管理网络地址、定位设备、决定路由，路由器工作在这层</strong>。包括用户数据包，路由更新包。</p><ul><li>路由选择：最佳路径</li><li>流量控制：控制发送端的速度</li><li>差错控制：查错</li><li>拥塞控制：若所有结点都来不及接受分组，而要丢弃大量分组的话，网络就处于<strong>拥塞</strong>状态。因此要采取一定措施，缓解这种拥塞。</li></ul><h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p>负责主机中<strong>两个进程</strong>的通信，即<strong>端到端</strong>的通信。传输单位是报文段或用户数据报。</p><p>OSI中最重要的一层，<strong>负责分割组合数据，实现端到端的逻辑连接</strong>。第4层的数据单元也称作<strong>数据包</strong>（packets）。但是，当你谈论TCP等具体的协议时又有特殊的叫法，TCP的数据单元称为<strong>段</strong> （segments）而UDP协议的数据单元称为<strong>“数据报（datagrams）”</strong>。这个层负责获取全部信息，因此，它必须跟踪数据单元碎片、乱序到达的 数据包和其它在传输过程中可能发生的危险。第4层为上层提供端到端（最终用户到最终用户）的透明的、可靠的数据传输服务。所为透明的传输是指在通信过程中 传输层对上层屏蔽了通信传输系统的具体细节。传输层协议的代表包括：TCP、UDP、SPX等。</p><ul><li>可靠传输，不可靠传输</li><li>差错控制</li><li>流量控制</li><li>复用分用</li></ul><h4 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h4><p>向表示层实体/用户进程提供<strong>建立连接</strong>并连接上<strong>有序地传输</strong>数据。</p><p><strong>负责在网络中两个节点间建立、维护、控制会话，区分不同的会话，以及提供单工、半双工、全双工三种通信模式服务</strong>。通过传输层（端口号：传输端口与接收端口）建立数据传输的通路，主要在你的系统之间发起会话或者接受会话请求（设备之间需要互相认识可以是IP也可以是MAC或者是主机名）。NFS、X Windows、RPC都在这一层。</p><ul><li>建立，管理，终止会话</li><li>适用于校验点可使会话在通信失效时从<strong>校验点/同步点</strong>继续恢复通信，实现数据同步。（适用于传输大文件）</li></ul><h4 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h4><p>用于处理在两个通信系统中交换信息的表示方式（语法和语义）。</p><p>可<strong>确保一个系统的应用层所发送的信息可以被另一个系统的应用层读取</strong>。例如，PC程序与另一台计算机进行通信，其中一台计算机使用扩展二一十进制交换码（EBCDIC），而另一台则使用美国信息交换标准码（ASCII）来表示相同的字符。如有必要，表示层会通过使用一种通格式来实现多种数据格式之间的转换。这一层主要解决信息的语法表示问题。它将欲交换的数据从适合于某一用户的抽象语法，转换为适合于OSI系统内部使用的传送语法。即提供格式化的表示和转换数据服务，数据的压缩和解压缩，加密和解密等工作都由表示层负责。 </p><ul><li>数据格式变换</li><li>数据加密解密</li><li>数据压缩和恢复</li></ul><h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>所有能和用户交互产生网络流量的程序。（比如QQ，邮箱等）</p><p>是最靠近用户的OSI层，这一层为用户的操作系统或应用程序（例如电子邮件、文件传输和终端仿真）<strong>提供网络服务</strong>。应用层协议的代表包括：Telnet、FTP、HTTP、SNMP等。 </p><h2 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP/IP模型"></a>TCP/IP模型</h2><p><img src="/2020/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9/模型层次.png" alt="avatar"></p><p>是最基本的Internet协议，有网络层的IP和传输层的TCP构成。指TCP/IP协议簇。</p><p>分为四层，每一层都呼叫他的下一层所提供的网络来实现自己的需求。</p><ol><li><p>网络接口层负责实际数据的传输，对应于OSI的物理层和数据链路层，常见协议有Ethernet 802.3 、Token Ring 802.5、X.25等。</p></li><li><p>网络层负责网络间寻址，数据传输，对应于OSI网络层。</p></li><li><p>传输层负责可靠的传输服务，对应于OSI传输层。</p></li><li><p>应用层负责一切与应用程序有关的功能，对应于OSI上三层。</p></li></ol><p>属于TCP/IP协议簇的所有协议都位于该模型的上面三层。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;OSI模型&quot;&gt;&lt;a href=&quot;#OSI模型&quot; class=&quot;headerlink&quot; title=&quot;OSI模型&quot;&gt;&lt;/a&gt;OSI模型&lt;/h2&gt;&lt;p&gt;OSI七层模型是一种框架性的设计方法，建立七层模型的主要目的是为&lt;strong&gt;解决异种网络互连时所遇到的兼容性问题</summary>
-      
-    
-    
-    
-    <category term="计算机网络" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="计算机网络" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
