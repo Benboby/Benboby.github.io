@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-22T14:38:23.913Z</updated>
+  <updated>2020-12-23T14:02:28.332Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一题：共鸣问题</title>
+    <link href="http://yoursite.com/2020/12/23/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%85%B1%E9%B8%A3%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/12/23/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%85%B1%E9%B8%A3%E9%97%AE%E9%A2%98/</id>
+    <published>2020-12-23T13:46:43.000Z</published>
+    <updated>2020-12-23T14:02:28.332Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>现在有 $n$ 个音符和 $m$ 对共鸣关系，编号为 $1~n$，每个音符自己有一个奏响时的优美程度，共鸣关系 $(x,y,z)$ 表示音符 $x$ 和 $y$ 同时奏响的额外优美程度是 $z$，同时不奏响则为 $-z$，其他情况为 $0$，求最大优美程度。$(n,m \in [1,1e5])$</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>对于一对共鸣关系而言，在不选的情况下收益为 $-z$，则选择一个的话，收益为 $-z + z = 0$，都选择的话为 $-z + 2z = z$。因此可以预先把每对关系的两个数都加上 $z$，刚开始我们是不选任何有联系的音符的，因此初值为 $-z$，那么选择一个数就会加上 $z$，选择两个就会加上 $2z$，满足了之前所讨论的关系。答案初始化为所有关系都不选的情况，即 $-sum(z)$，然后只要贪心的选择对答案有正贡献的值就行了。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * @param n int整型 </span></span><br><span class="line"><span class="comment">     * @param m int整型 </span></span><br><span class="line"><span class="comment">     * @param a int整型vector </span></span><br><span class="line"><span class="comment">     * @param b int整型vector&lt;vector&lt;&gt;&gt; </span></span><br><span class="line"><span class="comment">     * @return long长整型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">wwork</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; a, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt;&amp; b)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; c;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; x : a) c.push_back(x);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; v : b) &#123;</span><br><span class="line">            c[v[<span class="number">0</span>] - <span class="number">1</span>] += v[<span class="number">2</span>];</span><br><span class="line">            c[v[<span class="number">1</span>] - <span class="number">1</span>] += v[<span class="number">2</span>];</span><br><span class="line">            res -= v[<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; x : c) &#123;</span><br><span class="line">            <span class="keyword">if</span> (x &gt; <span class="number">0</span>) res += x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;现在有 $n$ 个音符和 $m$ 对共鸣关系，编号为 $1~n$，每个音符自己有一个奏响时的优美程度，共鸣关系 $(x,y,z)$ 表示音符</summary>
+      
+    
+    
+    
+    <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+    <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
   
   <entry>
     <title>每日一题：大逃离</title>
@@ -454,31 +478,6 @@
     
     
     <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题：连通两组点的最小成本</title>
-    <link href="http://yoursite.com/2020/09/25/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%BF%9E%E9%80%9A%E4%B8%A4%E7%BB%84%E7%82%B9%E7%9A%84%E6%9C%80%E5%B0%8F%E6%88%90%E6%9C%AC/"/>
-    <id>http://yoursite.com/2020/09/25/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%BF%9E%E9%80%9A%E4%B8%A4%E7%BB%84%E7%82%B9%E7%9A%84%E6%9C%80%E5%B0%8F%E6%88%90%E6%9C%AC/</id>
-    <published>2020-09-25T14:06:23.000Z</published>
-    <updated>2020-09-25T14:20:56.352Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给你两组点，其中第一组中有 $size1$ 个点，第二组中有 $size2$ 个点，且 $size1 &gt;= size2$。</p><p>任意两点间的连接成本 $cost$ 由大小为 size1 x size2 矩阵给出，其中 $cost[i][j]$ 是第一组中的点 $i$ 和第二组中的点 $j$ 的连接成本。如果两个组中的每个点都与另一组中的一个或多个点连接，则称这两组点是连通的。换言之，第一组中的每个点必须至少与第二组中的一个点连接，且第二组中的每个点必须至少与第一组中的一个点连接。</p><p>返回连通两组点所需的最小成本。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>$dp[i][j]$ 表示左部前 $i$ 个点连接右部(1&lt;&lt;m)的情况，状态转移方程：dp[i][now | 1 &lt;&lt; j] = min({dp<a href="当前状态">now | 1 &lt;&lt; j</a>, dp[i - 1][j] + cost[i - 1]<a href="前i-1个状态(当前点没连接任何点">j</a> + 当前点连接右边第j个点}, dp[i][j] + cost[i - 1]<a href="前i个状态(当前点可能之前连接了别的点">j</a> + 当前点连接右边第j个点))。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">connectTwoGroups</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = cost.size();</span><br><span class="line">        <span class="keyword">int</span> m = cost.get(<span class="number">0</span>).size();</span><br><span class="line">        <span class="keyword">int</span> all = <span class="number">1</span> &lt;&lt; m;</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>][all];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            Arrays.fill(dp[i], <span class="number">2000000000</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> now = <span class="number">0</span>; now &lt; all; now++) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">                    dp[i][now | <span class="number">1</span> &lt;&lt; j] = Math.min(dp[i][now | <span class="number">1</span> &lt;&lt; j], Math.min(dp[i - <span class="number">1</span>][now] + cost.get(i - <span class="number">1</span>).get(j), dp[i][now] + cost.get(i - <span class="number">1</span>).get(j)));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n][all - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给你两组点，其中第一组中有 $size1$ 个点，第二组中有 $size2$ 个点，且 $size1 &amp;gt;= size2$。&lt;/p&gt;
-&lt;</summary>
-      
-    
-    
-    
-    <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-    <category term="状压dp" scheme="http://yoursite.com/tags/%E7%8A%B6%E5%8E%8Bdp/"/>
     
   </entry>
   
