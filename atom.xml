@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-24T09:52:41.442Z</updated>
+  <updated>2020-12-23T14:04:07.636Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,19 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>每日一题：分发糖果</title>
-    <link href="http://yoursite.com/2020/12/24/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C/"/>
-    <id>http://yoursite.com/2020/12/24/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C/</id>
-    <published>2020-12-24T09:52:41.000Z</published>
-    <updated>2020-12-24T09:52:41.442Z</updated>
-    
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>每日一题：共鸣问题</title>
@@ -467,6 +454,30 @@
     
     
     <category term="C++面向对象" scheme="http://yoursite.com/tags/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一题：不相交线段的最小最大值</title>
+    <link href="http://yoursite.com/2020/09/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%BA%BF%E6%AE%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E6%9C%80%E5%A4%A7%E5%80%BC/"/>
+    <id>http://yoursite.com/2020/09/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%BA%BF%E6%AE%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E6%9C%80%E5%A4%A7%E5%80%BC/</id>
+    <published>2020-09-26T05:51:09.000Z</published>
+    <updated>2020-09-26T05:56:20.237Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>在一维数轴上给出 $m$ 个线段，每个线段都都有 $l,r,w$ 三个数据代表这个线段的左右端点和这个区间权值。 从中取出若干个不相交的线段(区间端点可以共用)，在覆盖满 $[1,n]$ 的情况下，取出的线段中 $权重的最大值]$ 最小能为多少？</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>$dp[i]$ 代表覆盖满 $[1,i]$ 最大权值最小为多少，然后按左端点从小到大枚举线段，就有 $dp[r_i]=min(dp[r_i],max(dp[l_i],w_i))$。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> l, r;</span><br><span class="line">  ll w;</span><br><span class="line">&#125; q[<span class="number">200005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Node x, Node y)</span> </span>&#123; <span class="keyword">return</span> x.l &lt; y.l; &#125;</span><br><span class="line"></span><br><span class="line">ll dp[<span class="number">100005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n, m;</span><br><span class="line">  <span class="keyword">while</span> (~<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m)) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%lld&quot;</span>, &amp;q[i].l, &amp;q[i].r, &amp;q[i].w);</span><br><span class="line">    sort(q + <span class="number">1</span>, q + m + <span class="number">1</span>, cmp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) dp[i] = <span class="number">1e18</span>;</span><br><span class="line">    dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">      dp[q[i].r] = min(dp[q[i].r], max(dp[q[i].l], q[i].w));</span><br><span class="line">    <span class="keyword">if</span> (dp[n] == <span class="number">1e18</span>)</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">&quot;invalid data&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, dp[n]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;在一维数轴上给出 $m$ 个线段，每个线段都都有 $l,r,w$ 三个数据代表这个线段的左右端点和这个区间权值。 从中取出若干个不相交的线段</summary>
+      
+    
+    
+    
+    <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+    <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
