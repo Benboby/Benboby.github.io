@@ -781,14 +781,14 @@
 
   
   <url>
-    <loc>http://yoursite.com/tags/C-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</loc>
+    <loc>http://yoursite.com/tags/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
     <lastmod>2020-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/C-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
+    <loc>http://yoursite.com/tags/C-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2020-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -803,6 +803,13 @@
   
   <url>
     <loc>http://yoursite.com/tags/JVM/</loc>
+    <lastmod>2020-12-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E5%8C%BA%E9%97%B4dp/</loc>
     <lastmod>2020-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -824,13 +831,6 @@
   
   <url>
     <loc>http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/</loc>
-    <lastmod>2020-12-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/%E5%8C%BA%E9%97%B4dp/</loc>
     <lastmod>2020-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
