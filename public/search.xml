@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>每日一题：货仓选址</title>
+      <link href="2021/01/09/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%B4%A7%E4%BB%93%E9%80%89%E5%9D%80/"/>
+      <url>2021/01/09/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%B4%A7%E4%BB%93%E9%80%89%E5%9D%80/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>在数轴上找到一个点，使得到其余 $n$ 个点距离之和最小。$(n \in [1, 1e5])$</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>考虑绝对值不等式：</p><p>当只有两个点 $a, b$ 时，有 $|a - x| + |b - x| &gt;= |a - b|$，为了满足 $|a - x| + |b - x| = |a - b|$ 关系，$x$ 必须选在 $a,b$ 两点之间。</p><p>拓展为 $n$ 个点，距离为 $|a<em>1 - x| + |a_2 - x| + … + |a</em>{n - 1} - x| + |a<em>n - x|$，收尾两两分组有 $(|a_1 - x| + |a_n - x|) + (|a_2 - x| - |a</em>{n - 1} - x| + …)$，两两应用绝对值不等式，$x$ 的位置必须满足在各个对应区间里。</p><p>得出结论：当 $n$ 为奇数时，$x$ 位置为中间那个点（因为刚好分组多出单独一个，满足最小性则必须将 $x$ 的位置选择为那个点，距离刚好为 $0$）；当 $n$ 为偶数时，$x$ 位置为中间两个点之间的任意位置都可。 </p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, res, a[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a, a + n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) res += <span class="built_in">abs</span>(a[i] - a[n &gt;&gt; <span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每日一题：按要求补齐数组</title>
       <link href="2020/12/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%8C%89%E8%A6%81%E6%B1%82%E8%A1%A5%E9%BD%90%E6%95%B0%E7%BB%84/"/>
       <url>2020/12/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%8C%89%E8%A6%81%E6%B1%82%E8%A1%A5%E9%BD%90%E6%95%B0%E7%BB%84/</url>
