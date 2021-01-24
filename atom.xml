@@ -6,7 +6,7 @@
   <link href="https://www.benboby.top/atom.xml" rel="self"/>
   
   <link href="https://www.benboby.top/"/>
-  <updated>2021-01-14T10:35:12.989Z</updated>
+  <updated>2021-01-24T01:27:39.245Z</updated>
   <id>https://www.benboby.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一题：解码异或后的排列</title>
+    <link href="https://www.benboby.top/2021/01/24/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%8E%92%E5%88%97/"/>
+    <id>https://www.benboby.top/2021/01/24/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%8E%92%E5%88%97/</id>
+    <published>2021-01-24T01:10:06.000Z</published>
+    <updated>2021-01-24T01:27:39.245Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给你一个整数数组 $g$，它是前 $n$ 个正整数的排列，且 $n$ 是个 <strong>奇数</strong> 。</p><p>它被加密成另一个长度为 $n - 1$ 的整数数组 $a$ ，满足 $a[i] = g[i] \^ g[i + 1]$。比方说，如果 $g = [1,3,2]$，那么 $a = [2,1]$。</p><p>给你 $a$ 数组，请你返回原始数组 $g$。题目保证答案存在且唯一。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>可以发现如果对 $a$ 数组做前缀异或和得到 $sum$ 数组，那么 $sum[i]$ 就表示 $g[0] \^ g[i + 1]$ 的值。$n$ 恰好为奇数，因此如果将数组 $sum$ 全部异或起来，$g[0]$ 刚好为被异或偶数次而抵消，得到的结果为 $g[1] \^ g[2] \^ … \^ g[n]$，恰好只有 $g[0]$ 没有出现。然后将这个结果与 $1-n$ 的所有数异或，得到的就是 $g[0]$ 的值，然后递推即可。时间复杂度 $O(n)$。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">decode</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = a.size(), sum = <span class="number">0</span>;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">g</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) g[<span class="number">0</span>] ^= (sum ^= a[i]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n + <span class="number">1</span>; i++) g[<span class="number">0</span>] ^= i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) g[i + <span class="number">1</span>] = g[i] ^ a[i];</span><br><span class="line">        <span class="keyword">return</span> g;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给你一个整数数组 $g$，它是前 $n$ 个正整数的排列，且 $n$ 是个 &lt;strong&gt;奇数&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;它被加</summary>
+      
+    
+    
+    
+    <category term="每日一题" scheme="https://www.benboby.top/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+    <category term="思维" scheme="https://www.benboby.top/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>每日一题：最小高度树</title>
@@ -442,28 +467,6 @@
     
     
     <category term="数据结构" scheme="https://www.benboby.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题：小y的序列</title>
-    <link href="https://www.benboby.top/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%B0%8Fy%E7%9A%84%E5%BA%8F%E5%88%97/"/>
-    <id>https://www.benboby.top/2020/10/04/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%B0%8Fy%E7%9A%84%E5%BA%8F%E5%88%97/</id>
-    <published>2020-10-04T14:22:19.000Z</published>
-    <updated>2021-01-10T08:17:23.386Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>最少修改几个数，使得数列满足 $a[i + 1] - a[i] = i$。$(n \in [1, 1e5], a[i] \in [-1e9, 1e9])$</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先构造一个长度为 $n$ 满足题意的初始数列，然后将所给的数减去对应的初始构造的数，差值出现的次数最多的就是最长的满足题意的序列，要修改的就是剩余的那些数。<br><a id="more"></a> </p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n, x, p = <span class="number">0</span>, res;</span><br><span class="line">  <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; mp;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; x;</span><br><span class="line">  res = mp[x] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    p += i;</span><br><span class="line">    res = max(res, ++mp[x - p]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; n - res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;最少修改几个数，使得数列满足 $a[i + 1] - a[i] = i$。$(n \in [1, 1e5], a[i] \in [-1e9, 1e9])$&lt;/p&gt;
-&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;先构造一个长度为 $n$ 满足题意的初始数列，然后将所给的数减去对应的初始构造的数，差值出现的次数最多的就是最长的满足题意的序列，要修改的就是剩余的那些数。&lt;br&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="每日一题" scheme="https://www.benboby.top/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-    <category term="思维" scheme="https://www.benboby.top/tags/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
