@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>C++语言基础</title>
+      <link href="C-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.html"/>
+      <url>C-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.html</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="2825138fd9e46f5f90eb89cb234ce0be4a963718b8c460f6627bec7993d59866">88bfb973b5cd9a98289a5356073cb3e589ae2916033f98b742f25517975e9f92</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每日一题：最小体力消耗路径</title>
       <link href="%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%B0%8F%E4%BD%93%E5%8A%9B%E6%B6%88%E8%80%97%E8%B7%AF%E5%BE%84.html"/>
       <url>%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%B0%8F%E4%BD%93%E5%8A%9B%E6%B6%88%E8%80%97%E8%B7%AF%E5%BE%84.html</url>
@@ -266,7 +291,7 @@
       
         <tags>
             
-            <tag> C++开发 </tag>
+            <tag> C++基础 </tag>
             
         </tags>
       
@@ -2395,7 +2420,7 @@
       
         <tags>
             
-            <tag> C++11 </tag>
+            <tag> C++基础 </tag>
             
         </tags>
       
