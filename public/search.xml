@@ -54,31 +54,6 @@
     
     
     <entry>
-      <title>STL学习</title>
-      <link href="2021/02/STL.html"/>
-      <url>2021/02/STL.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="STL的两级空间配置器"><a href="#STL的两级空间配置器" class="headerlink" title="STL的两级空间配置器"></a>STL的两级空间配置器</h2><p>为什么需要二级空间配置器？</p><ul><li>我们知道动态开辟内存时，要在堆上申请，但若是我们需要频繁的在堆开辟释放内存，则就会在堆上造成很多外部碎片，浪费了内存空间</li><li>每次都要进行调用malloc、free函数等操作，使空间就会增加一些附加信息，降低了空间利用率</li><li>随着外部碎片增多，内存分配器在找不到合适内存情况下需要合并空闲块，浪费了时间，大大降低了效率<br>于是就设置了二级空间配置器，当开辟内存&lt;=128bytes时，即视为开辟小块内存，则调用二级空间配置器。</li></ul><h3 id="一级配置器"><a href="#一级配置器" class="headerlink" title="一级配置器"></a>一级配置器</h3><p>重要的函数就是allocate、deallocate、reallocate。<br>一级空间配置器是以malloc()，free()，realloc()等C函数执行实际的内存配置。</p><ol><li>直接allocate分配内存，其实就是malloc来分配内存，成功则直接返回，失败就调用处理函数</li><li>如果用户自定义了内存分配失败的处理函数就调用，没有的话就返回异常</li><li>如果自定义了处理函数就进行处理，完事再继续分配试试</li></ol><h3 id="二级配置器"><a href="#二级配置器" class="headerlink" title="二级配置器"></a>二级配置器</h3><ol><li>维护16条链表，分别是0-15号链表，最小8字节，以8字节逐渐递增，最大128字节，你传入一个字节参数，表示你需要多大的内存，会自动帮你校对到第几号链表（如需要13bytes空间，我们会给它分配16bytes大小），在找到第你个链表后查看链表是否为空，如果不为空直接从对应的free_list中拔出，将已经拨出的指针向后移动一位。</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> C++ </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> C++基础 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>每日一题：滑动窗口中位数</title>
       <link href="2021/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E4%B8%AD%E4%BD%8D%E6%95%B0.html"/>
       <url>2021/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E4%B8%AD%E4%BD%8D%E6%95%B0.html</url>
